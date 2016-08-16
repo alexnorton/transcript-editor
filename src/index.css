@@ -1,0 +1,9 @@
+body {
+  font-family: system, -apple-system, BlinkMacSystemFont,
+      "Helvetica Neue", "Lucida Grande";
+}
+
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+}
