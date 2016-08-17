@@ -11,7 +11,8 @@ const TranscriptEditor = ({ transcript, currentTime }) => {
             currentTime={currentTime}
             key={i}
             segmentNumber={i}
-            played={currentTime >= t.words[0].start}
+            startedPlaying={currentTime >= t.words[0].start}
+            finishedPlaying={currentTime > t.words[t.words.length - 1].end}
           />
         )}
       </div>

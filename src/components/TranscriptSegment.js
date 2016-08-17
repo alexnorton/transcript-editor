@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import TranscriptWord from './TranscriptWord';
 
 class TranscriptSegment extends Component {
-  shouldComponentUpdate() {
-    return this.props.played;
+  shouldComponentUpdate(nextProps) {
+    return (nextProps.startedPlaying && !nextProps.finishedPlaying)  // currently playing
+      || (this.props.finishedPlaying !== nextProps.finishedPlaying); // finished playing
   }
 
   render() {
@@ -25,7 +26,8 @@ TranscriptSegment.propTypes = {
   transcript: React.PropTypes.object,
   currentTime: React.PropTypes.number,
   segmentNumber: React.PropTypes.number,
-  played: React.PropTypes.bool,
+  startedPlaying: React.PropTypes.bool,
+  finishedPlaying: React.PropTypes.bool,
 };
 
 export default TranscriptSegment;
