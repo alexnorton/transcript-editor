@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { AutoAffix } from 'react-overlays';
+import Immutable from 'immutable';
 
 import VideoPlayer from './VideoPlayer';
 import TranscriptEditor from './TranscriptEditor';
@@ -21,7 +22,7 @@ class EditorView extends Component {
     fetch('data/105-5018361.json')
       .then(response => response.json())
       .then(json => {
-        this.setState({ transcript: json });
+        this.setState({ transcript: this.transformTranscript(json) });
       });
   }
 
@@ -29,6 +30,38 @@ class EditorView extends Component {
     this.setState({
       currentTime: time,
     });
+  }
+
+  transformTranscript(json) {
+    const speakers = new Immutable.Map(
+      json.commaSegments.segmentation.speakers.map(s =>
+        [
+          s['@id'],
+          new Immutable.Map({
+            name: null,
+          }),
+        ]
+      )
+    );
+
+    const segments = new Immutable.List(
+      json.commaSegments.segmentation.segments.map((s, i) =>
+        new Immutable.Map({
+          speaker: s.speaker['@id'],
+          words: new Immutable.List(
+            json.commaSegments.segments.transcriptions[i].words.map(w =>
+              new Immutable.Map({
+                word: w.punct,
+                start: w.start,
+                end: w.end,
+              })
+            )
+          ),
+        })
+      )
+    );
+
+    return new Immutable.Map({ speakers, segments });
   }
 
   render() {

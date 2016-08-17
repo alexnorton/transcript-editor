@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import './index.css';
+import Immutable from 'immutable';
+import installDevTools from 'immutable-devtools';
+import './css/index.css';
+
+installDevTools(Immutable);
 
 ReactDOM.render(
   <App />,
