@@ -5,6 +5,7 @@ import Immutable from 'immutable';
 
 import VideoPlayer from './VideoPlayer';
 import TranscriptEditor from './TranscriptEditor';
+import StyleManager from '../StyleManager';
 
 class EditorView extends Component {
   constructor(props) {
@@ -14,11 +15,12 @@ class EditorView extends Component {
       playing: false,
       currentTime: 0,
     };
-
     this.onTimeUpdate = this.onTimeUpdate.bind(this);
+    this.onEntityUpdate = this.onEntityUpdate.bind(this);
   }
 
   componentDidMount() {
+    this.styleManager = new StyleManager();
     fetch('data/105-5018361.json')
       .then(response => response.json())
       .then(json => {
@@ -27,9 +29,14 @@ class EditorView extends Component {
   }
 
   onTimeUpdate(time) {
-    this.setState({
-      currentTime: time,
-    });
+    // this.setState({
+    //   currentTime: time,
+    // });
+    this.styleManager.setTime(time);
+  }
+
+  onEntityUpdate(entities) {
+    this.styleManager.setEntities(entities);
   }
 
   transformTranscript(json) {
@@ -67,7 +74,7 @@ class EditorView extends Component {
   render() {
     return (
       <Row>
-        <Col sm={6}>
+        <Col xs={6}>
           <AutoAffix
             viewportOffsetTop={10}
           >
@@ -77,9 +84,10 @@ class EditorView extends Component {
             </div>
           </AutoAffix>
         </Col>
-        <Col sm={6}>
+        <Col xs={6}>
           <TranscriptEditor
             transcript={this.state.transcript}
+            onEntityUpdate={this.onEntityUpdate}
           />
         </Col>
       </Row>

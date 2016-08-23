@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Editor, EditorState, ContentState, ContentBlock, CharacterMetadata,
-  Entity, CompositeDecorator } from 'draft-js';
+  Entity, CompositeDecorator, convertToRaw } from 'draft-js';
 import Immutable from 'immutable';
+import uuid from 'node-uuid';
 
 import TranscriptEditorWord from './TranscriptEditorWord';
 
@@ -39,7 +40,9 @@ class TranscriptEditor extends Component {
           key: i.toString(),
           characterList: s.get('words').map(w => {
             const entity = Entity.create(
-              'TRANSCRIPT_WORD', 'MUTABLE', w.toJS()
+              'TRANSCRIPT_WORD',
+              'MUTABLE',
+              { start: w.get('start'), end: w.get('end'), uuid: uuid.v4() }
             );
             return new Immutable.List(w.get('word').split('').map(() =>
               CharacterMetadata.applyEntity(
@@ -64,9 +67,13 @@ class TranscriptEditor extends Component {
         })
       );
 
+      const contentState = ContentState.createFromBlockArray(contentBlocks);
+
+      this.sendEntityUpdate(contentState);
+
       this.setState({
         editorState: EditorState.createWithContent(
-          ContentState.createFromBlockArray(contentBlocks),
+          contentState,
           this.decorator
         ),
       });
@@ -74,29 +81,35 @@ class TranscriptEditor extends Component {
   }
 
   onChange(editorState) {
-    const lastChangeType = editorState.getLastChangeType();
-    if (lastChangeType === 'backspace-character' || lastChangeType === 'remove-range') {
-      const contentState = editorState.getCurrentContent();
-      const selectionState = editorState.getSelection();
-      const blockMap = contentState.getBlockMap();
-      const newBlockMap = blockMap.map(contentBlock => {
-        if (contentBlock.getKey() === selectionState.getAnchorKey()) {
-          return contentBlock.set(
-            'characterList', this.mergeAdjacentWordEntities(contentBlock.characterList)
-          );
-        }
-        return contentBlock;
-      });
-      const newContentState = contentState.set('blockMap', newBlockMap);
-      const newEditorState = EditorState.push(editorState, newContentState, 'apply-entity', true);
-      this.setState({
-        editorState: EditorState.acceptSelection(newEditorState, selectionState),
-      });
-    } else {
-      this.setState({
-        editorState,
-      });
+    const contentState = editorState.getCurrentContent();
+    if (contentState !== this.state.editorState.getCurrentContent()) {
+      this.sendEntityUpdate(contentState);
+      const lastChangeType = editorState.getLastChangeType();
+      if (lastChangeType === 'backspace-character' || lastChangeType === 'remove-range') {
+        const selectionState = editorState.getSelection();
+        const blockMap = contentState.getBlockMap();
+        const newBlockMap = blockMap.map(contentBlock => {
+          if (contentBlock.getKey() === selectionState.getAnchorKey()) {
+            return contentBlock.set(
+              'characterList', this.mergeAdjacentWordEntities(contentBlock.characterList)
+            );
+          }
+          return contentBlock;
+        });
+        const newContentState = contentState.set('blockMap', newBlockMap);
+        const newEditorState = EditorState.push(editorState, newContentState, 'apply-entity', true);
+        return this.setState({
+          editorState: EditorState.acceptSelection(newEditorState, selectionState),
+        });
+      }
     }
+    return this.setState({
+      editorState,
+    });
+  }
+
+  sendEntityUpdate(contentState) {
+    this.props.onEntityUpdate(convertToRaw(contentState).entityMap);
   }
 
   handleReturn() {
@@ -109,7 +122,8 @@ class TranscriptEditor extends Component {
       if (!newList.isEmpty()) {
         const previousCharacter = newList.last();
         // Does the previous character have a different entity?
-        if (character.entity !== previousCharacter.entity) {
+        if (character.entity && previousCharacter.entity
+          && character.entity !== previousCharacter.entity) {
           const entity = Entity.get(character.entity);
           const previousEntity = Entity.get(previousCharacter.entity);
           // Does the different entity have the same type?
@@ -123,6 +137,12 @@ class TranscriptEditor extends Component {
       return newList.push(character);
     }, new Immutable.List());
   }
+
+  // getEntitySelectors(contentState) {
+  //   contentState.getBlockMap.map(contentBlock => {
+  //
+  //   });
+  // }
 
   render() {
     const { editorState } = this.state;
@@ -140,6 +160,7 @@ class TranscriptEditor extends Component {
 
 TranscriptEditor.propTypes = {
   transcript: React.PropTypes.object,
+  onEntityUpdate: React.PropTypes.func,
 };
 
 export default TranscriptEditor;

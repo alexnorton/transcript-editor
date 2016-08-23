@@ -9,6 +9,7 @@ class VideoPlayer extends Component {
   componentDidMount() {
     this.video.addEventListener('play', () => this.startInterval());
     this.video.addEventListener('pause', () => this.stopInterval());
+    this.video.addEventListener('seeked', () => this.updateTime());
     // this.video.addEventListener('timeupdate', (e) => {
     //   console.log(e.srcElement.currentTime);
     //   this.props.onTimeUpdate(e.srcElement.currentTime);
@@ -17,15 +18,19 @@ class VideoPlayer extends Component {
 
   startInterval() {
     this.interval = setInterval(() => {
-      this.setState({
-        currentTime: this.video.currentTime,
-      });
-      this.props.onTimeUpdate(this.video.currentTime);
+      this.updateTime();
     }, 100);
   }
 
   stopInterval() {
     clearInterval(this.interval);
+  }
+
+  updateTime() {
+    this.setState({
+      currentTime: this.video.currentTime,
+    });
+    this.props.onTimeUpdate(this.video.currentTime);
   }
 
   render() {

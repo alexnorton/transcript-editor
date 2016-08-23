@@ -18,7 +18,8 @@ class App extends Component {
 }
 
 jss.set('body', {
-  'background-color': 'pink',
+  // backgroundColor: 'magenta',
+  // color: 'yellow',
 });
 
 export default App;
