@@ -10,6 +10,8 @@
   "dependencies": {
     "draft-js": "^0.8.1",
     "immutable": "^3.8.1",
+    "immutablediff": "^0.4.3",
+    "jss-browserify": "^0.6.0",
     "react": "^15.2.1",
     "react-bootstrap": "^0.30.2",
     "react-dom": "^15.2.1",

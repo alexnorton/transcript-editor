@@ -17,8 +17,11 @@ class VideoPlayer extends Component {
 
   startInterval() {
     this.interval = setInterval(() => {
+      this.setState({
+        currentTime: this.video.currentTime,
+      });
       this.props.onTimeUpdate(this.video.currentTime);
-    }, 200);
+    }, 100);
   }
 
   stopInterval() {
@@ -27,12 +30,15 @@ class VideoPlayer extends Component {
 
   render() {
     return (
-      <video
-        ref={(c) => { this.video = c; }}
-        src="data/videos/5018361_1_13936325_LQ.m4v"
-        controls
-        style={{ width: '100%' }}
-      />
+      <div>
+        <video
+          ref={(c) => { this.video = c; }}
+          src="data/videos/5018361_1_13936325_LQ.m4v"
+          controls
+          style={{ width: '100%' }}
+        />
+        {this.state.currentTime}
+      </div>
     );
   }
 }

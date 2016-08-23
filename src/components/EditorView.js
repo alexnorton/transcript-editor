@@ -79,7 +79,6 @@ class EditorView extends Component {
         </Col>
         <Col sm={6}>
           <TranscriptEditor
-            currentTime={this.state.currentTime}
             transcript={this.state.transcript}
           />
         </Col>

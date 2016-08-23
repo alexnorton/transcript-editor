@@ -3,6 +3,8 @@ import { Editor, EditorState, ContentState, ContentBlock, CharacterMetadata,
   Entity, CompositeDecorator } from 'draft-js';
 import Immutable from 'immutable';
 
+import TranscriptEditorWord from './TranscriptEditorWord';
+
 import '../css/TranscriptEditor.css';
 
 class TranscriptEditor extends Component {
@@ -23,9 +25,7 @@ class TranscriptEditor extends Component {
             return Entity.get(entityKey).getType() === 'TRANSCRIPT_WORD';
           }, callback);
         },
-        component: (cprops) => (
-          <span style={{ backgroundColor: '#eee', margin: '5px 0' }}>{ cprops.children }</span>
-        ),
+        component: TranscriptEditorWord,
       },
     ]);
   }
@@ -39,7 +39,7 @@ class TranscriptEditor extends Component {
           key: i.toString(),
           characterList: s.get('words').map(w => {
             const entity = Entity.create(
-              'TRANSCRIPT_WORD', 'MUTABLE', w
+              'TRANSCRIPT_WORD', 'MUTABLE', w.toJS()
             );
             return new Immutable.List(w.get('word').split('').map(() =>
               CharacterMetadata.applyEntity(
@@ -74,16 +74,55 @@ class TranscriptEditor extends Component {
   }
 
   onChange(editorState) {
-    // console.log(editorState);
-    this.setState({ editorState });
+    const lastChangeType = editorState.getLastChangeType();
+    if (lastChangeType === 'backspace-character' || lastChangeType === 'remove-range') {
+      const contentState = editorState.getCurrentContent();
+      const selectionState = editorState.getSelection();
+      const blockMap = contentState.getBlockMap();
+      const newBlockMap = blockMap.map(contentBlock => {
+        if (contentBlock.getKey() === selectionState.getAnchorKey()) {
+          return contentBlock.set(
+            'characterList', this.mergeAdjacentWordEntities(contentBlock.characterList)
+          );
+        }
+        return contentBlock;
+      });
+      const newContentState = contentState.set('blockMap', newBlockMap);
+      const newEditorState = EditorState.push(editorState, newContentState, 'apply-entity', true);
+      this.setState({
+        editorState: EditorState.acceptSelection(newEditorState, selectionState),
+      });
+    } else {
+      this.setState({
+        editorState,
+      });
+    }
   }
 
-
-  handleKeyCommand(command) {
-    // console.log(command);
-    return 'not-handled';
+  handleReturn() {
+    return true;
   }
 
+  mergeAdjacentWordEntities(characterList) {
+    return characterList.reduce((newList, character) => {
+      // Is this the first character?
+      if (!newList.isEmpty()) {
+        const previousCharacter = newList.last();
+        // Does the previous character have a different entity?
+        if (character.entity !== previousCharacter.entity) {
+          const entity = Entity.get(character.entity);
+          const previousEntity = Entity.get(previousCharacter.entity);
+          // Does the different entity have the same type?
+          if (entity.type === previousEntity.type && entity !== previousEntity) {
+            // Merge the entities
+            Entity.mergeData(previousCharacter.entity, { end: entity.data.end });
+            return newList.push(CharacterMetadata.applyEntity(character, previousCharacter.entity));
+          }
+        }
+      }
+      return newList.push(character);
+    }, new Immutable.List());
+  }
 
   render() {
     const { editorState } = this.state;
@@ -92,6 +131,7 @@ class TranscriptEditor extends Component {
         <Editor
           editorState={editorState}
           onChange={this.onChange}
+          handleReturn={this.handleReturn}
         />
       </div>
     );

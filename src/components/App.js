@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { PageHeader } from 'react-bootstrap';
 import 'whatwg-fetch';
 
+import jss from 'jss-browserify';
+
 import EditorView from './EditorView';
 
 class App extends Component {
@@ -14,5 +16,9 @@ class App extends Component {
     );
   }
 }
+
+jss.set('body', {
+  'background-color': 'pink',
+});
 
 export default App;
