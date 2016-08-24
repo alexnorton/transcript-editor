@@ -14,7 +14,10 @@ class TranscriptEditor extends Component {
     super(props);
 
     this.state = { editorState: EditorState.createEmpty() };
+
     this.onChange = this.onChange.bind(this);
+    this.handleBeforeInput = this.handleBeforeInput.bind(this);
+
     this.debouncedSendEntityUpdate = debounce(this.sendEntityUpdate, 500);
 
     this.decorator = new CompositeDecorator([
@@ -107,6 +110,22 @@ class TranscriptEditor extends Component {
     });
   }
 
+  handleBeforeInput(chars) {
+    // Don't allow inserting additional spaces between words
+    if (chars === ' ') {
+      const editorState = this.state.editorState;
+      const selectionState = editorState.getSelection();
+      const startKey = selectionState.getStartKey();
+      const startOffset = selectionState.getStartOffset();
+      const selectedBlock = editorState.getCurrentContent().getBlockForKey(startKey);
+      const entityKeyBefore = selectedBlock.getEntityAt(startOffset - 1);
+      if (entityKeyBefore && Entity.get(entityKeyBefore).type === 'TRANSCRIPT_SPACE') {
+        return true;
+      }
+    }
+    return false;
+  }
+
   sendEntityUpdate(contentState) {
     this.props.onEntityUpdate(convertToRaw(contentState).entityMap);
   }
@@ -137,12 +156,6 @@ class TranscriptEditor extends Component {
     }, new Immutable.List());
   }
 
-  // getEntitySelectors(contentState) {
-  //   contentState.getBlockMap.map(contentBlock => {
-  //
-  //   });
-  // }
-
   render() {
     const { editorState } = this.state;
     return (
@@ -151,6 +164,7 @@ class TranscriptEditor extends Component {
           editorState={editorState}
           onChange={this.onChange}
           handleReturn={this.handleReturn}
+          handleBeforeInput={this.handleBeforeInput}
         />
       </div>
     );
