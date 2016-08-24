@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import Immutable from 'immutable';
-import installDevTools from 'immutable-devtools';
-import './css/index.css';
 
-installDevTools(Immutable);
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
+import App from './components/App';
+
+import './css/index.css';
 
 ReactDOM.render(
   <App />,
