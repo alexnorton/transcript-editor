@@ -5,6 +5,7 @@ import Immutable from 'immutable';
 import uuid from 'node-uuid';
 import debounce from 'lodash.debounce';
 
+import TranscriptEditorBlock from './TranscriptEditorBlock';
 import TranscriptEditorWord from './TranscriptEditorWord';
 
 import '../css/TranscriptEditor.css';
@@ -17,6 +18,7 @@ class TranscriptEditor extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.handleBeforeInput = this.handleBeforeInput.bind(this);
+    this.blockRenderer = this.blockRenderer.bind(this);
 
     this.debouncedSendEntityUpdate = debounce(this.sendEntityUpdate, 500);
 
@@ -126,6 +128,12 @@ class TranscriptEditor extends Component {
     return false;
   }
 
+  blockRenderer() {
+    return {
+      component: TranscriptEditorBlock,
+    };
+  }
+
   sendEntityUpdate(contentState) {
     this.props.onEntityUpdate(convertToRaw(contentState).entityMap);
   }
@@ -180,6 +188,7 @@ class TranscriptEditor extends Component {
           handleReturn={this.handleReturn}
           handleBeforeInput={this.handleBeforeInput}
           handlePastedText={this.handlePastedText}
+          blockRendererFn={this.blockRenderer}
         />
       </div>
     );
