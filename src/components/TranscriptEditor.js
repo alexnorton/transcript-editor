@@ -94,7 +94,7 @@ class TranscriptEditor extends Component {
       const newBlockMap = blockMap.map(contentBlock => {
         if (contentBlock.getKey() === selectionState.getAnchorKey()) {
           return contentBlock.set(
-            'characterList', this.mergeAdjacentWordEntities(contentBlock.characterList)
+            'characterList', this.updateEntities(contentBlock.characterList)
           );
         }
         return contentBlock;
@@ -134,22 +134,36 @@ class TranscriptEditor extends Component {
     return true;
   }
 
-  mergeAdjacentWordEntities(characterList) {
+  handlePastedText() {
+    return true;
+  }
+
+  updateEntities(characterList) {
     return characterList.reduce((newList, character) => {
       // Is this the first character?
       if (!newList.isEmpty()) {
         const previousCharacter = newList.last();
-        // Does the previous character have a different entity?
-        if (character.entity && previousCharacter.entity
-          && character.entity !== previousCharacter.entity) {
-          const entity = Entity.get(character.entity);
-          const previousEntity = Entity.get(previousCharacter.entity);
-          // Does the different entity have the same type?
-          if (entity.type === previousEntity.type && entity !== previousEntity) {
-            // Merge the entities
-            Entity.mergeData(previousCharacter.entity, { end: entity.data.end });
-            return newList.push(CharacterMetadata.applyEntity(character, previousCharacter.entity));
+        // Does the previous character have an entity?
+        if (previousCharacter.entity) {
+          // Does the previous character have a different entity?
+          if (character.entity && previousCharacter.entity
+            && character.entity !== previousCharacter.entity) {
+            const entity = Entity.get(character.entity);
+            const previousEntity = Entity.get(previousCharacter.entity);
+            // Does the different entity have the same type?
+            if (entity.type === previousEntity.type && entity !== previousEntity) {
+              // Merge the entities
+              Entity.mergeData(previousCharacter.entity, { end: entity.data.end });
+              return newList.push(
+                CharacterMetadata.applyEntity(character, previousCharacter.entity)
+              );
+            }
           }
+        } else {
+          // Set it to the entity of this character
+          return newList
+            .set(-1, CharacterMetadata.applyEntity(previousCharacter, character.entity))
+            .push(character);
         }
       }
       return newList.push(character);
@@ -165,6 +179,7 @@ class TranscriptEditor extends Component {
           onChange={this.onChange}
           handleReturn={this.handleReturn}
           handleBeforeInput={this.handleBeforeInput}
+          handlePastedText={this.handlePastedText}
         />
       </div>
     );
