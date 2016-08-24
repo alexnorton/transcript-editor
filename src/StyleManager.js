@@ -16,11 +16,13 @@ class StyleManager {
   }
 
   setEntities(entities) {
+    console.log('entities updated');
     this.entities = entities;
     this.updateStyles();
   }
 
   setTime(time) {
+    this.previousTime = this.time;
     this.time = time;
     this.updateStyles();
   }
@@ -28,17 +30,13 @@ class StyleManager {
   updateStyles() {
     Object.keys(this.entities).forEach(key => {
       const entity = this.entities[key];
-      jss.set(
-        `#word-${entity.data.uuid}`,
-        entity.data.start >= this.time ? this.styles.unplayed : this.styles.played
-      );
+      if (!this.previousTime || entity.data.start >= this.previousTime) {
+        jss.set(
+          `#word-${entity.data.uuid}`,
+          entity.data.start >= this.time ? this.styles.unplayed : this.styles.played
+        );
+      }
     });
-    // this.entities.forEach(entity => {
-    //   jss.set(
-    //     `#${entity.uuid}`,
-    //     entity.start >= this.time ? this.styles.played : this.styles.unplayed
-    //   );
-    // });
   }
 }
 

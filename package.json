@@ -2,7 +2,6 @@
   "name": "transcriptor-v2",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://alexnorton.gitlab.io/transcriptor",
   "devDependencies": {
     "immutable-devtools": "0.0.7",
     "react-scripts": "0.2.1"
@@ -12,6 +11,7 @@
     "immutable": "^3.8.1",
     "immutablediff": "^0.4.3",
     "jss-browserify": "^0.6.0",
+    "lodash.debounce": "^4.0.8",
     "node-uuid": "^1.4.7",
     "react": "^15.2.1",
     "react-bootstrap": "^0.30.2",

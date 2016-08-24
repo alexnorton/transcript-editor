@@ -3,6 +3,7 @@ import { Editor, EditorState, ContentState, ContentBlock, CharacterMetadata,
   Entity, CompositeDecorator, convertToRaw } from 'draft-js';
 import Immutable from 'immutable';
 import uuid from 'node-uuid';
+import debounce from 'lodash.debounce';
 
 import TranscriptEditorWord from './TranscriptEditorWord';
 
@@ -14,6 +15,7 @@ class TranscriptEditor extends Component {
 
     this.state = { editorState: EditorState.createEmpty() };
     this.onChange = this.onChange.bind(this);
+    this.debouncedSendEntityUpdate = debounce(this.sendEntityUpdate, 500);
 
     this.decorator = new CompositeDecorator([
       {
@@ -83,25 +85,22 @@ class TranscriptEditor extends Component {
   onChange(editorState) {
     const contentState = editorState.getCurrentContent();
     if (contentState !== this.state.editorState.getCurrentContent()) {
-      this.sendEntityUpdate(contentState);
-      const lastChangeType = editorState.getLastChangeType();
-      if (lastChangeType === 'backspace-character' || lastChangeType === 'remove-range') {
-        const selectionState = editorState.getSelection();
-        const blockMap = contentState.getBlockMap();
-        const newBlockMap = blockMap.map(contentBlock => {
-          if (contentBlock.getKey() === selectionState.getAnchorKey()) {
-            return contentBlock.set(
-              'characterList', this.mergeAdjacentWordEntities(contentBlock.characterList)
-            );
-          }
-          return contentBlock;
-        });
-        const newContentState = contentState.set('blockMap', newBlockMap);
-        const newEditorState = EditorState.push(editorState, newContentState, 'apply-entity', true);
-        return this.setState({
-          editorState: EditorState.acceptSelection(newEditorState, selectionState),
-        });
-      }
+      this.debouncedSendEntityUpdate(contentState);
+      const selectionState = editorState.getSelection();
+      const blockMap = contentState.getBlockMap();
+      const newBlockMap = blockMap.map(contentBlock => {
+        if (contentBlock.getKey() === selectionState.getAnchorKey()) {
+          return contentBlock.set(
+            'characterList', this.mergeAdjacentWordEntities(contentBlock.characterList)
+          );
+        }
+        return contentBlock;
+      });
+      const newContentState = contentState.set('blockMap', newBlockMap);
+      const newEditorState = EditorState.push(editorState, newContentState, 'apply-entity', true);
+      return this.setState({
+        editorState: EditorState.acceptSelection(newEditorState, selectionState),
+      });
     }
     return this.setState({
       editorState,
