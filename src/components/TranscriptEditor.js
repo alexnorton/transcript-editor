@@ -95,15 +95,39 @@ class TranscriptEditor extends Component {
       this.debouncedSendEntityUpdate(contentState);
 
       const selectionState = editorState.getSelection();
-      const anchorKey = selectionState.getAnchorKey();
-      const previousAnchorKey = previousEditorState.getSelection().getAnchorKey();
+      const startKey = selectionState.getStartKey();
+      const previousStartKey = previousEditorState.getSelection().getStartKey();
 
       const blockMap = contentState.getBlockMap();
 
       const newBlockMap = blockMap.reduce((_newBlockMap, contentBlock, blockKey) => {
         let newContentBlock = contentBlock;
         // Is this the block currently being edited?
-        if (blockKey === anchorKey) {
+        if (blockKey === startKey) {
+          // Have we merged blocks?
+          if (blockMap.size < previousEditorState.getCurrentContent().getBlockMap().size) {
+            const startOffset = selectionState.getStartOffset();
+            // Do we have two adjacent words?
+            if (Entity.get(newContentBlock.characterList.get(startOffset).entity).type
+                  === 'TRANSCRIPT_WORD'
+             && Entity.get(newContentBlock.characterList.get(startOffset - 1).entity).type
+                   === 'TRANSCRIPT_WORD') {
+              // Add a space
+              newContentBlock = newContentBlock
+                .set('characterList', newContentBlock.characterList.insert(startOffset,
+                  CharacterMetadata.applyEntity(
+                    CharacterMetadata.create(),
+                    Entity.create(
+                      'TRANSCRIPT_SPACE', 'IMMUTABLE', null
+                    )
+                  )
+                ))
+                .set('text', `${newContentBlock.text.slice(0, startOffset)}`
+                           + ` ${newContentBlock.text.slice(startOffset)}`
+                );
+            }
+          }
+
           // Update the entities
           newContentBlock = newContentBlock.set(
             'characterList', this.updateEntities(newContentBlock.characterList)
@@ -127,7 +151,7 @@ class TranscriptEditor extends Component {
             );
           }
         // Otherwise is this the block previously being edited? (e.g. that was split)
-        } else if (blockKey === previousAnchorKey) {
+        } else if (blockKey === previousStartKey) {
           // Have we created a trailing space?
           if (Entity.get(
               newContentBlock.characterList.last().entity
