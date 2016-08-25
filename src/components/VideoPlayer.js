@@ -42,7 +42,6 @@ class VideoPlayer extends Component {
           controls
           style={{ width: '100%' }}
         />
-        {this.state.currentTime}
       </div>
     );
   }
