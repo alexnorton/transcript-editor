@@ -102,8 +102,15 @@ class TranscriptEditor extends Component {
 
       const newBlockMap = blockMap.reduce((_newBlockMap, contentBlock, blockKey) => {
         let newContentBlock = contentBlock;
+
         // Is this the block currently being edited?
         if (blockKey === startKey) {
+          // Has everything been deleted from the block?
+          if (newContentBlock.characterList.isEmpty()) {
+            // Remove it
+            return _newBlockMap;
+          }
+
           // Have we merged blocks?
           if (blockMap.size < previousEditorState.getCurrentContent().getBlockMap().size) {
             const startOffset = selectionState.getStartOffset();
