@@ -19,4 +19,8 @@ class TranscriptEditorBlock extends Component {
   }
 }
 
+TranscriptEditorBlock.propTypes = {
+  block: React.PropTypes.object,
+};
+
 export default TranscriptEditorBlock;

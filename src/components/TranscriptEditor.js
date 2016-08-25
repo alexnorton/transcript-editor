@@ -18,6 +18,7 @@ class TranscriptEditor extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.handleBeforeInput = this.handleBeforeInput.bind(this);
+    this.handleReturn = this.handleReturn.bind(this);
     this.blockRenderer = this.blockRenderer.bind(this);
 
     this.debouncedSendEntityUpdate = debounce(this.sendEntityUpdate, 500);
@@ -70,7 +71,7 @@ class TranscriptEditor extends Component {
           text: s.get('words').map(w =>
             w.get('word')
           ).join(' '),
-          data: s,
+          data: new Immutable.Map({ speaker: s.get('speaker') }),
         })
       );
 
@@ -93,14 +94,31 @@ class TranscriptEditor extends Component {
       this.debouncedSendEntityUpdate(contentState);
       const selectionState = editorState.getSelection();
       const blockMap = contentState.getBlockMap();
-      const newBlockMap = blockMap.map(contentBlock => {
-        if (contentBlock.getKey() === selectionState.getAnchorKey()) {
-          return contentBlock.set(
+
+      const newBlockMap = blockMap.reduce((_newBlockMap, contentBlock, blockKey) => {
+        let newContentBlock = contentBlock;
+
+        // Is this the block currently being edited?
+        if (blockKey === selectionState.getAnchorKey()) {
+          // Update the entities
+          newContentBlock = contentBlock.set(
             'characterList', this.updateEntities(contentBlock.characterList)
           );
+
+          // Is this block missing data? (e.g. it's been split)
+          if (newContentBlock.data.isEmpty()) {
+            // Copy the previous block's data
+            newContentBlock = newContentBlock.set(
+              'data', _newBlockMap.last().get('data')
+            );
+          }
+
+          return _newBlockMap.set(blockKey, newContentBlock);
         }
-        return contentBlock;
-      });
+
+        return _newBlockMap.set(blockKey, contentBlock);
+      }, new Immutable.OrderedMap());
+
       const newContentState = contentState.set('blockMap', newBlockMap);
       const newEditorState = EditorState.push(editorState, newContentState, 'apply-entity', true);
       return this.setState({
@@ -139,6 +157,17 @@ class TranscriptEditor extends Component {
   }
 
   handleReturn() {
+    const editorState = this.state.editorState;
+    const selectionState = editorState.getSelection();
+    const startKey = selectionState.getStartKey();
+    const startOffset = selectionState.getStartOffset();
+    const selectedBlock = editorState.getCurrentContent().getBlockForKey(startKey);
+    const entityKeyBefore = selectedBlock.getEntityAt(startOffset - 1);
+    const entityKeyAfter = selectedBlock.getEntityAt(startOffset);
+    if ((entityKeyBefore && Entity.get(entityKeyBefore).type === 'TRANSCRIPT_SPACE')
+      || (entityKeyAfter && Entity.get(entityKeyAfter).type === 'TRANSCRIPT_SPACE')) {
+      return false;
+    }
     return true;
   }
 
@@ -149,7 +178,12 @@ class TranscriptEditor extends Component {
   updateEntities(characterList) {
     return characterList.reduce((newList, character) => {
       // Is this the first character?
-      if (!newList.isEmpty()) {
+      if (newList.isEmpty()) {
+        // Is this a space?
+        if (character.entity && Entity.get(character.entity).type === 'TRANSCRIPT_SPACE') {
+          return newList;
+        }
+      } else {
         const previousCharacter = newList.last();
         // Does the previous character have an entity?
         if (previousCharacter.entity) {
