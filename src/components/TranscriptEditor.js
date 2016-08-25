@@ -93,13 +93,22 @@ class TranscriptEditor extends Component {
     const previousEditorState = this.state.editorState;
     if (contentState !== previousEditorState.getCurrentContent()) {
       this.debouncedSendEntityUpdate(contentState);
+
       const selectionState = editorState.getSelection();
+      const anchorKey = selectionState.getAnchorKey();
+      const previousAnchorKey = previousEditorState.getSelection().getAnchorKey();
+
       const blockMap = contentState.getBlockMap();
 
       const newBlockMap = blockMap.reduce((_newBlockMap, contentBlock, blockKey) => {
         let newContentBlock = contentBlock;
         // Is this the block currently being edited?
-        if (blockKey === selectionState.getAnchorKey()) {
+        if (blockKey === anchorKey) {
+          // Update the entities
+          newContentBlock = newContentBlock.set(
+            'characterList', this.updateEntities(newContentBlock.characterList)
+          );
+
           // Have we created a leading space? (e.g. when splitting a block)
           if (Entity.get(
               newContentBlock.characterList.first().entity
@@ -110,17 +119,23 @@ class TranscriptEditor extends Component {
               .set('text', newContentBlock.text.substring(1));
           }
 
-          // Update the entities
-          newContentBlock = newContentBlock.set(
-            'characterList', this.updateEntities(newContentBlock.characterList)
-          );
-
           // Is this block missing data? (e.g. it's been split)
           if (newContentBlock.data.isEmpty()) {
             // Copy the previous block's data
             newContentBlock = newContentBlock.set(
               'data', _newBlockMap.last().data
             );
+          }
+        // Otherwise is this the block previously being edited? (e.g. that was split)
+        } else if (blockKey === previousAnchorKey) {
+          // Have we created a trailing space?
+          if (Entity.get(
+              newContentBlock.characterList.last().entity
+            ).type === 'TRANSCRIPT_SPACE') {
+            // Remove the trailing space
+            newContentBlock = newContentBlock
+              .set('characterList', newContentBlock.characterList.pop())
+              .set('text', newContentBlock.text.substring(0, newContentBlock.text.length - 1));
           }
         }
 
