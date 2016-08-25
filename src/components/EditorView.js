@@ -80,7 +80,6 @@ class EditorView extends Component {
           >
             <div>
               <VideoPlayer onTimeUpdate={this.onTimeUpdate} />
-              Current time: <code>{this.state.currentTime.toFixed(4)}</code>
             </div>
           </AutoAffix>
         </Col>
