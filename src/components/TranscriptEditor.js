@@ -90,33 +90,41 @@ class TranscriptEditor extends Component {
 
   onChange(editorState) {
     const contentState = editorState.getCurrentContent();
-    if (contentState !== this.state.editorState.getCurrentContent()) {
+    const previousEditorState = this.state.editorState;
+    if (contentState !== previousEditorState.getCurrentContent()) {
       this.debouncedSendEntityUpdate(contentState);
       const selectionState = editorState.getSelection();
       const blockMap = contentState.getBlockMap();
 
       const newBlockMap = blockMap.reduce((_newBlockMap, contentBlock, blockKey) => {
         let newContentBlock = contentBlock;
-
         // Is this the block currently being edited?
         if (blockKey === selectionState.getAnchorKey()) {
+          // Have we created a leading space? (e.g. when splitting a block)
+          if (Entity.get(
+              newContentBlock.characterList.first().entity
+            ).type === 'TRANSCRIPT_SPACE') {
+            // Remove the leading space
+            newContentBlock = newContentBlock
+              .set('characterList', newContentBlock.characterList.shift())
+              .set('text', newContentBlock.text.substring(1));
+          }
+
           // Update the entities
-          newContentBlock = contentBlock.set(
-            'characterList', this.updateEntities(contentBlock.characterList)
+          newContentBlock = newContentBlock.set(
+            'characterList', this.updateEntities(newContentBlock.characterList)
           );
 
           // Is this block missing data? (e.g. it's been split)
           if (newContentBlock.data.isEmpty()) {
             // Copy the previous block's data
             newContentBlock = newContentBlock.set(
-              'data', _newBlockMap.last().get('data')
+              'data', _newBlockMap.last().data
             );
           }
-
-          return _newBlockMap.set(blockKey, newContentBlock);
         }
 
-        return _newBlockMap.set(blockKey, contentBlock);
+        return _newBlockMap.set(blockKey, newContentBlock);
       }, new Immutable.OrderedMap());
 
       const newContentState = contentState.set('blockMap', newBlockMap);
@@ -178,12 +186,7 @@ class TranscriptEditor extends Component {
   updateEntities(characterList) {
     return characterList.reduce((newList, character) => {
       // Is this the first character?
-      if (newList.isEmpty()) {
-        // Is this a space?
-        if (character.entity && Entity.get(character.entity).type === 'TRANSCRIPT_SPACE') {
-          return newList;
-        }
-      } else {
+      if (!newList.isEmpty()) {
         const previousCharacter = newList.last();
         // Does the previous character have an entity?
         if (previousCharacter.entity) {
