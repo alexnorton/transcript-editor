@@ -38,7 +38,7 @@ class VideoPlayer extends Component {
       <div>
         <video
           ref={(c) => { this.video = c; }}
-          src="data/videos/5018361_1_13936325_LQ.m4v"
+          src={`data/videos/${this.props.videoId}.m4v`}
           controls
           style={{ width: '100%' }}
         />
@@ -48,6 +48,7 @@ class VideoPlayer extends Component {
 }
 
 VideoPlayer.propTypes = {
+  videoId: React.PropTypes.string,
   onTimeUpdate: React.PropTypes.func,
 };
 

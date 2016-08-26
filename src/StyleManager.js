@@ -16,7 +16,6 @@ class StyleManager {
   }
 
   setEntities(entities) {
-    console.log('entities updated');
     this.entities = entities;
     this.updateStyles();
   }

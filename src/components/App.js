@@ -1,25 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { PageHeader } from 'react-bootstrap';
-import 'whatwg-fetch';
 
-import jss from 'jss-browserify';
+const App = ({ children }) => (
+  <div>
+    <PageHeader>Transcriptor</PageHeader>
+    {children}
+  </div>
+);
 
-import EditorView from './EditorView';
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <PageHeader>Transcriptor</PageHeader>
-        <EditorView />
-      </div>
-    );
-  }
-}
-
-jss.set('body', {
-  // backgroundColor: 'magenta',
-  // color: 'yellow',
-});
+App.propTypes = {
+  children: React.PropTypes.node,
+};
 
 export default App;

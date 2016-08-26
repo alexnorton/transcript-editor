@@ -7,3 +7,11 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+h1 {
+  font-variant: small-caps;
+}
+
+.page-header {
+  margin-top: 0;
+}

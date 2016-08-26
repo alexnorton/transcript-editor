@@ -40,7 +40,8 @@ class TranscriptEditor extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.transcript !== nextProps.transcript) {
+    if (Immutable.Map.isMap(nextProps.transcript)
+      && this.state.transcript !== nextProps.transcript) {
       const transcript = nextProps.transcript;
 
       const contentBlocks = transcript.get('segments').map((s, i) =>

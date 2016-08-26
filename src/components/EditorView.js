@@ -21,7 +21,7 @@ class EditorView extends Component {
 
   componentDidMount() {
     this.styleManager = new StyleManager();
-    fetch('data/105-5018361.json')
+    fetch(`data/${this.props.params.videoId}.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({ transcript: this.transformTranscript(json) });
@@ -29,9 +29,6 @@ class EditorView extends Component {
   }
 
   onTimeUpdate(time) {
-    // this.setState({
-    //   currentTime: time,
-    // });
     this.styleManager.setTime(time);
   }
 
@@ -79,7 +76,10 @@ class EditorView extends Component {
             viewportOffsetTop={10}
           >
             <div>
-              <VideoPlayer onTimeUpdate={this.onTimeUpdate} />
+              <VideoPlayer
+                videoId={this.props.params.videoId}
+                onTimeUpdate={this.onTimeUpdate}
+              />
             </div>
           </AutoAffix>
         </Col>
@@ -93,5 +93,9 @@ class EditorView extends Component {
     );
   }
 }
+
+EditorView.propTypes = {
+  params: React.PropTypes.object,
+};
 
 export default EditorView;
