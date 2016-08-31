@@ -2,6 +2,7 @@
   "name": "transcriptor-v2",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://github.com/bbc/transcript-polisher",
   "devDependencies": {
     "immutable-devtools": "0.0.7",
     "react-scripts": "0.2.1"
