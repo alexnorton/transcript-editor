@@ -175,9 +175,10 @@ class TranscriptEditor extends Component {
       }, new Immutable.OrderedMap());
 
       const newContentState = contentState.set('blockMap', newBlockMap);
-      const newEditorState = EditorState.push(editorState, newContentState, 'apply-entity', true);
       return this.setState({
-        editorState: EditorState.acceptSelection(newEditorState, selectionState),
+        editorState: EditorState.push(
+          previousEditorState, newContentState, editorState.getLastChangeType()
+        ),
       });
     }
     return this.setState({
