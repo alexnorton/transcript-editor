@@ -1,8 +1,8 @@
 {
-  "name": "transcriptor-v2",
+  "name": "transcript-editor",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://bbc.github.io/transcript-polisher/",
+  "homepage": "https://bbc.github.io/transcript-editor/",
   "devDependencies": {
     "immutable-devtools": "0.0.7",
     "react-scripts": "0.2.1"
@@ -20,6 +20,7 @@
     "react-dom": "^15.2.1",
     "react-overlays": "^0.6.6",
     "react-router": "^2.7.0",
+    "react-spinkit": "^1.1.11",
     "whatwg-fetch": "^1.0.0"
   },
   "scripts": {
