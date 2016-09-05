@@ -12,6 +12,10 @@ import VideoList from './components/VideoList';
 
 import './css/index.css';
 
+window.apiEndpoint = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:3001'
+  : 'https://d3kepzbjvmq06q.cloudfront.net';
+
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route component={App}>

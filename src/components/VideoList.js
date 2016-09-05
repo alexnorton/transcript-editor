@@ -10,7 +10,7 @@ class VideoList extends Component {
   }
 
   componentDidMount() {
-    fetch('data/videos.json')
+    fetch(`${window.apiEndpoint}/videos.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({ videos: json });

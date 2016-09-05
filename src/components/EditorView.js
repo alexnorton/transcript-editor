@@ -21,7 +21,7 @@ class EditorView extends Component {
 
   componentDidMount() {
     this.styleManager = new StyleManager();
-    fetch(`data/${this.props.params.videoId}.json`)
+    fetch(`${window.apiEndpoint}/${this.props.params.videoId}.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({ transcript: this.transformTranscript(json) });
