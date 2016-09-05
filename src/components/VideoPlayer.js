@@ -38,7 +38,7 @@ class VideoPlayer extends Component {
       <div>
         <video
           ref={(c) => { this.video = c; }}
-          src={`data/videos/${this.props.videoId}.m4v`}
+          src={`${window.apiEndpoint}/videos/${this.props.videoId}.m4v`}
           controls
           style={{ width: '100%' }}
         />
