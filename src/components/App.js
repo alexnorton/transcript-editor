@@ -3,7 +3,7 @@ import { PageHeader } from 'react-bootstrap';
 
 const App = ({ children }) => (
   <div>
-    <PageHeader>Transcriptor</PageHeader>
+    <PageHeader>📝 Transcript Editor</PageHeader>
     {children}
   </div>
 );
