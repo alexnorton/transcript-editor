@@ -11,7 +11,7 @@ class TranscriptEditorBlock extends Component {
     return (
       <Row>
         <Col
-          xs={2}
+          xs={3}
           contentEditable={false}
           style={{
             MozUserSelect: 'none',
@@ -19,9 +19,9 @@ class TranscriptEditorBlock extends Component {
             msUserSelect: 'none',
           }}
         >
-          {this.props.block.data.get('speaker')}
+          Speaker {this.props.block.data.get('speaker')}
         </Col>
-        <Col xs={10}>
+        <Col xs={9}>
           <EditorBlock {...this.props} />
         </Col>
       </Row>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { AutoAffix } from 'react-overlays';
-import Immutable from 'immutable';
 
 import VideoPlayer from './VideoPlayer';
 import TranscriptEditor from './TranscriptEditor';
 import StyleManager from '../StyleManager';
+import Transcript from '../model/Transcript';
 
 class EditorView extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class EditorView extends Component {
     fetch(`${window.apiEndpoint}/${this.props.params.videoId}.json`)
       .then(response => response.json())
       .then(json => {
-        this.setState({ transcript: this.transformTranscript(json) });
+        this.setState({ transcript: Transcript.fromComma(json) });
       });
   }
 
@@ -34,38 +34,6 @@ class EditorView extends Component {
 
   onEntityUpdate(entities) {
     this.styleManager.setEntities(entities);
-  }
-
-  transformTranscript(json) {
-    const speakers = new Immutable.Map(
-      json.commaSegments.segmentation.speakers.map(s =>
-        [
-          s['@id'],
-          new Immutable.Map({
-            name: null,
-          }),
-        ]
-      )
-    );
-
-    const segments = new Immutable.List(
-      json.commaSegments.segmentation.segments.map((s, i) =>
-        new Immutable.Map({
-          speaker: s.speaker['@id'],
-          words: new Immutable.List(
-            json.commaSegments.segments.transcriptions[i].words.map(w =>
-              new Immutable.Map({
-                word: w.punct,
-                start: w.start,
-                end: w.end,
-              })
-            )
-          ),
-        })
-      )
-    );
-
-    return new Immutable.Map({ speakers, segments });
   }
 
   render() {

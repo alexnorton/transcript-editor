@@ -40,8 +40,7 @@ class TranscriptEditor extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (Immutable.Map.isMap(nextProps.transcript)
-      && this.state.transcript !== nextProps.transcript) {
+    if (this.state.transcript !== nextProps.transcript) {
       const transcript = nextProps.transcript;
 
       const contentBlocks = transcript.get('segments').map((s, i) =>
@@ -53,7 +52,7 @@ class TranscriptEditor extends Component {
               'MUTABLE',
               { start: w.get('start'), end: w.get('end'), uuid: uuid.v4() }
             );
-            return new Immutable.List(w.get('word').split('').map(() =>
+            return new Immutable.List(w.get('text').split('').map(() =>
               CharacterMetadata.applyEntity(
                 CharacterMetadata.create(),
                 entity
@@ -70,7 +69,7 @@ class TranscriptEditor extends Component {
             ])
           ).flatten(1),
           text: s.get('words').map(w =>
-            w.get('word')
+            w.get('text')
           ).join(' '),
           data: new Immutable.Map({ speaker: s.get('speaker') }),
         })
