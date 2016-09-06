@@ -5,6 +5,7 @@ import Immutable from 'immutable';
 import debounce from 'lodash.debounce';
 
 import convertFromTranscript from '../helpers/convertFromTranscript';
+import convertToTranscript from '../helpers/convertToTranscript';
 import TranscriptEditorBlock from './TranscriptEditorBlock';
 import TranscriptEditorWord from './TranscriptEditorWord';
 
@@ -14,14 +15,17 @@ class TranscriptEditor extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { editorState: EditorState.createEmpty() };
+    this.state = {
+      editorState: EditorState.createEmpty(),
+      speakers: [],
+    };
 
     this.onChange = this.onChange.bind(this);
     this.handleBeforeInput = this.handleBeforeInput.bind(this);
     this.handleReturn = this.handleReturn.bind(this);
     this.blockRenderer = this.blockRenderer.bind(this);
 
-    this.debouncedSendEntityUpdate = debounce(this.sendEntityUpdate, 500);
+    this.debouncedSendTranscriptUpdate = debounce(this.sendTranscriptUpdate, 500);
 
     this.decorator = new CompositeDecorator([
       {
@@ -40,18 +44,18 @@ class TranscriptEditor extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.transcript !== nextProps.transcript) {
-      const transcript = nextProps.transcript;
+    const transcript = nextProps.transcript;
+    if (transcript && this.state.transcript !== transcript) {
+      const { contentState, speakers } = convertFromTranscript(transcript);
 
-      const contentState = convertFromTranscript(transcript);
-
-      this.sendEntityUpdate(contentState);
+      this.sendTranscriptUpdate(contentState, speakers);
 
       this.setState({
         editorState: EditorState.createWithContent(
           contentState,
           this.decorator
         ),
+        speakers,
       });
     }
   }
@@ -60,7 +64,7 @@ class TranscriptEditor extends Component {
     const contentState = editorState.getCurrentContent();
     const previousEditorState = this.state.editorState;
     if (contentState !== previousEditorState.getCurrentContent()) {
-      this.debouncedSendEntityUpdate(contentState);
+      this.debouncedSendTranscriptUpdate(contentState, this.state.speakers);
 
       const selectionState = editorState.getSelection();
       const startKey = selectionState.getStartKey();
@@ -172,10 +176,14 @@ class TranscriptEditor extends Component {
   blockRenderer() {
     return {
       component: TranscriptEditorBlock,
+      props: {
+        speakers: this.state.speakers,
+      },
     };
   }
 
-  sendEntityUpdate(contentState) {
+  sendTranscriptUpdate(contentState, speakers) {
+    console.log(convertToTranscript(contentState, speakers));
     this.props.onEntityUpdate(convertToRaw(contentState).entityMap);
   }
 

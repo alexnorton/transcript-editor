@@ -37,7 +37,9 @@ const convertFromTranscript = (transcript) => {
 
   const contentState = ContentState.createFromBlockArray(contentBlocks);
 
-  return contentState;
+  const speakers = transcript.get('speakers');
+
+  return { contentState, speakers };
 };
 
 export default convertFromTranscript;

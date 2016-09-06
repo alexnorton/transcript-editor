@@ -5,8 +5,8 @@ const TranscriptSegmentRecord = new Immutable.Record({
   words: new Immutable.List(),
 });
 
-class Transcript extends TranscriptSegmentRecord {
+class TranscriptSegment extends TranscriptSegmentRecord {
 
 }
 
-export default Transcript;
+export default TranscriptSegment;

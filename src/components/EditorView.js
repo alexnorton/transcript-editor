@@ -11,7 +11,7 @@ class EditorView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      transcript: {},
+      transcript: null,
       playing: false,
       currentTime: 0,
     };
