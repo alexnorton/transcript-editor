@@ -15,9 +15,8 @@ class StyleManager {
     };
   }
 
-  setEntities(entities) {
-    this.entities = entities;
-    this.updateStyles();
+  setTranscript(transcript) {
+    this.transcript = transcript;
   }
 
   setTime(time) {
@@ -27,14 +26,15 @@ class StyleManager {
   }
 
   updateStyles() {
-    Object.keys(this.entities).forEach(key => {
-      const entity = this.entities[key];
-      if (!this.previousTime || entity.data.start >= this.previousTime) {
-        jss.set(
-          `#word-${entity.data.uuid}`,
-          entity.data.start >= this.time ? this.styles.unplayed : this.styles.played
-        );
-      }
+    this.transcript.segments.forEach((segment, segmentIndex) => {
+      segment.words.forEach((word, wordIndex) => {
+        if (!this.previousTime || word.start >= this.previousTime) {
+          jss.set(
+            `#word-${segmentIndex}-${wordIndex}`,
+            word.start >= this.time ? this.styles.unplayed : this.styles.played
+          );
+        }
+      });
     });
   }
 }

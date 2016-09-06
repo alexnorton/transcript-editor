@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, Entity, CompositeDecorator, CharacterMetadata,
-  convertToRaw } from 'draft-js';
+import { Editor, EditorState, Entity, CompositeDecorator, CharacterMetadata } from 'draft-js';
 import Immutable from 'immutable';
 import debounce from 'lodash.debounce';
 
@@ -183,8 +182,7 @@ class TranscriptEditor extends Component {
   }
 
   sendTranscriptUpdate(contentState, speakers) {
-    console.log(convertToTranscript(contentState, speakers));
-    this.props.onEntityUpdate(convertToRaw(contentState).entityMap);
+    this.props.onTranscriptUpdate(convertToTranscript(contentState, speakers));
   }
 
   handleReturn() {
@@ -257,7 +255,7 @@ class TranscriptEditor extends Component {
 
 TranscriptEditor.propTypes = {
   transcript: React.PropTypes.object,
-  onEntityUpdate: React.PropTypes.func,
+  onTranscriptUpdate: React.PropTypes.func,
 };
 
 export default TranscriptEditor;

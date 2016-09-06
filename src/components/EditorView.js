@@ -12,11 +12,12 @@ class EditorView extends Component {
     super(props);
     this.state = {
       transcript: null,
+      initialTranscript: null,
       playing: false,
       currentTime: 0,
     };
     this.onTimeUpdate = this.onTimeUpdate.bind(this);
-    this.onEntityUpdate = this.onEntityUpdate.bind(this);
+    this.onTranscriptUpdate = this.onTranscriptUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -24,7 +25,7 @@ class EditorView extends Component {
     fetch(`${window.apiEndpoint}/${this.props.params.videoId}.json`)
       .then(response => response.json())
       .then(json => {
-        this.setState({ transcript: Transcript.fromComma(json) });
+        this.setState({ initialTranscript: Transcript.fromComma(json) });
       });
   }
 
@@ -32,8 +33,8 @@ class EditorView extends Component {
     this.styleManager.setTime(time);
   }
 
-  onEntityUpdate(entities) {
-    this.styleManager.setEntities(entities);
+  onTranscriptUpdate(transcript) {
+    this.styleManager.setTranscript(transcript);
   }
 
   render() {
@@ -53,8 +54,8 @@ class EditorView extends Component {
         </Col>
         <Col xs={6}>
           <TranscriptEditor
-            transcript={this.state.transcript}
-            onEntityUpdate={this.onEntityUpdate}
+            transcript={this.state.initialTranscript}
+            onTranscriptUpdate={this.onTranscriptUpdate}
           />
         </Col>
       </Row>
