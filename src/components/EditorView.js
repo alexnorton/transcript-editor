@@ -40,7 +40,7 @@ class EditorView extends Component {
   render() {
     return (
       <Row>
-        <Col xs={6}>
+        <Col xs={5}>
           <AutoAffix
             viewportOffsetTop={10}
           >
@@ -52,7 +52,7 @@ class EditorView extends Component {
             </div>
           </AutoAffix>
         </Col>
-        <Col xs={6}>
+        <Col xs={7}>
           <TranscriptEditor
             transcript={this.state.initialTranscript}
             onTranscriptUpdate={this.onTranscriptUpdate}
