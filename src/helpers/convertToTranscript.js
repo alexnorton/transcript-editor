@@ -23,6 +23,7 @@ const convertToTranscript = (contentState, speakers) => {
         words.push(new TranscriptWord({
           start: entity.data.start,
           end: entity.data.end,
+          id: entity.data.id,
           text,
         }));
       }

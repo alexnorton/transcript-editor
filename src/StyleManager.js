@@ -26,11 +26,11 @@ class StyleManager {
   }
 
   updateStyles() {
-    this.transcript.segments.forEach((segment, segmentIndex) => {
-      segment.words.forEach((word, wordIndex) => {
+    this.transcript.segments.forEach(segment => {
+      segment.words.forEach(word => {
         if (!this.previousTime || word.start >= this.previousTime) {
           jss.set(
-            `#word-${segmentIndex}-${wordIndex}`,
+            `#word-${word.id}`,
             word.start >= this.time ? this.styles.unplayed : this.styles.played
           );
         }

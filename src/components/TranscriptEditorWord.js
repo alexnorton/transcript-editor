@@ -18,7 +18,7 @@ class TranscriptEditorWord extends Component {
           border: '1px solid #ddd',
           padding: '0 2px',
         }}
-        id={`word-${entity.data.key}`}
+        id={`word-${entity.data.id}`}
       >{ this.props.children }</span>
     );
   }

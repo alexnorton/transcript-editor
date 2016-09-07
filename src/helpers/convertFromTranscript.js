@@ -1,18 +1,19 @@
 import { ContentBlock, Entity, CharacterMetadata, ContentState } from 'draft-js';
 import Immutable from 'immutable';
+import uuid from 'node-uuid';
 
 const convertFromTranscript = (transcript) => {
   const contentBlocks = transcript.get('segments').map((segment, segmentIndex) =>
     new ContentBlock({
       key: segmentIndex.toString(),
-      characterList: segment.get('words').map((word, wordIndex) => {
+      characterList: segment.get('words').map(word => {
         const entity = Entity.create(
           'TRANSCRIPT_WORD',
           'MUTABLE',
           {
             start: word.get('start'),
             end: word.get('end'),
-            key: `${segmentIndex}-${wordIndex}`,
+            id: word.get('id') || uuid.v4(),
           }
         );
         return new Immutable.List(word.get('text').split('').map(() =>
