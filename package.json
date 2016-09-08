@@ -11,6 +11,7 @@
     "ajv": "^4.7.0",
     "bootstrap": "^3.3.7",
     "draft-js": "^0.8.1",
+    "file-saver": "^1.3.2",
     "immutable": "^3.8.1",
     "immutablediff": "^0.4.3",
     "jss-browserify": "^0.6.0",
