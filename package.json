@@ -8,6 +8,7 @@
     "react-scripts": "^0.4.1"
   },
   "dependencies": {
+    "ajv": "^4.7.0",
     "bootstrap": "^3.3.7",
     "draft-js": "^0.8.1",
     "immutable": "^3.8.1",
@@ -26,12 +27,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "react-scripts test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "eslint-config-airbnb",
     "env": {
-      "browser": true
+      "browser": true,
+      "jest": true
     },
     "rules": {
       "react/jsx-filename-extension": [
