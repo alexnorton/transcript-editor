@@ -6,34 +6,30 @@ import TranscriptWord from './TranscriptWord';
 import Speaker from './Speaker';
 
 const TranscriptRecord = new Immutable.Record({
-  speakers: new Immutable.Map(),
+  speakers: new Immutable.List(),
   segments: new Immutable.List(),
 });
 
 class Transcript extends TranscriptRecord {
   static fromComma(json) {
     // Create a map of Comma speaker IDs to numeric speaker IDs, e.g. S0: 0, S4: 1, ...
-    const speakerIdMap = new Immutable.Map(
-      json.commaSegments.segmentation.speakers.map((s, i) => [
-        s['@id'], i,
-      ])
-    );
+    const speakerIdMap = {};
 
-    const speakers = new Immutable.Map(
-      json.commaSegments.segmentation.speakers.map(s =>
-        [
-          speakerIdMap.get(s['@id']),
-          new Speaker({
-            name: null,
-          }),
-        ]
-      )
+    const speakers = new Immutable.List(
+      json.commaSegments.segmentation.speakers.map((s, i) => {
+        speakerIdMap[s['@id']] = i;
+
+        // Comma doesn't give us speaker names so we just create a new "empty" Speaker
+        return new Speaker({
+          name: null,
+        });
+      })
     );
 
     const segments = new Immutable.List(
       json.commaSegments.segmentation.segments.map((s, i) =>
         new TranscriptSegment({
-          speaker: speakerIdMap.get(s.speaker['@id']),
+          speaker: speakerIdMap[s.speaker['@id']],
           words: new Immutable.List(
             json.commaSegments.segments.transcriptions[i].words.map(w =>
               new TranscriptWord({
@@ -53,9 +49,9 @@ class Transcript extends TranscriptRecord {
   static fromJSON(json) {
     this.validateJSON(json);
 
-    const speakers = new Immutable.Map(json.speakers.map((speaker, index) => [
-      index, new Speaker(speaker),
-    ]));
+    const speakers = new Immutable.List(json.speakers.map(speaker =>
+      new Speaker(speaker)
+    ));
 
     const segments = new Immutable.List(
       json.segments.map(({ speaker, words }) => new TranscriptSegment({

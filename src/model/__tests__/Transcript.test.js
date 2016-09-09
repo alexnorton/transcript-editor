@@ -45,10 +45,10 @@ describe('fromJSON', () => {
 
     expect(transcript.get('speakers').size).toBe(2);
     expect(transcript.get('speakers').get(0) instanceof Speaker).toBe(true);
-    expect(transcript.get('speakers').toJS()).toEqual({
-      0: { name: 'Barack Obama' },
-      1: { name: null },
-    });
+    expect(transcript.get('speakers').toJS()).toEqual([
+      { name: 'Barack Obama' },
+      { name: null },
+    ]);
 
     expect(transcript.get('segments').size).toBe(2);
     expect(transcript.get('segments').get(1) instanceof TranscriptSegment).toBe(true);
