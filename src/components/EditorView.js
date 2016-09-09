@@ -73,7 +73,7 @@ class EditorView extends Component {
   saveTranscript() {
     const blob = new Blob(
       [JSON.stringify(this.transcript.toJSON(), null, 2)],
-      { type: 'text/plain;charset=utf-8' }
+      { type: 'application/json;charset=utf-8' }
     );
     saveAs(blob, 'transcript.json');
   }
