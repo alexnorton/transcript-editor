@@ -7,6 +7,8 @@ import convertFromTranscript from '../helpers/convertFromTranscript';
 import convertToTranscript from '../helpers/convertToTranscript';
 import TranscriptEditorBlock from './TranscriptEditorBlock';
 import TranscriptEditorWord from './TranscriptEditorWord';
+import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
+  from '../helpers/TranscriptEntities';
 
 import '../css/TranscriptEditor.css';
 
@@ -34,7 +36,7 @@ class TranscriptEditor extends Component {
             if (entityKey === null) {
               return false;
             }
-            return Entity.get(entityKey).getType() === 'TRANSCRIPT_WORD';
+            return Entity.get(entityKey).getType() === TRANSCRIPT_WORD;
           }, callback);
         },
         component: TranscriptEditorWord,
@@ -82,21 +84,21 @@ class TranscriptEditor extends Component {
             return _newBlockMap;
           }
 
+          const startOffset = selectionState.getStartOffset();
           // Have we merged blocks?
           if (blockMap.size < previousEditorState.getCurrentContent().getBlockMap().size) {
-            const startOffset = selectionState.getStartOffset();
             // Do we have two adjacent words?
             if (Entity.get(newContentBlock.characterList.get(startOffset).entity).type
-                  === 'TRANSCRIPT_WORD'
+                  === TRANSCRIPT_WORD
              && Entity.get(newContentBlock.characterList.get(startOffset - 1).entity).type
-                   === 'TRANSCRIPT_WORD') {
+                   === TRANSCRIPT_WORD) {
               // Add a space
               newContentBlock = newContentBlock
                 .set('characterList', newContentBlock.characterList.insert(startOffset,
                   CharacterMetadata.applyEntity(
                     CharacterMetadata.create(),
                     Entity.create(
-                      'TRANSCRIPT_SPACE', 'IMMUTABLE', null
+                      TRANSCRIPT_SPACE, 'IMMUTABLE', null
                     )
                   )
                 ))
@@ -114,7 +116,7 @@ class TranscriptEditor extends Component {
           // Have we created a leading space? (e.g. when splitting a block)
           if (Entity.get(
               newContentBlock.characterList.first().entity
-            ).type === 'TRANSCRIPT_SPACE') {
+            ).type === TRANSCRIPT_SPACE) {
             // Remove the leading space
             newContentBlock = newContentBlock
               .set('characterList', newContentBlock.characterList.shift())
@@ -133,7 +135,7 @@ class TranscriptEditor extends Component {
           // Have we created a trailing space?
           if (Entity.get(
               newContentBlock.characterList.last().entity
-            ).type === 'TRANSCRIPT_SPACE') {
+            ).type === TRANSCRIPT_SPACE) {
             // Remove the trailing space
             newContentBlock = newContentBlock
               .set('characterList', newContentBlock.characterList.pop())
@@ -165,7 +167,7 @@ class TranscriptEditor extends Component {
       const startOffset = selectionState.getStartOffset();
       const selectedBlock = editorState.getCurrentContent().getBlockForKey(startKey);
       const entityKeyBefore = selectedBlock.getEntityAt(startOffset - 1);
-      if (entityKeyBefore && Entity.get(entityKeyBefore).type === 'TRANSCRIPT_SPACE') {
+      if (entityKeyBefore && Entity.get(entityKeyBefore).type === TRANSCRIPT_SPACE) {
         return true;
       }
     }
@@ -193,8 +195,8 @@ class TranscriptEditor extends Component {
     const selectedBlock = editorState.getCurrentContent().getBlockForKey(startKey);
     const entityKeyBefore = selectedBlock.getEntityAt(startOffset - 1);
     const entityKeyAfter = selectedBlock.getEntityAt(startOffset);
-    if ((entityKeyBefore && Entity.get(entityKeyBefore).type === 'TRANSCRIPT_SPACE')
-      || (entityKeyAfter && Entity.get(entityKeyAfter).type === 'TRANSCRIPT_SPACE')) {
+    if ((entityKeyBefore && Entity.get(entityKeyBefore).type === TRANSCRIPT_SPACE)
+      || (entityKeyAfter && Entity.get(entityKeyAfter).type === TRANSCRIPT_SPACE)) {
       return false;
     }
     return true;
