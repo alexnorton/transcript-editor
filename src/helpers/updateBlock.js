@@ -4,8 +4,8 @@ import { Entity, CharacterMetadata } from 'draft-js';
 import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
   from './TranscriptEntities';
 
-const updateBlock = (contentBlock, previousContentBlock) => {
-  return contentBlock.characterList.reduce(({ characterList, text }, character, index) => {
+const updateBlock = (contentBlock, previousContentBlock) => (
+  contentBlock.characterList.reduce(({ characterList, text }, character, index) => {
     // Is this the first character?
     if (!characterList.isEmpty()) {
       const previousCharacter = characterList.last();
@@ -67,12 +67,11 @@ const updateBlock = (contentBlock, previousContentBlock) => {
         };
       }
     }
-
     return {
       characterList: characterList.push(character),
       text: text + contentBlock.text[index],
     };
-  }, { characterList: new Immutable.List(), text: '' });
-};
+  }, { characterList: new Immutable.List(), text: '' })
+);
 
 export default updateBlock;
