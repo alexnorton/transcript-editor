@@ -2,7 +2,7 @@ import Immutable from 'immutable';
 import { Entity, CharacterMetadata } from 'draft-js';
 
 import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
-  from '../helpers/TranscriptEntities';
+  from './TranscriptEntities';
 
 const updateBlock = (contentBlock, previousContentBlock) => {
   return contentBlock.characterList.reduce(({ characterList, text }, character, index) => {
