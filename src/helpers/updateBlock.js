@@ -30,6 +30,26 @@ const updateBlock = (contentBlock, previousContentBlock) => (
                 text: text + contentBlock.text[index],
               };
             }
+            const contentBlockLength = contentBlock.getLength();
+            // Is this the last character of the block and was the previous block state longer?
+            if (index === contentBlockLength - 1
+              && previousContentBlock.getLength() > contentBlockLength
+              && entity.type === TRANSCRIPT_SPACE) {
+              const deletedEntity = Entity.get(previousContentBlock.getEntityAt(index + 1));
+              // Add a placeholder
+              return {
+                characterList: characterList
+                  .push(character)
+                  .push(CharacterMetadata.applyEntity(
+                    CharacterMetadata.create(),
+                    Entity.create(
+                      TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE', deletedEntity.data
+                    )
+                  )),
+                text: `${text}${contentBlock.text[index]}\u200C`,
+              };
+            }
+
           // Otherwise do we have two spaces?
           } else if (entity.type === TRANSCRIPT_SPACE) {
             const previousStateEntity = Entity.get(previousContentBlock.getEntityAt(index));
