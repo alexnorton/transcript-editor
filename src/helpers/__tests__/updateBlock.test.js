@@ -11,7 +11,7 @@ const createCharacterListFromRanges = (ranges) => {
   const list = [];
 
   ranges.forEach(({ from, to, value }) => {
-    for (let i = from; i <= to; i++) {
+    for (let i = from; i <= to; i += 1) {
       list[i] = Object.assign({}, value);
     }
   });
@@ -24,7 +24,7 @@ beforeEach(() => {
     Entity._entities = entities;
   };
 
-  Entity.get = jest.fn((key) => Entity._entities[key]);
+  Entity.get = jest.fn(key => Entity._entities[key]);
 
   Entity.mergeData = jest.fn((key, data) => {
     Entity._entities[key].data = Object.assign(Entity._entities[key].data, data);
@@ -78,7 +78,7 @@ describe('updateBlock()', () => {
         { from: 0, to: 4, value: { entity: '1' } },
         { from: 5, to: 5, value: { entity: '2' } },
         { from: 6, to: 6, value: { entity: null } },
-        { from: 7, to: 10, value: { entity: '3' } },
+        { from: 7, to: 11, value: { entity: '3' } },
       ]),
       text: 'Hello aAlex!',
     });
@@ -90,10 +90,10 @@ describe('updateBlock()', () => {
     expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
       { from: 0, to: 4, value: { entity: '1' } },
       { from: 5, to: 5, value: { entity: '2' } },
-      { from: 6, to: 10, value: { entity: '3' } },
+      { from: 6, to: 11, value: { entity: '3' } },
     ]).toJS());
 
-    expect(text).toBe('Hello aAlex');
+    expect(text).toBe('Hello aAlex!');
   });
 
   it('prevents insertion of multiple spaces', () => {
@@ -108,7 +108,7 @@ describe('updateBlock()', () => {
         { from: 0, to: 4, value: { entity: '1' } },
         { from: 5, to: 5, value: { entity: '2' } },
         { from: 6, to: 6, value: { entity: null } },
-        { from: 7, to: 10, value: { entity: '3' } },
+        { from: 7, to: 11, value: { entity: '3' } },
       ]),
       text: 'Hello  Alex!',
     });
@@ -120,10 +120,10 @@ describe('updateBlock()', () => {
     expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
       { from: 0, to: 4, value: { entity: '1' } },
       { from: 5, to: 5, value: { entity: '2' } },
-      { from: 6, to: 9, value: { entity: '3' } },
+      { from: 6, to: 10, value: { entity: '3' } },
     ]).toJS());
 
-    expect(text).toBe('Hello Alex');
+    expect(text).toBe('Hello Alex!');
   });
 
   it('merges adjacent word entities', () => {
@@ -177,7 +177,7 @@ describe('updateBlock()', () => {
         { from: 6, to: 9, value: { entity: '3' } },
       ]),
       text: 'Hello Alex',
-      getEntityAt: jest.fn((index) => this.characterList.get(index).entity),
+      getEntityAt: jest.fn(index => this.characterList.get(index).entity),
     });
 
     const { characterList, text } = updateBlock(contentBlock, previousContentBlock);
