@@ -1,17 +1,4 @@
-body {
-  font-family: system, -apple-system, BlinkMacSystemFont,
-      "Helvetica Neue", "Lucida Grande";
-}
-
 #root {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-h1 {
-  font-variant: small-caps;
-}
-
-.page-header {
-  margin-top: 0;
 }
