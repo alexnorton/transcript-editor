@@ -96,7 +96,9 @@ describe('updateBlock()', () => {
     expect(text).toBe('Hello aAlex!');
   });
 
-  it('prevents insertion of multiple spaces', () => {
+  // Disabled because this is implemented in components/TranscriptEditor.js using
+  // the handleBeforeInput method
+  xit('prevents insertion of multiple spaces', () => {
     Entity._setEntities({
       1: { type: TRANSCRIPT_WORD },
       2: { type: TRANSCRIPT_SPACE },
