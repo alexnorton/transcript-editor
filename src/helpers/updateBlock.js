@@ -12,10 +12,10 @@ const updateBlock = (contentBlock, previousContentBlock) => (
 
       // Does the previous character have an entity?
       if (previousCharacter.entity) {
+        const previousEntity = Entity.get(previousCharacter.entity);
         // Does the previous character have a different entity?
         if (character.entity) {
           const entity = Entity.get(character.entity);
-          const previousEntity = Entity.get(previousCharacter.entity);
 
           if (character.entity !== previousCharacter.entity) {
             // Does the different entity have the same type?
@@ -77,7 +77,35 @@ const updateBlock = (contentBlock, previousContentBlock) => (
             };
           }
         }
+        // Is the previous character a placeholder?
+        if (!character.entity && previousEntity && previousEntity.type === TRANSCRIPT_PLACEHOLDER) {
+          // Create a new word entity and apply it to this character, replacing the placeholder
+          return {
+            characterList: characterList
+              .set(-1, CharacterMetadata.applyEntity(
+                character,
+                Entity.create(
+                  TRANSCRIPT_WORD, 'MUTABLE', previousEntity.data
+                )
+              )),
+            text: text.slice(0, -1) + contentBlock.text[index],
+          };
+        }
       } else {
+        const entity = Entity.get(character.entity);
+        if (entity.type === TRANSCRIPT_PLACEHOLDER) {
+          // Create a new word entity and apply it to this character, replacing the placeholder
+          return {
+            characterList: characterList
+              .set(-1, CharacterMetadata.applyEntity(
+                character,
+                Entity.create(
+                  TRANSCRIPT_WORD, 'MUTABLE', entity.data
+                )
+              )),
+            text: text.slice(0, -1) + contentBlock.text[index],
+          };
+        }
         // Set it to the entity of this character
         return {
           characterList: characterList
