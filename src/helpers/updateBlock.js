@@ -4,122 +4,153 @@ import { Entity, CharacterMetadata } from 'draft-js';
 import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
   from './TranscriptEntities';
 
-const updateBlock = (contentBlock, previousContentBlock) => (
-  contentBlock.characterList.reduce(({ characterList, text }, character, index) => {
-    // Is this the first character?
-    if (!characterList.isEmpty()) {
-      const previousCharacter = characterList.last();
+const ruleAddToStartOfWord = ({ contentBlock }) => {
+  let triggered = false;
 
-      // Does the previous character have an entity?
-      if (previousCharacter.entity) {
-        const previousEntity = Entity.get(previousCharacter.entity);
-        // Does the previous character have a different entity?
-        if (character.entity) {
-          const entity = Entity.get(character.entity);
-
-          if (character.entity !== previousCharacter.entity) {
-            // Does the different entity have the same type?
-            if (entity.type === previousEntity.type && entity !== previousEntity) {
-              // Merge the entities
-              Entity.mergeData(previousCharacter.entity, { end: entity.data.end });
-
-              return {
-                characterList: characterList.push(
-                  CharacterMetadata.applyEntity(character, previousCharacter.entity)
-                ),
-                text: text + contentBlock.text[index],
-              };
-            }
-            const contentBlockLength = contentBlock.getLength();
-            // Is this the last character of the block and was the previous block state longer?
-            if (index === contentBlockLength - 1
-              && previousContentBlock.getLength() > contentBlockLength
-              && entity.type === TRANSCRIPT_SPACE) {
-              const deletedEntity = Entity.get(previousContentBlock.getEntityAt(index + 1));
-              // Add a placeholder
-              return {
-                characterList: characterList
-                  .push(character)
-                  .push(CharacterMetadata.applyEntity(
-                    CharacterMetadata.create(),
-                    Entity.create(
-                      TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE', deletedEntity.data
-                    )
-                  )),
-                text: `${text}${contentBlock.text[index]}\u200C`,
-              };
-            }
-
-          // Otherwise do we have two spaces?
-          } else if (entity.type === TRANSCRIPT_SPACE) {
-            const previousStateEntity = Entity.get(previousContentBlock.getEntityAt(index));
-
-            // Have we just deleted a word?
-            if (previousStateEntity.type === TRANSCRIPT_WORD) {
-              // Add a placeholder
-              return {
-                characterList: characterList
-                  .push(CharacterMetadata.applyEntity(
-                    CharacterMetadata.create(),
-                    Entity.create(
-                      TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE', previousStateEntity.data
-                    )
-                  ))
-                  .push(character),
-                text: `${text}\u200C `,
-              };
-            }
-
-            // Remove a space
-            return {
-              characterList,
-              text,
-            };
-          }
-        }
-        // Is the previous character a placeholder?
-        if (!character.entity && previousEntity && previousEntity.type === TRANSCRIPT_PLACEHOLDER) {
-          // Create a new word entity and apply it to this character, replacing the placeholder
-          return {
-            characterList: characterList
-              .set(-1, CharacterMetadata.applyEntity(
-                character,
-                Entity.create(
-                  TRANSCRIPT_WORD, 'MUTABLE', previousEntity.data
-                )
-              )),
-            text: text.slice(0, -1) + contentBlock.text[index],
-          };
-        }
-      } else {
-        const entity = Entity.get(character.entity);
-        if (entity.type === TRANSCRIPT_PLACEHOLDER) {
-          // Create a new word entity and apply it to this character, replacing the placeholder
-          return {
-            characterList: characterList
-              .set(-1, CharacterMetadata.applyEntity(
-                character,
-                Entity.create(
-                  TRANSCRIPT_WORD, 'MUTABLE', entity.data
-                )
-              )),
-            text: text.slice(0, -1) + contentBlock.text[index],
-          };
-        }
-        // Set it to the entity of this character
+  const newContentBlock = contentBlock.characterList.reduceRight(
+    ({ characterList, text }, character, index) => {
+      if (!character.entity) {
+        triggered = true;
         return {
-          characterList: characterList
-            .set(-1, CharacterMetadata.applyEntity(previousCharacter, character.entity))
-            .push(character),
-          text: text + contentBlock.text[index],
+          characterList: characterList.insert(0,
+            CharacterMetadata.applyEntity(character, characterList.get(0).entity)
+          ),
+          text: contentBlock.text[index] + text,
         };
       }
-    }
+      return {
+        characterList: characterList.insert(0, character),
+        text: contentBlock.text[index] + text,
+      };
+    }, { characterList: new Immutable.List(), text: '' }
+  );
+
+  return triggered && newContentBlock;
+};
+
+const rulePreventMultipleSpaces = () => {};
+
+const ruleMergeAdjacentWords = ({ contentBlock }) => {
+  let triggered = false;
+
+  const newContentBlock = contentBlock.characterList.reduce(
+    ({ characterList, text }, character, index) => {
+      if (characterList.last()
+        && characterList.last().entity
+        && character.entity
+        && characterList.last().entity !== character.entity) {
+        const entity = Entity.get(character.entity);
+        const previousEntity = Entity.get(characterList.last().entity);
+        if (entity.type === TRANSCRIPT_WORD && previousEntity.type === TRANSCRIPT_WORD) {
+          triggered = true;
+          Entity.mergeData(characterList.last().entity, { end: entity.data.end });
+          return {
+            characterList: characterList.push(
+              CharacterMetadata.applyEntity(character, characterList.last().entity)
+            ),
+            text: text + contentBlock.text[index],
+          };
+        }
+      }
+      return {
+        characterList: characterList.push(character),
+        text: text + contentBlock.text[index],
+      };
+    }, { characterList: new Immutable.List(), text: '' }
+  );
+
+  return triggered && newContentBlock;
+};
+
+const ruleInsertPlaceholderOnWordDeleteAtStart = ({ contentBlock, previousContentBlock }) => {
+  if (contentBlock.getLength() < previousContentBlock.getLength()
+    && Entity.get(contentBlock.characterList.first().entity).type === TRANSCRIPT_SPACE) {
+    const deletedEntity = Entity.get(previousContentBlock.characterList.first().entity);
+
     return {
-      characterList: characterList.push(character),
-      text: text + contentBlock.text[index],
+      characterList: contentBlock.characterList.insert(
+        0, CharacterMetadata.applyEntity(
+          CharacterMetadata.create(),
+          Entity.create(
+            TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE', deletedEntity.data
+          )
+        )
+      ),
+      text: `\u200C${contentBlock.text}`,
     };
-  }, { characterList: new Immutable.List(), text: '' })
-);
+  }
+
+  return false;
+};
+
+const ruleInsertPlaceholderOnWordDeleteInMiddle = ({ contentBlock, previousContentBlock }) => {
+  let triggered = false;
+
+
+  if (contentBlock.getLength() < previousContentBlock.getLength()) {
+    // If the first character of the block is a space
+
+
+    // If the last character of the block is a space
+
+    // contentBlock.characterList.reduce(
+    //   ({ characterList, text }, character, index) => {
+    //     if (characterList.last()
+    //       && characterList.last().entity
+    //       && character.entity
+    //       && characterList.last().entity !== character.entity) {
+    //   }, { characterList: new Immutable.List(), text: '' }
+    // );
+  }
+
+  return triggered && contentBlock;
+};
+
+const ruleInsertPlaceholderOnWordDeleteAtEnd = ({ contentBlock, previousContentBlock }) => {
+  if (contentBlock.getLength() < previousContentBlock.getLength()
+    && Entity.get(contentBlock.characterList.last().entity).type === TRANSCRIPT_SPACE) {
+    const deletedEntity = Entity.get(previousContentBlock.characterList.last().entity);
+    if (deletedEntity.type === TRANSCRIPT_WORD) {
+      return {
+        characterList: contentBlock.characterList.push(
+          CharacterMetadata.applyEntity(
+            CharacterMetadata.create(),
+            Entity.create(
+              TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE', deletedEntity.data
+            )
+          )
+        ),
+        text: `${contentBlock.text}\u200C`,
+      };
+    }
+  }
+
+  return false;
+};
+
+const ruleMergeSpaces = () => {};
+
+const ruleReplacePlaceholderOnTextEntry = () => {};
+
+const updateBlock = (contentBlock, previousContentBlock) => {
+  const rules = [
+    ruleAddToStartOfWord,
+    rulePreventMultipleSpaces,
+    ruleMergeAdjacentWords,
+    ruleInsertPlaceholderOnWordDeleteAtStart,
+    ruleInsertPlaceholderOnWordDeleteInMiddle,
+    ruleInsertPlaceholderOnWordDeleteAtEnd,
+    ruleMergeSpaces,
+    ruleReplacePlaceholderOnTextEntry,
+  ];
+
+  let newContentBlock;
+
+  rules.some(rule => (
+    newContentBlock = rule({ contentBlock, previousContentBlock })
+  ));
+
+  return newContentBlock || contentBlock;
+};
 
 export default updateBlock;
