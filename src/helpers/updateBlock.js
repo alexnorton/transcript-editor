@@ -85,25 +85,43 @@ const ruleInsertPlaceholderOnWordDeleteAtStart = ({ contentBlock, previousConten
 
 const ruleInsertPlaceholderOnWordDeleteInMiddle = ({ contentBlock, previousContentBlock }) => {
   let triggered = false;
-
+  let newContentBlock;
 
   if (contentBlock.getLength() < previousContentBlock.getLength()) {
-    // If the first character of the block is a space
+    newContentBlock = contentBlock.characterList.reduce(
+      ({ characterList, text }, character, index) => {
+        if (characterList.size > 0
+          && Entity.get(characterList.last().entity).type === TRANSCRIPT_SPACE
+          && Entity.get(character.entity).type === TRANSCRIPT_SPACE
+          && Entity.get(
+            previousContentBlock.characterList.get(index).entity
+          ).type === TRANSCRIPT_WORD) {
+          triggered = true;
 
+          const deletedEntity = Entity.get(previousContentBlock.characterList.get(index).entity);
 
-    // If the last character of the block is a space
+          return {
+            characterList: characterList
+              .push(CharacterMetadata.applyEntity(
+                CharacterMetadata.create(),
+                Entity.create(
+                  TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE', deletedEntity.data
+                )
+              ))
+              .push(character),
+            text: `${text}\u200C${contentBlock.text[index]}`,
+          };
+        }
 
-    // contentBlock.characterList.reduce(
-    //   ({ characterList, text }, character, index) => {
-    //     if (characterList.last()
-    //       && characterList.last().entity
-    //       && character.entity
-    //       && characterList.last().entity !== character.entity) {
-    //   }, { characterList: new Immutable.List(), text: '' }
-    // );
+        return {
+          characterList: characterList.push(character),
+          text: text + contentBlock.text[index],
+        };
+      }, { characterList: new Immutable.List(), text: '' }
+    );
   }
 
-  return triggered && contentBlock;
+  return triggered && newContentBlock;
 };
 
 const ruleInsertPlaceholderOnWordDeleteAtEnd = ({ contentBlock, previousContentBlock }) => {
