@@ -28,7 +28,7 @@ class EditorView extends Component {
     this.styleManager = new StyleManager();
     fetch(`${window.apiEndpoint}/${this.props.params.videoId}.json`)
       .then(response => response.json())
-      .then(json => {
+      .then((json) => {
         const transcript = Transcript.fromComma(json);
         this.setState({
           initialTranscript: transcript,
@@ -57,7 +57,7 @@ class EditorView extends Component {
 
     const fileReader = new FileReader();
 
-    fileReader.onload = event => {
+    fileReader.onload = (event) => {
       const transcriptJSONString = event.target.result;
       const transcriptJSON = JSON.parse(transcriptJSONString);
       const transcript = Transcript.fromJSON(transcriptJSON);

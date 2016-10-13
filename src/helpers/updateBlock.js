@@ -1,7 +1,7 @@
 import Immutable from 'immutable';
 import { Entity, CharacterMetadata } from 'draft-js';
 
-import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
+import { TRANSCRIPT_SPACE }
   from './TranscriptEntities';
 
 const updateBlock = contentBlock => (
