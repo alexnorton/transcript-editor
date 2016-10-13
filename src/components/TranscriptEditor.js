@@ -66,7 +66,8 @@ class TranscriptEditor extends Component {
   onChange(editorState) {
     const contentState = editorState.getCurrentContent();
     const previousEditorState = this.state.editorState;
-    if (contentState !== previousEditorState.getCurrentContent()) {
+    const lastChangeType = editorState.getLastChangeType();
+    if (lastChangeType !== 'undo' && contentState !== previousEditorState.getCurrentContent()) {
       this.debouncedSendTranscriptUpdate(contentState, this.state.speakers);
 
       const selectionState = editorState.getSelection();
@@ -154,7 +155,7 @@ class TranscriptEditor extends Component {
       const newContentState = contentState.set('blockMap', newBlockMap);
       return this.setState({
         editorState: EditorState.push(
-          previousEditorState, newContentState, editorState.getLastChangeType()
+          previousEditorState, newContentState, lastChangeType
         ),
       });
     }
