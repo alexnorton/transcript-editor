@@ -96,6 +96,61 @@ describe('updateBlock()', () => {
     expect(text).toBe('Hello aAlex!');
   });
 
+  it('merges adjacent word entities', () => {
+    Entity._setEntities({
+      1: { type: TRANSCRIPT_WORD, data: { start: 0.1, end: 0.5 } },
+      2: { type: TRANSCRIPT_WORD, data: { start: 0.6, end: 0.9 } },
+    });
+
+    const contentBlock = new ContentBlock({
+      characterList: createCharacterListFromRanges([
+        { from: 0, to: 4, value: { entity: '1' } },
+        { from: 5, to: 9, value: { entity: '2' } },
+      ]),
+      text: 'HelloAlex!',
+    });
+
+    const previousContentBlock = new ContentBlock();
+
+    const { characterList, text } = updateBlock(contentBlock, previousContentBlock);
+
+    expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
+      { from: 0, to: 9, value: { entity: '1' } },
+    ]).toJS());
+
+    expect(text).toBe('HelloAlex!');
+
+    expect(Entity.get('1').data).toEqual({ start: 0.1, end: 0.9 });
+  });
+
+  it('merges adjacent space entities', () => {
+    Entity._setEntities({
+      1: { type: TRANSCRIPT_WORD },
+      2: { type: TRANSCRIPT_SPACE },
+      3: { type: TRANSCRIPT_WORD },
+    });
+
+    const contentBlock = new ContentBlock({
+      characterList: createCharacterListFromRanges([
+        { from: 0, to: 4, value: { entity: '1' } },
+        { from: 5, to: 5, value: { entity: '2' } },
+        { from: 6, to: 6, value: { entity: '2' } },
+        { from: 7, to: 11, value: { entity: '3' } },
+      ]),
+      text: 'Hello  Alex!',
+    });
+
+    const { characterList, text } = updateBlock(contentBlock);
+
+    expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
+      { from: 0, to: 4, value: { entity: '1' } },
+      { from: 5, to: 5, value: { entity: '2' } },
+      { from: 6, to: 10, value: { entity: '3' } },
+    ]).toJS());
+
+    expect(text).toBe('Hello Alex!');
+  });
+
   // Disabled because this is implemented in components/TranscriptEditor.js using
   // the handleBeforeInput method
   xit('prevents insertion of multiple spaces', () => {
@@ -128,32 +183,7 @@ describe('updateBlock()', () => {
     expect(text).toBe('Hello Alex!');
   });
 
-  it('merges adjacent word entities', () => {
-    Entity._setEntities({
-      1: { type: TRANSCRIPT_WORD, data: { start: 0.1, end: 0.5 } },
-      2: { type: TRANSCRIPT_WORD, data: { start: 0.6, end: 0.9 } },
-    });
-
-    const contentBlock = new ContentBlock({
-      characterList: createCharacterListFromRanges([
-        { from: 0, to: 4, value: { entity: '1' } },
-        { from: 5, to: 9, value: { entity: '2' } },
-      ]),
-      text: 'HelloAlex!',
-    });
-
-    const previousContentBlock = new ContentBlock();
-
-    const { characterList, text } = updateBlock(contentBlock, previousContentBlock);
-
-    expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
-      { from: 0, to: 9, value: { entity: '1' } },
-    ]).toJS());
-
-    expect(text).toBe('HelloAlex!');
-
-    expect(Entity.get('1').data).toEqual({ start: 0.1, end: 0.9 });
-  });
+  // The below tests are disabled pending revisiting adding placeholder support
 
   xit('inserts a placeholder when a word at the end of a block has been deleted', () => {
     Entity._setEntities({
