@@ -58,9 +58,7 @@ describe('updateBlock()', () => {
       text: 'Hello Alex',
     });
 
-    const previousContentBlock = new ContentBlock();
-
-    const { characterList, text } = updateBlock(contentBlock, previousContentBlock);
+    const { characterList, text } = updateBlock(contentBlock);
 
     expect(characterList.toJS()).toEqual(contentBlock.characterList.toJS());
     expect(text).toBe('Hello Alex');
@@ -83,9 +81,7 @@ describe('updateBlock()', () => {
       text: 'Hello aAlex!',
     });
 
-    const previousContentBlock = new ContentBlock();
-
-    const { characterList, text } = updateBlock(contentBlock, previousContentBlock);
+    const { characterList, text } = updateBlock(contentBlock);
 
     expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
       { from: 0, to: 4, value: { entity: '1' } },
