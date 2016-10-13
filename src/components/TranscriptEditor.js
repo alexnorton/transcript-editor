@@ -5,6 +5,7 @@ import debounce from 'lodash.debounce';
 
 import convertFromTranscript from '../helpers/convertFromTranscript';
 import convertToTranscript from '../helpers/convertToTranscript';
+import updateBlock from '../helpers/updateBlock';
 import TranscriptEditorBlock from './TranscriptEditorBlock';
 import TranscriptEditorWord from './TranscriptEditorWord';
 import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
@@ -36,7 +37,8 @@ class TranscriptEditor extends Component {
             if (entityKey === null) {
               return false;
             }
-            return Entity.get(entityKey).getType() === TRANSCRIPT_WORD;
+            const entityType = Entity.get(entityKey).getType();
+            return entityType === TRANSCRIPT_WORD || entityType === TRANSCRIPT_PLACEHOLDER;
           }, callback);
         },
         component: TranscriptEditorWord,
@@ -109,8 +111,11 @@ class TranscriptEditor extends Component {
           }
 
           // Update the entities
-          newContentBlock = newContentBlock.set(
-            'characterList', this.updateEntities(newContentBlock.characterList)
+          newContentBlock = newContentBlock.merge(
+            updateBlock(
+              newContentBlock,
+              previousEditorState.getCurrentContent().getBlockForKey(blockKey)
+            )
           );
 
           // Have we created a leading space? (e.g. when splitting a block)
@@ -204,38 +209,6 @@ class TranscriptEditor extends Component {
 
   handlePastedText() {
     return true;
-  }
-
-  updateEntities(characterList) {
-    return characterList.reduce((newList, character) => {
-      // Is this the first character?
-      if (!newList.isEmpty()) {
-        const previousCharacter = newList.last();
-        // Does the previous character have an entity?
-        if (previousCharacter.entity) {
-          // Does the previous character have a different entity?
-          if (character.entity && previousCharacter.entity
-            && character.entity !== previousCharacter.entity) {
-            const entity = Entity.get(character.entity);
-            const previousEntity = Entity.get(previousCharacter.entity);
-            // Does the different entity have the same type?
-            if (entity.type === previousEntity.type && entity !== previousEntity) {
-              // Merge the entities
-              Entity.mergeData(previousCharacter.entity, { end: entity.data.end });
-              return newList.push(
-                CharacterMetadata.applyEntity(character, previousCharacter.entity)
-              );
-            }
-          }
-        } else {
-          // Set it to the entity of this character
-          return newList
-            .set(-1, CharacterMetadata.applyEntity(previousCharacter, character.entity))
-            .push(character);
-        }
-      }
-      return newList.push(character);
-    }, new Immutable.List());
   }
 
   render() {
