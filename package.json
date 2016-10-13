@@ -10,7 +10,7 @@
   "dependencies": {
     "ajv": "^4.7.0",
     "bootswatch": "^3.3.7",
-    "draft-js": "^0.8.1",
+    "draft-js": "^0.9.0",
     "file-saver": "^1.3.2",
     "immutable": "^3.8.1",
     "immutablediff": "^0.4.3",
