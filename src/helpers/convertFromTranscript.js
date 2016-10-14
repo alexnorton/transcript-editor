@@ -6,7 +6,7 @@ const convertFromTranscript = (transcript) => {
   const contentBlocks = transcript.get('segments').map((segment, segmentIndex) =>
     new ContentBlock({
       key: segmentIndex.toString(),
-      characterList: segment.get('words').map(word => {
+      characterList: segment.get('words').map((word) => {
         const entity = Entity.create(
           'TRANSCRIPT_WORD',
           'MUTABLE',
