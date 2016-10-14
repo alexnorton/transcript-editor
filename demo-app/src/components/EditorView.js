@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
 import { AutoAffix } from 'react-overlays';
 import { saveAs } from 'file-saver';
+import TranscriptEditor from 'transcript-editor';
 
 import VideoPlayer from './VideoPlayer';
-import TranscriptEditor from './TranscriptEditor';
 import StyleManager from '../StyleManager';
 import Transcript from '../model/Transcript';
 
