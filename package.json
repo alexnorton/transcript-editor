@@ -22,7 +22,7 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "webpack"
   },
   "repository": {
     "type": "git",
