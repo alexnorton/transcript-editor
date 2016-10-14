@@ -1,0 +1,13 @@
+.TranscriptEditor {
+  border: 1px solid #ddd;
+  padding: 15px;
+  cursor: text;
+}
+
+.TranscriptEditor .row {
+  margin: -15px -15px -30px;
+}
+
+.TranscriptEditor .public-DraftStyleDefault-block {
+  margin-bottom: 10px;
+}
