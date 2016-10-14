@@ -1,0 +1,44 @@
+{
+  "name": "transcript-editor",
+  "version": "0.0.1",
+  "description": "Editor component for transcripts. Allows correction of errors produced by the speech recognition process while maintaining time-alignment of words.",
+  "main": "lib/bundle.js",
+  "dependencies": {
+    "ajv": "^4.7.7",
+    "draft-js": "^0.9.1",
+    "immutable": "^3.8.1",
+    "lodash.debounce": "^4.0.8",
+    "node-uuid": "^1.4.7",
+    "react-bootstrap": "^0.30.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbc/transcript-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbc/transcript-editor/issues"
+  },
+  "homepage": "https://github.com/bbc/transcript-editor#readme",
+  "optionalDependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "files": [
+    "lib/"
+  ]
+}
