@@ -6,11 +6,11 @@ import TranscriptSegment from '../model/TranscriptSegment';
 import TranscriptWord from '../model/TranscriptWord';
 
 const convertToTranscript = (contentState, speakers) => {
-  const segments = contentState.getBlockMap().toArray().map(block => {
+  const segments = contentState.getBlockMap().toArray().map((block) => {
     const words = [];
 
     block.findEntityRanges(
-      character => {
+      (character) => {
         const entityKey = character.getEntity();
         if (entityKey === null) {
           return false;

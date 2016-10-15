@@ -1,52 +1,44 @@
 {
   "name": "transcript-editor",
   "version": "0.0.1",
-  "private": true,
-  "homepage": "https://bbc.github.io/transcript-editor/",
-  "devDependencies": {
-    "immutable-devtools": "0.0.7",
-    "react-scripts": "^0.4.1"
-  },
+  "description": "Editor component for transcripts. Allows correction of errors produced by the speech recognition process while maintaining time-alignment of words.",
+  "main": "lib/bundle.js",
   "dependencies": {
-    "ajv": "^4.7.0",
-    "bootswatch": "^3.3.7",
-    "draft-js": "^0.9.0",
-    "file-saver": "^1.3.2",
+    "ajv": "^4.7.7",
+    "draft-js": "^0.9.1",
     "immutable": "^3.8.1",
-    "immutablediff": "^0.4.3",
-    "jss-browserify": "^0.6.0",
     "lodash.debounce": "^4.0.8",
     "node-uuid": "^1.4.7",
-    "react": "^15.2.1",
-    "react-bootstrap": "^0.30.2",
-    "react-dom": "^15.2.1",
-    "react-overlays": "^0.6.6",
-    "react-router": "^2.7.0",
-    "react-spinkit": "^1.1.11",
-    "whatwg-fetch": "^1.0.0"
+    "react-bootstrap": "^0.30.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "test": "react-scripts test --env=jsdom"
+    "prepublish": "webpack"
   },
-  "eslintConfig": {
-    "extends": "eslint-config-airbnb",
-    "env": {
-      "browser": true,
-      "jest": true
-    },
-    "rules": {
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ]
-    }
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbc/transcript-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbc/transcript-editor/issues"
+  },
+  "homepage": "https://github.com/bbc/transcript-editor#readme",
+  "optionalDependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "files": [
+    "lib/"
+  ]
 }
