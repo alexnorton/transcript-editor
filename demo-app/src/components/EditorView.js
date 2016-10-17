@@ -3,10 +3,10 @@ import { Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
 import { AutoAffix } from 'react-overlays';
 import { saveAs } from 'file-saver';
 import TranscriptEditor from 'transcript-editor';
+import { Transcript } from 'transcript-model';
 
 import VideoPlayer from './VideoPlayer';
 import StyleManager from '../StyleManager';
-import Transcript from '../model/Transcript';
 
 class EditorView extends Component {
   constructor(props) {
