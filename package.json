@@ -9,7 +9,8 @@
     "immutable": "^3.8.1",
     "lodash.debounce": "^4.0.8",
     "node-uuid": "^1.4.7",
-    "react-bootstrap": "^0.30.5"
+    "react-bootstrap": "^0.30.5",
+    "transcript-model": "bbc/transcript-model"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

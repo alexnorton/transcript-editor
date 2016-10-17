@@ -1,9 +1,7 @@
 import { Entity } from 'draft-js';
 import Immutable from 'immutable';
 
-import Transcript from '../model/Transcript';
-import TranscriptSegment from '../model/TranscriptSegment';
-import TranscriptWord from '../model/TranscriptWord';
+import { Transcript, TranscriptSegment, TranscriptWord } from 'transcript-model';
 
 const convertToTranscript = (contentState, speakers) => {
   const segments = contentState.getBlockMap().toArray().map((block) => {
