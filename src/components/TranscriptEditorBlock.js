@@ -3,10 +3,6 @@ import { EditorBlock } from 'draft-js';
 import { Row, Col } from 'react-bootstrap';
 
 class TranscriptEditorBlock extends Component {
-  hello() {
-    return 'blah';
-  }
-
   render() {
     return (
       <Row>

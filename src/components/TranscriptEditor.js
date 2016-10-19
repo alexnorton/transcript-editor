@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Editor, EditorState, Entity, CompositeDecorator, CharacterMetadata } from 'draft-js';
 import Immutable from 'immutable';
 import debounce from 'lodash.debounce';
+import { Transcript } from 'transcript-model';
 
 import convertFromTranscript from '../helpers/convertFromTranscript';
 import convertToTranscript from '../helpers/convertToTranscript';
@@ -230,7 +231,7 @@ class TranscriptEditor extends Component {
 }
 
 TranscriptEditor.propTypes = {
-  transcript: React.PropTypes.object,
+  transcript: React.PropTypes.instanceOf(Transcript),
   onTranscriptUpdate: React.PropTypes.func,
 };
 
