@@ -47,20 +47,16 @@ class TranscriptEditor extends Component {
     ]);
   }
 
+  componentWillMount() {
+    if (this.props.transcript) {
+      this.instantiateEditor(this.props.transcript);
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     const transcript = nextProps.transcript;
     if (transcript && this.state.transcript !== transcript) {
-      const { contentState, speakers } = convertFromTranscript(transcript);
-
-      this.sendTranscriptUpdate(contentState, speakers);
-
-      this.setState({
-        editorState: EditorState.createWithContent(
-          contentState,
-          this.decorator
-        ),
-        speakers,
-      });
+      this.instantiateEditor(transcript);
     }
   }
 
@@ -162,6 +158,20 @@ class TranscriptEditor extends Component {
     }
     return this.setState({
       editorState,
+    });
+  }
+
+  instantiateEditor(transcript) {
+    const { contentState, speakers } = convertFromTranscript(transcript);
+
+    this.sendTranscriptUpdate(contentState, speakers);
+
+    this.setState({
+      editorState: EditorState.createWithContent(
+        contentState,
+        this.decorator
+      ),
+      speakers,
     });
   }
 
