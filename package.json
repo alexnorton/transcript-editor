@@ -21,8 +21,14 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.25.0",
     "jest": "^16.0.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
+  },
+  "peerDependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
   "scripts": {
     "prepublish": "webpack",
@@ -38,10 +44,6 @@
     "url": "https://github.com/bbc/transcript-editor/issues"
   },
   "homepage": "https://github.com/bbc/transcript-editor#readme",
-  "optionalDependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
-  },
   "files": [
     "lib/"
   ],
