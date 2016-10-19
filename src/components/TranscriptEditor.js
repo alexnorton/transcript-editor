@@ -60,6 +60,10 @@ class TranscriptEditor extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.editorState !== this.state.editorState;
+  }
+
   onChange(editorState) {
     const contentState = editorState.getCurrentContent();
     const previousEditorState = this.state.editorState;
