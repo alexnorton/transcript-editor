@@ -1,5 +1,6 @@
 module.exports = {
   entry: './src/components/TranscriptEditor.js',
+  devtool: 'eval',
   output: {
     path: './lib',
     filename: 'bundle.js',
