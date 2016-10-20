@@ -227,7 +227,7 @@ class TranscriptEditor extends Component {
   render() {
     const { editorState } = this.state;
     return (
-      <div className="TranscriptEditor">
+      <div className="transcript-editor">
         <Editor
           editorState={editorState}
           onChange={this.onChange}

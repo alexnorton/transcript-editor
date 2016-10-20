@@ -13,14 +13,10 @@ class TranscriptEditorWord extends Component {
     return (
       <span
         title={titleString}
-        style={{
-          backgroundColor: '#d4eaff',
-          border: '1px solid #ddd',
-          padding: '0 2px',
-        }}
         id={`word-${entity.data.id}`}
         data-start={entity.data.start}
         data-end={entity.data.end}
+        className="transcript-editor-block__word"
       >{ this.props.children }</span>
     );
   }

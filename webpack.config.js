@@ -31,7 +31,6 @@ module.exports = {
     'draft-js': 'draft-js',
     'node-uuid': 'node-uuid',
     'lodash.debounce': 'lodash.debounce',
-    'react-bootstrap': 'react-bootstrap',
     'transcript-model': 'transcript-model',
   },
 };

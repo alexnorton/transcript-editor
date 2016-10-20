@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { EditorBlock } from 'draft-js';
-import { Row, Col } from 'react-bootstrap';
 
 class TranscriptEditorBlock extends Component {
   render() {
     return (
-      <Row>
-        <Col
-          xs={3}
+      <div className="transcript-editor-block">
+        <div className="transcript-editor-block__speaker"
           contentEditable={false}
           style={{
             MozUserSelect: 'none',
@@ -16,11 +14,11 @@ class TranscriptEditorBlock extends Component {
           }}
         >
           Speaker {this.props.block.data.get('speaker')}
-        </Col>
-        <Col xs={9}>
+        </div>
+        <div className="transcript-editor-block__text">
           <EditorBlock {...this.props} />
-        </Col>
-      </Row>
+        </div>
+      </div>
     );
   }
 }
