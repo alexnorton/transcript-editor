@@ -60,10 +60,6 @@ class TranscriptEditor extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextState.editorState !== this.state.editorState;
-  }
-
   onChange(editorState) {
     const contentState = editorState.getCurrentContent();
     const previousEditorState = this.state.editorState;
@@ -168,15 +164,16 @@ class TranscriptEditor extends Component {
   instantiateEditor(transcript) {
     const { contentState, speakers } = convertFromTranscript(transcript);
 
-    this.sendTranscriptUpdate(contentState, speakers);
-
     this.setState({
       editorState: EditorState.createWithContent(
         contentState,
         this.decorator
       ),
       speakers,
+      transcript,
     });
+
+    this.sendTranscriptUpdate(contentState, speakers);
   }
 
   handleBeforeInput(chars) {
