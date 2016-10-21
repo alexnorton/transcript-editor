@@ -9,7 +9,8 @@ import convertToTranscript from '../helpers/convertToTranscript';
 import updateBlock from '../helpers/updateBlock';
 import TranscriptEditorBlock from './TranscriptEditorBlock';
 import TranscriptEditorWord from './TranscriptEditorWord';
-import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
+import TranscriptEditorSpace from './TranscriptEditorSpace';
+import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE }
   from '../helpers/TranscriptEntities';
 
 import '../css/TranscriptEditor.css';
@@ -40,10 +41,23 @@ class TranscriptEditor extends Component {
               return false;
             }
             const entityType = Entity.get(entityKey).getType();
-            return entityType === TRANSCRIPT_WORD || entityType === TRANSCRIPT_PLACEHOLDER;
+            return entityType === TRANSCRIPT_WORD;
           }, callback);
         },
         component: TranscriptEditorWord,
+      },
+      {
+        strategy: (contentBlock, callback) => {
+          contentBlock.findEntityRanges((character) => {
+            const entityKey = character.getEntity();
+            if (entityKey === null) {
+              return false;
+            }
+            const entityType = Entity.get(entityKey).getType();
+            return entityType === TRANSCRIPT_SPACE;
+          }, callback);
+        },
+        component: TranscriptEditorSpace,
       },
     ]);
   }
