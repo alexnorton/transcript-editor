@@ -21,6 +21,7 @@ class TranscriptEditor extends Component {
     this.state = {
       editorState: EditorState.createEmpty(),
       speakers: [],
+      disabled: props.disabled || false,
     };
 
     this.onChange = this.onChange.bind(this);
@@ -54,6 +55,10 @@ class TranscriptEditor extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.setState({
+      disabled: nextProps.disabled || false,
+    });
+
     const transcript = nextProps.transcript;
     if (transcript && this.state.transcript !== transcript) {
       this.instantiateEditor(transcript);
@@ -61,6 +66,10 @@ class TranscriptEditor extends Component {
   }
 
   onChange(editorState) {
+    if (this.state.disabled) {
+      return;
+    }
+
     const contentState = editorState.getCurrentContent();
     const previousEditorState = this.state.editorState;
     const lastChangeType = editorState.getLastChangeType();
@@ -244,6 +253,7 @@ class TranscriptEditor extends Component {
 TranscriptEditor.propTypes = {
   transcript: React.PropTypes.instanceOf(Transcript),
   onTranscriptUpdate: React.PropTypes.func,
+  disabled: React.PropTypes.bool,
 };
 
 export default TranscriptEditor;
