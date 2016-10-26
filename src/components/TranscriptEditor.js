@@ -87,12 +87,19 @@ class TranscriptEditor extends Component {
     const contentState = editorState.getCurrentContent();
     const previousEditorState = this.state.editorState;
     const lastChangeType = editorState.getLastChangeType();
+
+    const selectionState = editorState.getSelection();
+    const previousSelectionState = previousEditorState.getSelection();
+
+    if (this.props.onSelectionChange && selectionState !== previousSelectionState) {
+      this.sendSelectionChange(contentState, selectionState);
+    }
+
     if (lastChangeType !== 'undo' && contentState !== previousEditorState.getCurrentContent()) {
       this.debouncedSendTranscriptUpdate(contentState, this.state.speakers);
 
-      const selectionState = editorState.getSelection();
       const startKey = selectionState.getStartKey();
-      const previousStartKey = previousEditorState.getSelection().getStartKey();
+      const previousStartKey = previousSelectionState.getStartKey();
 
       const blockMap = contentState.getBlockMap();
 
@@ -228,6 +235,38 @@ class TranscriptEditor extends Component {
     this.props.onTranscriptUpdate(convertToTranscript(contentState, speakers));
   }
 
+  sendSelectionChange(contentState, selectionState) {
+    const startKey = selectionState.isBackward
+      ? selectionState.focusKey : selectionState.anchorKey;
+    const startOffset = selectionState.isBackward
+      ? selectionState.focusOffset : selectionState.anchorOffset;
+    const endKey = selectionState.isBackward
+      ? selectionState.anchorKey : selectionState.focusKey;
+    const endOffset = selectionState.isBackward
+      ? selectionState.anchorOffset : selectionState.focusOffset;
+
+    const startEntityKey = contentState
+      .getBlockForKey(startKey)
+      .getEntityAt(startOffset);
+    const endEntityKey = contentState
+      .getBlockForKey(endKey)
+      .getEntityAt(endOffset);
+
+    const startEntity = startEntityKey && Entity.get(startEntityKey);
+    const endEntity = endEntityKey && Entity.get(endEntityKey);
+
+    this.props.onSelectionChange({
+      startTime: startEntity && startEntity.data.start,
+      startWordID: startEntity && startEntity.data.id,
+      startBlockKey: startKey,
+      startCharacterOffset: startOffset,
+      endTime: endEntity && endEntity.data.end,
+      endID: endEntity && endEntity.data.id,
+      endBlockKey: endKey,
+      endCharacterOffset: endOffset,
+    });
+  }
+
   handleReturn() {
     const editorState = this.state.editorState;
     const selectionState = editorState.getSelection();
@@ -267,6 +306,7 @@ class TranscriptEditor extends Component {
 TranscriptEditor.propTypes = {
   transcript: React.PropTypes.instanceOf(Transcript),
   onTranscriptUpdate: React.PropTypes.func,
+  onSelectionChange: React.PropTypes.func,
   disabled: React.PropTypes.bool,
 };
 
