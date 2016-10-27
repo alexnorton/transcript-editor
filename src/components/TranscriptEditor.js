@@ -231,6 +231,10 @@ class TranscriptEditor extends Component {
     };
   }
 
+  focus() {
+    this.editor.focus();
+  }
+
   sendTranscriptUpdate(contentState, speakers) {
     this.props.onTranscriptUpdate(convertToTranscript(contentState, speakers));
   }
@@ -291,6 +295,7 @@ class TranscriptEditor extends Component {
     return (
       <div className="transcript-editor">
         <Editor
+          ref={(editor) => { this.editor = editor; }}
           editorState={editorState}
           onChange={this.onChange}
           handleReturn={this.handleReturn}
