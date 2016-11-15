@@ -26,7 +26,7 @@ class EditorView extends Component {
 
   componentDidMount() {
     this.styleManager = new StyleManager();
-    fetch(`${window.apiEndpoint}/${this.props.params.videoId}.json`)
+    fetch(`${process.env.PUBLIC_URL}/media-tagger.json`)
       .then(response => response.json())
       .then((json) => {
         const transcript = Transcript.fromComma(json);
@@ -35,6 +35,7 @@ class EditorView extends Component {
           clipName: json.metadata.RETURN.RESULTS.ITEM.CLIPNAME,
         });
         this.transcript = transcript;
+        this.editor.focus();
       });
   }
 
@@ -105,14 +106,17 @@ class EditorView extends Component {
                   />
                   <Button onClick={this.loadTranscript}>Load transcript</Button>
                   <Button onClick={this.saveTranscript}>Save transcript</Button>
+                  <Button onClick={() => { this.editor.focus(); }}>Focus editor</Button>
                 </ButtonToolbar>
               </div>
             </AutoAffix>
           </Col>
           <Col xs={7}>
             <TranscriptEditor
+              ref={(editor) => { this.editor = editor; }}
               transcript={this.state.initialTranscript}
               onTranscriptUpdate={this.onTranscriptUpdate}
+              onSelectionChange={(selectionState) => { console.log('selection changed', selectionState); }}
             />
           </Col>
         </Row>

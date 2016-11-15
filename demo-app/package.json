@@ -5,7 +5,7 @@
   "homepage": "https://bbc.github.io/transcript-editor/",
   "devDependencies": {
     "immutable-devtools": "0.0.7",
-    "react-scripts": "^0.4.1"
+    "react-scripts": "^0.7.0"
   },
   "dependencies": {
     "bootswatch": "^3.3.7",
