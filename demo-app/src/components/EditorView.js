@@ -4,6 +4,7 @@ import { AutoAffix } from 'react-overlays';
 import { saveAs } from 'file-saver';
 import TranscriptEditor from 'transcript-editor';
 import { Transcript } from 'transcript-model';
+import Mousetrap from 'mousetrap';
 
 import VideoPlayer from './VideoPlayer';
 import StyleManager from '../StyleManager';
@@ -25,6 +26,8 @@ class EditorView extends Component {
   }
 
   componentDidMount() {
+    Mousetrap.bind('ctrl+command+p', () => { console.log('ctrl+p'); });
+
     this.styleManager = new StyleManager();
     fetch(`${process.env.PUBLIC_URL}/media-tagger.json`)
       .then(response => response.json())

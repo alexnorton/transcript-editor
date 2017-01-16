@@ -11,14 +11,15 @@
     "bootswatch": "^3.3.7",
     "file-saver": "^1.3.2",
     "jss-browserify": "^0.6.0",
+    "mousetrap": "^1.6.0",
     "react": "^15.2.1",
     "react-bootstrap": "^0.30.2",
     "react-dom": "^15.2.1",
     "react-overlays": "^0.6.6",
     "react-router": "^2.7.0",
     "transcript-editor": "file:../",
-    "whatwg-fetch": "^1.0.0",
-    "transcript-model": "bbc/transcript-model"
+    "transcript-model": "bbc/transcript-model",
+    "whatwg-fetch": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
