@@ -8,7 +8,7 @@
     "immutable": "^3.8.1",
     "lodash.debounce": "^4.0.8",
     "node-uuid": "^1.4.7",
-    "transcript-model": "bbc/transcript-model"
+    "transcript-model": "git+ssh://git@github.com/bbc/transcript-model.git"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
