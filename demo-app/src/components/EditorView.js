@@ -4,7 +4,6 @@ import { AutoAffix } from 'react-overlays';
 import { saveAs } from 'file-saver';
 import TranscriptEditor from 'transcript-editor';
 import { Transcript } from 'transcript-model';
-import Mousetrap from 'mousetrap';
 
 import VideoPlayer from './VideoPlayer';
 import StyleManager from '../StyleManager';
@@ -26,8 +25,6 @@ class EditorView extends Component {
   }
 
   componentDidMount() {
-    Mousetrap.bind('ctrl+command+p', () => { console.log('ctrl+p'); });
-
     this.styleManager = new StyleManager();
     fetch(`${process.env.PUBLIC_URL}/media-tagger.json`)
       .then(response => response.json())
@@ -72,6 +69,26 @@ class EditorView extends Component {
     };
 
     fileReader.readAsText(file);
+  }
+
+  handleKeyboardEvent(keyboardEvent) {
+    if (keyboardEvent.ctrlKey) {
+      if (keyboardEvent.key === ' ') {
+        console.log('play/pause');
+        keyboardEvent.preventDefault();
+        return;
+      }
+      if (keyboardEvent.key === 'f') {
+        console.log('forwards');
+        keyboardEvent.preventDefault();
+        return;
+      }
+      if (keyboardEvent.key === 'b') {
+        console.log('backwards');
+        keyboardEvent.preventDefault();
+        return;
+      }
+    }
   }
 
   saveTranscript() {
@@ -119,7 +136,7 @@ class EditorView extends Component {
               ref={(editor) => { this.editor = editor; }}
               transcript={this.state.initialTranscript}
               onTranscriptUpdate={this.onTranscriptUpdate}
-              onSelectionChange={(selectionState) => { console.log('selection changed', selectionState); }}
+              onKeyboardEvent={this.handleKeyboardEvent}
             />
           </Col>
         </Row>
