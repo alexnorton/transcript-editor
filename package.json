@@ -7,8 +7,8 @@
     "draft-js": "^0.9.1",
     "immutable": "^3.8.1",
     "lodash.debounce": "^4.0.8",
-    "node-uuid": "^1.4.7",
-    "transcript-model": "git+ssh://git@github.com/bbc/transcript-model.git"
+    "transcript-model": "git+ssh://git@github.com/bbc/transcript-model.git",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

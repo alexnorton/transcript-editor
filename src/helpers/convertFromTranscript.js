@@ -1,6 +1,6 @@
 import { ContentBlock, Entity, CharacterMetadata, ContentState } from 'draft-js';
 import Immutable from 'immutable';
-import uuid from 'node-uuid';
+import { uuidV4 } from 'uuid/v4';
 
 const convertFromTranscript = (transcript) => {
   const contentBlocks = transcript.get('segments').map((segment, segmentIndex) =>
@@ -13,7 +13,7 @@ const convertFromTranscript = (transcript) => {
           {
             start: word.get('start'),
             end: word.get('end'),
-            id: word.get('id') || uuid.v4(),
+            id: word.get('id') || uuidV4(),
           }
         );
         return new Immutable.List(word.get('text').split('').map(() =>
