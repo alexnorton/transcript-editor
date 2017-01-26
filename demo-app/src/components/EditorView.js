@@ -71,6 +71,26 @@ class EditorView extends Component {
     fileReader.readAsText(file);
   }
 
+  handleKeyboardEvent(keyboardEvent) {
+    if (keyboardEvent.ctrlKey) {
+      if (keyboardEvent.key === ' ') {
+        console.log('play/pause');
+        keyboardEvent.preventDefault();
+        return;
+      }
+      if (keyboardEvent.key === 'f') {
+        console.log('forwards');
+        keyboardEvent.preventDefault();
+        return;
+      }
+      if (keyboardEvent.key === 'b') {
+        console.log('backwards');
+        keyboardEvent.preventDefault();
+        return;
+      }
+    }
+  }
+
   saveTranscript() {
     const blob = new Blob(
       [JSON.stringify(this.transcript.toJSON(), null, 2)],
@@ -116,7 +136,7 @@ class EditorView extends Component {
               ref={(editor) => { this.editor = editor; }}
               transcript={this.state.initialTranscript}
               onTranscriptUpdate={this.onTranscriptUpdate}
-              onSelectionChange={(selectionState) => { console.log('selection changed', selectionState); }}
+              onKeyboardEvent={this.handleKeyboardEvent}
             />
           </Col>
         </Row>

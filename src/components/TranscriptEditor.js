@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, Entity, CompositeDecorator, CharacterMetadata } from 'draft-js';
+import { Editor, EditorState, Entity, CompositeDecorator, CharacterMetadata, getDefaultKeyBinding } from 'draft-js';
 import Immutable from 'immutable';
 import debounce from 'lodash.debounce';
 import { Transcript } from 'transcript-model';
@@ -29,6 +29,7 @@ class TranscriptEditor extends Component {
     this.handleBeforeInput = this.handleBeforeInput.bind(this);
     this.handleReturn = this.handleReturn.bind(this);
     this.blockRenderer = this.blockRenderer.bind(this);
+    this.handleKeyboardEvent = this.handleKeyboardEvent.bind(this);
 
     this.debouncedSendTranscriptUpdate = debounce(this.sendTranscriptUpdate, 500);
 
@@ -180,13 +181,14 @@ class TranscriptEditor extends Component {
       }, new Immutable.OrderedMap());
 
       const newContentState = contentState.set('blockMap', newBlockMap);
-      return this.setState({
+      this.setState({
         editorState: EditorState.push(
           previousEditorState, newContentState, lastChangeType
         ),
       });
+      return;
     }
-    return this.setState({
+    this.setState({
       editorState,
     });
   }
@@ -220,6 +222,16 @@ class TranscriptEditor extends Component {
       }
     }
     return false;
+  }
+
+  handleKeyboardEvent(e) {
+    if (getDefaultKeyBinding(e)) {
+      return getDefaultKeyBinding(e);
+    }
+    if (this.props.onKeyboardEvent) {
+      this.props.onKeyboardEvent(e);
+    }
+    return null;
   }
 
   blockRenderer() {
@@ -286,6 +298,7 @@ class TranscriptEditor extends Component {
     return true;
   }
 
+  // eslint-disable-next-line
   handlePastedText() {
     return true;
   }
@@ -300,6 +313,7 @@ class TranscriptEditor extends Component {
           onChange={this.onChange}
           handleReturn={this.handleReturn}
           handleBeforeInput={this.handleBeforeInput}
+          keyBindingFn={this.handleKeyboardEvent}
           handlePastedText={this.handlePastedText}
           blockRendererFn={this.blockRenderer}
         />
@@ -313,6 +327,7 @@ TranscriptEditor.propTypes = {
   onTranscriptUpdate: React.PropTypes.func,
   onSelectionChange: React.PropTypes.func,
   disabled: React.PropTypes.bool,
+  onKeyboardEvent: React.PropTypes.func,
 };
 
 export default TranscriptEditor;
