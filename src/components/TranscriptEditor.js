@@ -313,7 +313,6 @@ class TranscriptEditor extends Component {
           onChange={this.onChange}
           handleReturn={this.handleReturn}
           handleBeforeInput={this.handleBeforeInput}
-          handleKeyCommand={this.handleKeyCommand}
           keyBindingFn={this.handleKeyboardEvent}
           handlePastedText={this.handlePastedText}
           blockRendererFn={this.blockRenderer}
