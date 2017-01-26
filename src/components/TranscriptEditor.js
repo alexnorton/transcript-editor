@@ -29,6 +29,7 @@ class TranscriptEditor extends Component {
     this.handleBeforeInput = this.handleBeforeInput.bind(this);
     this.handleReturn = this.handleReturn.bind(this);
     this.blockRenderer = this.blockRenderer.bind(this);
+    this.handleKeyboardEvent = this.handleKeyboardEvent.bind(this);
 
     this.debouncedSendTranscriptUpdate = debounce(this.sendTranscriptUpdate, 500);
 
@@ -223,14 +224,14 @@ class TranscriptEditor extends Component {
     return false;
   }
 
-  handleKeyCommand(command) {
-    console.log(command);
-    return false;
-  }
-
-  myKeyBindingFn(e) {
-    console.log(e, e.keyCode, getDefaultKeyBinding(e));
-    return getDefaultKeyBinding(e);
+  handleKeyboardEvent(e) {
+    if (getDefaultKeyBinding(e)) {
+      return getDefaultKeyBinding(e);
+    }
+    if (this.props.onKeyboardEvent) {
+      this.props.onKeyboardEvent(e);
+    }
+    return null;
   }
 
   blockRenderer() {
@@ -313,7 +314,7 @@ class TranscriptEditor extends Component {
           handleReturn={this.handleReturn}
           handleBeforeInput={this.handleBeforeInput}
           handleKeyCommand={this.handleKeyCommand}
-          keyBindingFn={this.myKeyBindingFn}
+          keyBindingFn={this.handleKeyboardEvent}
           handlePastedText={this.handlePastedText}
           blockRendererFn={this.blockRenderer}
         />
@@ -327,6 +328,7 @@ TranscriptEditor.propTypes = {
   onTranscriptUpdate: React.PropTypes.func,
   onSelectionChange: React.PropTypes.func,
   disabled: React.PropTypes.bool,
+  onKeyboardEvent: React.PropTypes.func,
 };
 
 export default TranscriptEditor;
