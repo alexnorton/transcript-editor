@@ -29,7 +29,7 @@ module.exports = {
     immutable: 'immutable',
     ajv: 'ajv',
     'draft-js': 'draft-js',
-    uuid: 'uuid',
+    'uuid/v4': 'uuid/v4',
     'lodash.debounce': 'lodash.debounce',
     'transcript-model': 'transcript-model',
   },
