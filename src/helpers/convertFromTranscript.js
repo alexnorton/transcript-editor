@@ -1,6 +1,6 @@
 import { ContentBlock, Entity, CharacterMetadata, ContentState } from 'draft-js';
 import Immutable from 'immutable';
-import { uuidV4 } from 'uuid/v4';
+import uuidV4 from 'uuid/v4';
 
 const convertFromTranscript = (transcript) => {
   const contentBlocks = transcript.get('segments').map((segment, segmentIndex) =>
