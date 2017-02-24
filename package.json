@@ -45,10 +45,5 @@
   "homepage": "https://github.com/bbc/transcript-editor#readme",
   "files": [
     "lib/"
-  ],
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  }
+  ]
 }
