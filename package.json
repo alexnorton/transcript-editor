@@ -37,8 +37,8 @@
     "type": "git",
     "url": "git+https://github.com/bbc/transcript-editor.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Alex Norton <alex.norton@bbc.co.uk>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bbc/transcript-editor/issues"
   },
