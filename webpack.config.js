@@ -1,10 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
-  entry: './src/components/TranscriptEditor.js',
-  devtool: 'eval',
+  entry: './src/index.js',
+  devtool: 'source-map',
   output: {
     path: './lib',
     filename: 'bundle.js',
     libraryTarget: 'umd',
+    library: 'transcript-editor',
   },
   module: {
     loaders: [
@@ -20,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        loader: ExtractTextPlugin.extract('css'),
       },
     ],
   },
@@ -33,4 +38,9 @@ module.exports = {
     'lodash.debounce': 'lodash.debounce',
     'transcript-model': 'transcript-model',
   },
+  plugins: [
+    new ExtractTextPlugin('style.css', {
+      allChunks: true,
+    }),
+  ],
 };
