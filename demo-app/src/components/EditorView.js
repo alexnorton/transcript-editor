@@ -5,6 +5,8 @@ import { saveAs } from 'file-saver';
 import TranscriptEditor from 'transcript-editor';
 import { Transcript } from 'transcript-model';
 
+import 'transcript-editor/lib/style.css';
+
 import VideoPlayer from './VideoPlayer';
 import StyleManager from '../StyleManager';
 
@@ -114,7 +116,7 @@ class EditorView extends Component {
             >
               <div>
                 <VideoPlayer
-                  videoId={this.props.params.videoId}
+                  src={`${process.env.PUBLIC_URL}/video.mp4`}
                   onTimeUpdate={this.onTimeUpdate}
                 />
                 <ButtonToolbar>
@@ -137,6 +139,7 @@ class EditorView extends Component {
               transcript={this.state.initialTranscript}
               onTranscriptUpdate={this.onTranscriptUpdate}
               onKeyboardEvent={this.handleKeyboardEvent}
+              showSpeakers
             />
           </Col>
         </Row>
@@ -144,9 +147,5 @@ class EditorView extends Component {
     );
   }
 }
-
-EditorView.propTypes = {
-  params: React.PropTypes.object,
-};
 
 export default EditorView;
