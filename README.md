@@ -15,7 +15,8 @@ Uses the [transcript-model](https://github.com/bbc/transcript-model) transcript 
 | name                 | type       | description |
 | -------------------- | ---------- | ----------- |
 | `transcript`         | Transcript | Transcript object to hydrate the editor state from. |
-| `disabled`           | boolean    | When false, user input is disabled. Defaults to true. |
+| `disabled`           | boolean    | When true, user input is disabled. Defaults to false. |
 | `onTranscriptUpdate` | function   | Callback to be exectuted when the transcript has changed. |
 | `onSelectionChange`  | function   | Callback to be executed when the selection state has changed. |
 | `onKeyboardEvent`    | function   | Callback to be executed when a keyboard event occurs. |
+| `showSpeakers`       | boolean    | When true, show speaker information column. Defaults to false |
