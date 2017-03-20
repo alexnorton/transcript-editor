@@ -23,6 +23,7 @@ class TranscriptEditor extends Component {
       editorState: EditorState.createEmpty(),
       speakers: [],
       disabled: props.disabled || false,
+      showSpeakers: props.showSpeakers || false,
     };
 
     this.onChange = this.onChange.bind(this);
@@ -239,6 +240,7 @@ class TranscriptEditor extends Component {
       component: TranscriptEditorBlock,
       props: {
         speakers: this.state.speakers,
+        showSpeakers: this.state.showSpeakers,
       },
     };
   }
@@ -328,6 +330,7 @@ TranscriptEditor.propTypes = {
   onSelectionChange: React.PropTypes.func,
   disabled: React.PropTypes.bool,
   onKeyboardEvent: React.PropTypes.func,
+  showSpeakers: React.PropTypes.bool,
 };
 
 export default TranscriptEditor;
