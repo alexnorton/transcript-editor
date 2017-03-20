@@ -17,7 +17,7 @@
     "react-overlays": "^0.6.6",
     "react-router": "^2.7.0",
     "transcript-editor": "file:../",
-    "transcript-model": "bbc/transcript-model",
+    "transcript-model": "^0.2.1",
     "whatwg-fetch": "^1.0.0"
   },
   "scripts": {

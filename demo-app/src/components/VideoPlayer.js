@@ -10,10 +10,6 @@ class VideoPlayer extends Component {
     this.video.addEventListener('play', () => this.startInterval());
     this.video.addEventListener('pause', () => this.stopInterval());
     this.video.addEventListener('seeked', () => this.updateTime());
-    // this.video.addEventListener('timeupdate', (e) => {
-    //   console.log(e.srcElement.currentTime);
-    //   this.props.onTimeUpdate(e.srcElement.currentTime);
-    // });
   }
 
   startInterval() {
@@ -38,7 +34,7 @@ class VideoPlayer extends Component {
       <div>
         <video
           ref={(c) => { this.video = c; }}
-          src={`${process.env.PUBLIC_URL}/video.mp4`}
+          src={this.props.src}
           controls
           style={{ width: '100%' }}
         />
@@ -48,7 +44,7 @@ class VideoPlayer extends Component {
 }
 
 VideoPlayer.propTypes = {
-  videoId: React.PropTypes.string,
+  src: React.PropTypes.string,
   onTimeUpdate: React.PropTypes.func,
 };
 

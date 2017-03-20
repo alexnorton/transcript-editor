@@ -1,8 +1,8 @@
 import React from 'react';
 import { EditorBlock } from 'draft-js';
 
-const TranscriptEditorBlock = props => (
-  <div className="transcript-editor-block">
+const TranscriptEditorBlock = (props) => {
+  const speakerSection = props.blockProps.showSpeakers ? (
     <div
       className="transcript-editor-block__speaker"
       contentEditable={false}
@@ -12,16 +12,25 @@ const TranscriptEditorBlock = props => (
         msUserSelect: 'none',
       }}
     >
-      Speaker {props.block.data.get('speaker')}
+      Speaker {props.block.data.get('speaker') + 1}
     </div>
-    <div className="transcript-editor-block__text">
-      <EditorBlock {...props} />
+  ) : null;
+
+  return (
+    <div className="transcript-editor-block">
+      {speakerSection}
+      <div className="transcript-editor-block__text">
+        <EditorBlock {...props} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 TranscriptEditorBlock.propTypes = {
-  block: React.PropTypes.object,
+  block: React.PropTypes.node,
+  blockProps: React.PropTypes.shape({
+    showSpeakers: React.PropTypes.bool,
+  }),
 };
 
 export default TranscriptEditorBlock;
