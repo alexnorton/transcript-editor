@@ -7,7 +7,7 @@
     "draft-js": "^0.9.1",
     "immutable": "^3.8.1",
     "lodash.debounce": "^4.0.8",
-    "transcript-model": "^0.1.0",
+    "transcript-model": "^0.2.1",
     "uuid": "^3.0.1"
   },
   "devDependencies": {
