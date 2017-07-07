@@ -5,7 +5,7 @@ import { saveAs } from 'file-saver';
 import TranscriptEditor from 'transcript-editor';
 import { Transcript } from 'transcript-model';
 
-import 'transcript-editor/lib/style.css';
+import 'transcript-editor/lib/css/TranscriptEditor.css';
 
 import VideoPlayer from './VideoPlayer';
 import StyleManager from '../StyleManager';
