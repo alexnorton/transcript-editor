@@ -13,8 +13,6 @@ import TranscriptEditorSpace from './TranscriptEditorSpace';
 import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE }
   from '../helpers/TranscriptEntities';
 
-import '../css/TranscriptEditor.css';
-
 class TranscriptEditor extends Component {
   constructor(props) {
     super(props);
