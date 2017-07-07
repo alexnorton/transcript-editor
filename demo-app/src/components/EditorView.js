@@ -31,7 +31,7 @@ class EditorView extends Component {
     fetch(`${process.env.PUBLIC_URL}/media-tagger.json`)
       .then(response => response.json())
       .then((json) => {
-        const transcript = Transcript.fromComma(json);
+        const transcript = Transcript.fromMediaTagger(json);
         this.setState({
           initialTranscript: transcript,
           clipName: json.metadata.RETURN.RESULTS.ITEM.CLIPNAME,

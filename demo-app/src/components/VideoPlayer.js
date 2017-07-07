@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class VideoPlayer extends Component {
@@ -44,8 +45,8 @@ class VideoPlayer extends Component {
 }
 
 VideoPlayer.propTypes = {
-  src: React.PropTypes.string,
-  onTimeUpdate: React.PropTypes.func,
+  src: PropTypes.string,
+  onTimeUpdate: PropTypes.func,
 };
 
 export default VideoPlayer;
