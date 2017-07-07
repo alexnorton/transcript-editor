@@ -1,10 +1,10 @@
 import Immutable from 'immutable';
-import { Entity, CharacterMetadata } from 'draft-js';
+import { CharacterMetadata } from 'draft-js';
 
 import { TRANSCRIPT_SPACE }
   from './TranscriptEntities';
 
-const updateBlock = contentBlock => (
+const updateBlock = (contentBlock, contentState) => (
   contentBlock.characterList.reduce(({ characterList, text }, character, index) => {
     // Is this the first character?
     if (!characterList.isEmpty()) {
@@ -13,12 +13,12 @@ const updateBlock = contentBlock => (
       if (previousCharacter.entity) {
         // Does the previous character have a different entity?
         if (character.entity) {
-          const entity = Entity.get(character.entity);
-          const previousEntity = Entity.get(previousCharacter.entity);
+          const entity = contentState.getEntity(character.entity);
+          const previousEntity = contentState.getEntity(previousCharacter.entity);
           // Does the different entity have the same type?
           if (entity.type === previousEntity.type && entity !== previousEntity) {
             // Merge the entities
-            Entity.mergeData(previousCharacter.entity, { end: entity.data.end });
+            contentState.mergeEntityData(previousCharacter.entity, { end: entity.data.end });
             return {
               characterList: characterList.push(
                 CharacterMetadata.applyEntity(character, previousCharacter.entity)

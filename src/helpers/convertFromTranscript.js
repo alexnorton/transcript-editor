@@ -1,4 +1,4 @@
-import { ContentBlock, Entity, CharacterMetadata, ContentState } from 'draft-js';
+import { ContentBlock, CharacterMetadata, ContentState } from 'draft-js';
 import Immutable from 'immutable';
 import uuidV4 from 'uuid/v4';
 

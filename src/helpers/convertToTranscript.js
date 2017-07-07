@@ -1,4 +1,3 @@
-import { Entity } from 'draft-js';
 import Immutable from 'immutable';
 
 import { Transcript, TranscriptSegment, TranscriptWord } from 'transcript-model';
@@ -13,10 +12,10 @@ const convertToTranscript = (contentState, speakers) => {
         if (entityKey === null) {
           return false;
         }
-        return Entity.get(entityKey).getType() === 'TRANSCRIPT_WORD';
+        return contentState.getEntity(entityKey).getType() === 'TRANSCRIPT_WORD';
       },
       (start, end) => {
-        const entity = Entity.get(block.getEntityAt(start));
+        const entity = contentState.getEntity(block.getEntityAt(start));
         const text = block.getText().substring(start, end);
         words.push(new TranscriptWord({
           start: entity.data.start,

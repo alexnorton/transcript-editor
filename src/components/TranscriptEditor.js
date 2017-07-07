@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, Entity, CompositeDecorator, CharacterMetadata, getDefaultKeyBinding } from 'draft-js';
+import { Editor, EditorState, CompositeDecorator, CharacterMetadata, getDefaultKeyBinding } from 'draft-js';
 import Immutable from 'immutable';
 import debounce from 'lodash.debounce';
 import { Transcript } from 'transcript-model';
@@ -34,26 +34,26 @@ class TranscriptEditor extends Component {
 
     this.decorator = new CompositeDecorator([
       {
-        strategy: (contentBlock, callback) => {
+        strategy: (contentBlock, callback, contentState) => {
           contentBlock.findEntityRanges((character) => {
             const entityKey = character.getEntity();
             if (entityKey === null) {
               return false;
             }
-            const entityType = Entity.get(entityKey).getType();
+            const entityType = contentState.getEntity(entityKey).getType();
             return entityType === TRANSCRIPT_WORD;
           }, callback);
         },
         component: TranscriptEditorWord,
       },
       {
-        strategy: (contentBlock, callback) => {
+        strategy: (contentBlock, callback, contentState) => {
           contentBlock.findEntityRanges((character) => {
             const entityKey = character.getEntity();
             if (entityKey === null) {
               return false;
             }
-            const entityType = Entity.get(entityKey).getType();
+            const entityType = contentState.getEntity(entityKey).getType();
             return entityType === TRANSCRIPT_SPACE;
           }, callback);
         },
@@ -116,16 +116,18 @@ class TranscriptEditor extends Component {
           // Have we merged blocks?
           if (blockMap.size < previousEditorState.getCurrentContent().getBlockMap().size) {
             // Do we have two adjacent words?
-            if (Entity.get(newContentBlock.characterList.get(startOffset).entity).type
-                  === TRANSCRIPT_WORD
-             && Entity.get(newContentBlock.characterList.get(startOffset - 1).entity).type
-                   === TRANSCRIPT_WORD) {
+            if (contentState.getEntity(
+                newContentBlock.characterList.get(startOffset).entity
+              ).type === TRANSCRIPT_WORD
+             && contentState.getEntity(
+                newContentBlock.characterList.get(startOffset - 1).entity
+              ).type === TRANSCRIPT_WORD) {
               // Add a space
               newContentBlock = newContentBlock
                 .set('characterList', newContentBlock.characterList.insert(startOffset,
                   CharacterMetadata.applyEntity(
                     CharacterMetadata.create(),
-                    Entity.create(
+                    contentState.createEntity(
                       TRANSCRIPT_SPACE, 'IMMUTABLE', null
                     )
                   )
@@ -140,12 +142,12 @@ class TranscriptEditor extends Component {
           newContentBlock = newContentBlock.merge(
             updateBlock(
               newContentBlock,
-              previousEditorState.getCurrentContent().getBlockForKey(blockKey)
+              contentState
             )
           );
 
           // Have we created a leading space? (e.g. when splitting a block)
-          if (Entity.get(
+          if (contentState.getEntity(
               newContentBlock.characterList.first().entity
             ).type === TRANSCRIPT_SPACE) {
             // Remove the leading space
@@ -164,7 +166,7 @@ class TranscriptEditor extends Component {
         // Otherwise is this the block previously being edited? (e.g. that was split)
         } else if (blockKey === previousStartKey) {
           // Have we created a trailing space?
-          if (Entity.get(
+          if (contentState.getEntity(
               newContentBlock.characterList.last().entity
             ).type === TRANSCRIPT_SPACE) {
             // Remove the trailing space
@@ -212,12 +214,13 @@ class TranscriptEditor extends Component {
     // Don't allow inserting additional spaces between words
     if (chars === ' ') {
       const editorState = this.state.editorState;
+      const contentState = editorState.getCurrentContent();
       const selectionState = editorState.getSelection();
       const startKey = selectionState.getStartKey();
       const startOffset = selectionState.getStartOffset();
       const selectedBlock = editorState.getCurrentContent().getBlockForKey(startKey);
       const entityKeyBefore = selectedBlock.getEntityAt(startOffset - 1);
-      if (entityKeyBefore && Entity.get(entityKeyBefore).type === TRANSCRIPT_SPACE) {
+      if (entityKeyBefore && contentState.getEntity(entityKeyBefore).type === TRANSCRIPT_SPACE) {
         return true;
       }
     }
@@ -269,8 +272,8 @@ class TranscriptEditor extends Component {
       .getBlockForKey(endKey)
       .getEntityAt(endOffset);
 
-    const startEntity = startEntityKey && Entity.get(startEntityKey);
-    const endEntity = endEntityKey && Entity.get(endEntityKey);
+    const startEntity = startEntityKey && contentState.getEntity(startEntityKey);
+    const endEntity = endEntityKey && contentState.getEntity(endEntityKey);
 
     this.props.onSelectionChange({
       startTime: startEntity && startEntity.data.start,
@@ -286,14 +289,15 @@ class TranscriptEditor extends Component {
 
   handleReturn() {
     const editorState = this.state.editorState;
+    const contentState = editorState.getCurrentContent();
     const selectionState = editorState.getSelection();
     const startKey = selectionState.getStartKey();
     const startOffset = selectionState.getStartOffset();
     const selectedBlock = editorState.getCurrentContent().getBlockForKey(startKey);
     const entityKeyBefore = selectedBlock.getEntityAt(startOffset - 1);
     const entityKeyAfter = selectedBlock.getEntityAt(startOffset);
-    if ((entityKeyBefore && Entity.get(entityKeyBefore).type === TRANSCRIPT_SPACE)
-      || (entityKeyAfter && Entity.get(entityKeyAfter).type === TRANSCRIPT_SPACE)) {
+    if ((entityKeyBefore && contentState.getEntity(entityKeyBefore).type === TRANSCRIPT_SPACE)
+      || (entityKeyAfter && contentState.getEntity(entityKeyAfter).type === TRANSCRIPT_SPACE)) {
       return false;
     }
     return true;
