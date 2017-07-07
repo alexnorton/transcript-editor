@@ -98,8 +98,6 @@ class TranscriptEditor extends Component {
     }
 
     if (lastChangeType !== 'undo' && contentState !== previousEditorState.getCurrentContent()) {
-      this.debouncedSendTranscriptUpdate(contentState, this.state.speakers);
-
       const startKey = selectionState.getStartKey();
       const previousStartKey = previousSelectionState.getStartKey();
 
@@ -182,6 +180,9 @@ class TranscriptEditor extends Component {
       }, new Immutable.OrderedMap());
 
       const newContentState = contentState.set('blockMap', newBlockMap);
+
+      this.debouncedSendTranscriptUpdate(newContentState, this.state.speakers);
+
       this.setState({
         editorState: EditorState.push(
           previousEditorState, newContentState, lastChangeType
