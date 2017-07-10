@@ -84,12 +84,13 @@ class TranscriptEditor extends Component {
       return;
     }
 
-    const contentState = editorState.getCurrentContent();
     const previousEditorState = this.state.editorState;
     const lastChangeType = editorState.getLastChangeType();
 
     const selectionState = editorState.getSelection();
     const previousSelectionState = previousEditorState.getSelection();
+
+    let contentState = editorState.getCurrentContent();
 
     if (this.props.onSelectionChange && selectionState !== previousSelectionState) {
       this.sendSelectionChange(contentState, selectionState);
@@ -127,9 +128,12 @@ class TranscriptEditor extends Component {
                 .set('characterList', newContentBlock.characterList.insert(startOffset,
                   CharacterMetadata.applyEntity(
                     CharacterMetadata.create(),
-                    contentState.createEntity(
-                      TRANSCRIPT_SPACE, 'IMMUTABLE', null
-                    )
+                    (() => {
+                      contentState = contentState.createEntity(
+                        'TRANSCRIPT_SPACE', 'IMMUTABLE', null
+                      );
+                      return contentState.getLastCreatedEntityKey();
+                    })()
                   )
                 ))
                 .set('text', `${newContentBlock.text.slice(0, startOffset)}`
@@ -179,13 +183,13 @@ class TranscriptEditor extends Component {
         return _newBlockMap.set(blockKey, newContentBlock);
       }, new Immutable.OrderedMap());
 
-      const newContentState = contentState.set('blockMap', newBlockMap);
+      contentState = contentState.set('blockMap', newBlockMap);
 
-      this.debouncedSendTranscriptUpdate(newContentState, this.state.speakers);
+      this.debouncedSendTranscriptUpdate(contentState, this.state.speakers);
 
       this.setState({
         editorState: EditorState.push(
-          previousEditorState, newContentState, lastChangeType
+          previousEditorState, contentState, lastChangeType
         ),
       });
       return;
