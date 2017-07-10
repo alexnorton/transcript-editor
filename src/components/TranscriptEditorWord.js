@@ -1,8 +1,8 @@
 import React from 'react';
-import { Entity } from 'draft-js';
+import { ContentState } from 'draft-js';
 
-const TranscriptEditorWord = ({ entityKey, children }) => {
-  const entity = Entity.get(entityKey);
+const TranscriptEditorWord = ({ entityKey, children, contentState }) => {
+  const entity = contentState.getEntity(entityKey);
   const titleString = `${entity.data.start.toFixed(2)}`
     + ` - ${entity.data.end.toFixed(2)}`;
   return (
@@ -19,6 +19,7 @@ const TranscriptEditorWord = ({ entityKey, children }) => {
 TranscriptEditorWord.propTypes = {
   entityKey: React.PropTypes.string,
   children: React.PropTypes.array,
+  contentState: React.PropTypes.instanceOf(ContentState),
 };
 
 export default TranscriptEditorWord;
