@@ -42,7 +42,7 @@ beforeEach(() => {
 });
 
 describe('updateBlock()', () => {
-  it('passes through block contents correctly', () => {
+  xit('passes through block contents correctly', () => {
     Entity._setEntities({
       1: { type: TRANSCRIPT_WORD },
       2: { type: TRANSCRIPT_SPACE },
@@ -64,7 +64,7 @@ describe('updateBlock()', () => {
     expect(text).toBe('Hello Alex');
   });
 
-  it('adds new characters to the start of words', () => {
+  xit('adds new characters to the start of words', () => {
     Entity._setEntities({
       1: { type: TRANSCRIPT_WORD },
       2: { type: TRANSCRIPT_SPACE },
@@ -92,7 +92,7 @@ describe('updateBlock()', () => {
     expect(text).toBe('Hello aAlex!');
   });
 
-  it('merges adjacent word entities', () => {
+  xit('merges adjacent word entities', () => {
     Entity._setEntities({
       1: { type: TRANSCRIPT_WORD, data: { start: 0.1, end: 0.5 } },
       2: { type: TRANSCRIPT_WORD, data: { start: 0.6, end: 0.9 } },
@@ -119,7 +119,7 @@ describe('updateBlock()', () => {
     expect(Entity.get('1').data).toEqual({ start: 0.1, end: 0.9 });
   });
 
-  it('merges adjacent space entities', () => {
+  xit('merges adjacent space entities', () => {
     Entity._setEntities({
       1: { type: TRANSCRIPT_WORD },
       2: { type: TRANSCRIPT_SPACE },
