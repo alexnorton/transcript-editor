@@ -27,7 +27,8 @@
   },
   "scripts": {
     "prepublish": "babel -d lib --copy-files --ignore '**/__tests__' src/",
-    "test": "jest src/"
+    "test": "jest src/",
+    "coverage": "jest --coverage --collectCoverageFrom='src/**/*.js'"
   },
   "repository": {
     "type": "git",
