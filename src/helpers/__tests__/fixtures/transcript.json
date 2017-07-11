@@ -1,0 +1,1661 @@
+{
+  "speakers": [
+    {
+      "name": null
+    },
+    {
+      "name": null
+    },
+    {
+      "name": null
+    },
+    {
+      "name": null
+    },
+    {
+      "name": null
+    }
+  ],
+  "segments": [
+    {
+      "words": [
+        {
+          "text": "PLAYFUL",
+          "start": 1.39,
+          "end": 1.7799999999999998
+        },
+        {
+          "text": "curious",
+          "start": 1.9,
+          "end": 2.44
+        },
+        {
+          "text": "and",
+          "start": 2.44,
+          "end": 2.54
+        },
+        {
+          "text": "totally",
+          "start": 2.54,
+          "end": 2.96
+        },
+        {
+          "text": "adorable.",
+          "start": 2.96,
+          "end": 3.52
+        },
+        {
+          "text": "This",
+          "start": 3.78,
+          "end": 3.9099999999999997
+        },
+        {
+          "text": "six",
+          "start": 3.93,
+          "end": 4.2700000000000005
+        },
+        {
+          "text": "month",
+          "start": 4.27,
+          "end": 4.4799999999999995
+        },
+        {
+          "text": "old",
+          "start": 4.48,
+          "end": 4.62
+        },
+        {
+          "text": "panda",
+          "start": 4.63,
+          "end": 4.96
+        },
+        {
+          "text": "cub",
+          "start": 4.96,
+          "end": 5.29
+        },
+        {
+          "text": "has",
+          "start": 5.47,
+          "end": 5.6899999999999995
+        },
+        {
+          "text": "been",
+          "start": 5.69,
+          "end": 5.8100000000000005
+        },
+        {
+          "text": "a",
+          "start": 5.81,
+          "end": 5.85
+        },
+        {
+          "text": "huge",
+          "start": 5.85,
+          "end": 6.25
+        },
+        {
+          "text": "sensation",
+          "start": 6.25,
+          "end": 6.8100000000000005
+        },
+        {
+          "text": "in",
+          "start": 6.81,
+          "end": 6.92
+        },
+        {
+          "text": "Taiwan.",
+          "start": 6.93,
+          "end": 7.4799999999999995
+        },
+        {
+          "text": "Ever",
+          "start": 7.74,
+          "end": 8.01
+        },
+        {
+          "text": "since",
+          "start": 8.01,
+          "end": 8.25
+        },
+        {
+          "text": "she",
+          "start": 8.25,
+          "end": 8.37
+        },
+        {
+          "text": "was",
+          "start": 8.37,
+          "end": 8.53
+        },
+        {
+          "text": "born",
+          "start": 8.53,
+          "end": 8.78
+        },
+        {
+          "text": "in",
+          "start": 8.78,
+          "end": 8.889999999999999
+        },
+        {
+          "text": "July.",
+          "start": 8.89,
+          "end": 9.41
+        }
+      ],
+      "speaker": 0
+    },
+    {
+      "words": [
+        {
+          "text": "Previously",
+          "start": 11.62,
+          "end": 12.219999999999999
+        },
+        {
+          "text": "on",
+          "start": 12.22,
+          "end": 12.430000000000001
+        },
+        {
+          "text": "showing",
+          "start": 12.48,
+          "end": 12.74
+        },
+        {
+          "text": "videos",
+          "start": 12.82,
+          "end": 13.280000000000001
+        },
+        {
+          "text": "and",
+          "start": 13.28,
+          "end": 13.389999999999999
+        },
+        {
+          "text": "pictures",
+          "start": 13.41,
+          "end": 13.99
+        },
+        {
+          "text": "on",
+          "start": 14.24,
+          "end": 14.44
+        },
+        {
+          "text": "Monday.",
+          "start": 14.44,
+          "end": 14.99
+        },
+        {
+          "text": "She",
+          "start": 15.14,
+          "end": 15.34
+        },
+        {
+          "text": "was",
+          "start": 15.34,
+          "end": 15.5
+        },
+        {
+          "text": "put",
+          "start": 15.5,
+          "end": 15.69
+        },
+        {
+          "text": "on",
+          "start": 15.69,
+          "end": 15.79
+        },
+        {
+          "text": "a",
+          "start": 15.79,
+          "end": 15.86
+        },
+        {
+          "text": "show",
+          "start": 15.86,
+          "end": 16.16
+        },
+        {
+          "text": "for",
+          "start": 16.16,
+          "end": 16.28
+        },
+        {
+          "text": "the",
+          "start": 16.28,
+          "end": 16.34
+        },
+        {
+          "text": "first",
+          "start": 16.34,
+          "end": 16.72
+        },
+        {
+          "text": "time",
+          "start": 16.72,
+          "end": 17.049999999999997
+        },
+        {
+          "text": "at",
+          "start": 17.19,
+          "end": 17.290000000000003
+        },
+        {
+          "text": "the",
+          "start": 17.37,
+          "end": 17.470000000000002
+        },
+        {
+          "text": "Taiping",
+          "start": 17.47,
+          "end": 17.919999999999998
+        },
+        {
+          "text": "Zoo,",
+          "start": 17.92,
+          "end": 18.35
+        }
+      ],
+      "speaker": 1
+    },
+    {
+      "words": [
+        {
+          "text": "thousands",
+          "start": 19.39,
+          "end": 19.93
+        },
+        {
+          "text": "of",
+          "start": 19.93,
+          "end": 19.99
+        },
+        {
+          "text": "people",
+          "start": 19.99,
+          "end": 20.22
+        },
+        {
+          "text": "have",
+          "start": 20.22,
+          "end": 20.33
+        },
+        {
+          "text": "been",
+          "start": 20.33,
+          "end": 20.459999999999997
+        },
+        {
+          "text": "lining",
+          "start": 20.46,
+          "end": 20.76
+        },
+        {
+          "text": "up",
+          "start": 20.76,
+          "end": 20.85
+        },
+        {
+          "text": "since",
+          "start": 20.85,
+          "end": 21.16
+        },
+        {
+          "text": "early",
+          "start": 21.21,
+          "end": 21.54
+        },
+        {
+          "text": "this",
+          "start": 21.54,
+          "end": 21.75
+        },
+        {
+          "text": "morning",
+          "start": 21.75,
+          "end": 22.15
+        },
+        {
+          "text": "to",
+          "start": 22.33,
+          "end": 22.459999999999997
+        },
+        {
+          "text": "get",
+          "start": 22.46,
+          "end": 22.61
+        },
+        {
+          "text": "a",
+          "start": 22.61,
+          "end": 22.66
+        },
+        {
+          "text": "glimpse",
+          "start": 22.66,
+          "end": 23.05
+        },
+        {
+          "text": "of",
+          "start": 23.05,
+          "end": 23.13
+        },
+        {
+          "text": "the",
+          "start": 23.13,
+          "end": 23.209999999999997
+        },
+        {
+          "text": "Pen",
+          "start": 23.21,
+          "end": 23.51
+        },
+        {
+          "text": "Club",
+          "start": 23.54,
+          "end": 23.88
+        },
+        {
+          "text": "friends",
+          "start": 23.89,
+          "end": 24.18
+        },
+        {
+          "text": "died.",
+          "start": 24.19,
+          "end": 24.5
+        }
+      ],
+      "speaker": 2
+    },
+    {
+      "words": [
+        {
+          "text": "They",
+          "start": 24.93,
+          "end": 25.12
+        },
+        {
+          "text": "even",
+          "start": 25.12,
+          "end": 25.41
+        },
+        {
+          "text": "though",
+          "start": 25.41,
+          "end": 25.57
+        },
+        {
+          "text": "Beijing",
+          "start": 25.58,
+          "end": 26.02
+        },
+        {
+          "text": "hopes",
+          "start": 26.02,
+          "end": 26.34
+        },
+        {
+          "text": "Hercules",
+          "start": 26.44,
+          "end": 27.150000000000002
+        },
+        {
+          "text": "will",
+          "start": 27.33,
+          "end": 27.509999999999998
+        },
+        {
+          "text": "help",
+          "start": 27.53,
+          "end": 27.8
+        },
+        {
+          "text": "convince",
+          "start": 27.8,
+          "end": 28.220000000000002
+        },
+        {
+          "text": "many",
+          "start": 28.22,
+          "end": 28.5
+        },
+        {
+          "text": "people",
+          "start": 28.5,
+          "end": 28.82
+        },
+        {
+          "text": "here",
+          "start": 28.82,
+          "end": 29.12
+        },
+        {
+          "text": "to",
+          "start": 29.32,
+          "end": 29.46
+        },
+        {
+          "text": "help.",
+          "start": 29.47,
+          "end": 29.669999999999998
+        },
+        {
+          "text": "Warmer",
+          "start": 29.67,
+          "end": 30.060000000000002
+        },
+        {
+          "text": "feelings",
+          "start": 30.1,
+          "end": 30.53
+        },
+        {
+          "text": "towards",
+          "start": 30.53,
+          "end": 30.86
+        },
+        {
+          "text": "mainland",
+          "start": 30.86,
+          "end": 31.24
+        },
+        {
+          "text": "China.",
+          "start": 31.24,
+          "end": 31.689999999999998
+        },
+        {
+          "text": "Unification.",
+          "start": 32.13,
+          "end": 32.980000000000004
+        },
+        {
+          "text": "People",
+          "start": 33.45,
+          "end": 33.85
+        },
+        {
+          "text": "here.",
+          "start": 33.85,
+          "end": 34.15
+        },
+        {
+          "text": "Politics",
+          "start": 34.32,
+          "end": 34.9
+        },
+        {
+          "text": "is",
+          "start": 34.89,
+          "end": 35.01
+        },
+        {
+          "text": "a",
+          "start": 35.01,
+          "end": 35.089999999999996
+        },
+        {
+          "text": "lasting",
+          "start": 35.09,
+          "end": 35.6
+        },
+        {
+          "text": "undermine,",
+          "start": 35.62,
+          "end": 36.22
+        },
+        {
+          "text": "to",
+          "start": 36.43,
+          "end": 36.61
+        },
+        {
+          "text": "them,",
+          "start": 36.62,
+          "end": 36.98
+        },
+        {
+          "text": "then",
+          "start": 37.17,
+          "end": 37.43
+        },
+        {
+          "text": "dies",
+          "start": 37.45,
+          "end": 37.800000000000004
+        },
+        {
+          "text": "very",
+          "start": 37.83,
+          "end": 38.089999999999996
+        },
+        {
+          "text": "much.",
+          "start": 38.09,
+          "end": 38.31
+        },
+        {
+          "text": "Made",
+          "start": 38.31,
+          "end": 38.620000000000005
+        },
+        {
+          "text": "in",
+          "start": 38.62,
+          "end": 38.769999999999996
+        },
+        {
+          "text": "Taiwan.",
+          "start": 38.77,
+          "end": 39.46
+        }
+      ],
+      "speaker": 2
+    },
+    {
+      "words": [
+        {
+          "text": "He",
+          "start": 40.12,
+          "end": 40.72
+        },
+        {
+          "text": "has",
+          "start": 40.72,
+          "end": 40.86
+        },
+        {
+          "text": "years.",
+          "start": 40.86,
+          "end": 41.1
+        },
+        {
+          "text": "Hand",
+          "start": 41.13,
+          "end": 41.410000000000004
+        },
+        {
+          "text": "endured",
+          "start": 41.41,
+          "end": 41.769999999999996
+        },
+        {
+          "text": "a",
+          "start": 41.78,
+          "end": 41.97
+        },
+        {
+          "text": "hold",
+          "start": 41.96,
+          "end": 42.19
+        },
+        {
+          "text": "first.",
+          "start": 42.22,
+          "end": 42.6
+        },
+        {
+          "text": "When",
+          "start": 42.6,
+          "end": 42.7
+        },
+        {
+          "text": "her",
+          "start": 42.7,
+          "end": 42.81
+        },
+        {
+          "text": "parents",
+          "start": 42.81,
+          "end": 43.21
+        },
+        {
+          "text": "were",
+          "start": 43.21,
+          "end": 43.29
+        },
+        {
+          "text": "given",
+          "start": 43.29,
+          "end": 43.519999999999996
+        },
+        {
+          "text": "to",
+          "start": 43.52,
+          "end": 43.650000000000006
+        },
+        {
+          "text": "Thailand.",
+          "start": 43.71,
+          "end": 44.21
+        },
+        {
+          "text": "I",
+          "start": 44.29,
+          "end": 44.4
+        },
+        {
+          "text": "thought",
+          "start": 44.4,
+          "end": 44.61
+        },
+        {
+          "text": "it",
+          "start": 44.61,
+          "end": 44.68
+        },
+        {
+          "text": "was",
+          "start": 44.68,
+          "end": 44.8
+        },
+        {
+          "text": "a",
+          "start": 44.8,
+          "end": 44.87
+        },
+        {
+          "text": "strategy",
+          "start": 44.87,
+          "end": 45.39
+        },
+        {
+          "text": "to",
+          "start": 45.39,
+          "end": 45.54
+        },
+        {
+          "text": "win",
+          "start": 45.54,
+          "end": 45.69
+        },
+        {
+          "text": "us",
+          "start": 45.69,
+          "end": 45.86
+        },
+        {
+          "text": "over",
+          "start": 45.86,
+          "end": 46.339999999999996
+        },
+        {
+          "text": "now.",
+          "start": 46.62,
+          "end": 46.89
+        },
+        {
+          "text": "I",
+          "start": 46.89,
+          "end": 46.97
+        },
+        {
+          "text": "don't",
+          "start": 46.97,
+          "end": 47.22
+        },
+        {
+          "text": "think",
+          "start": 47.22,
+          "end": 47.37
+        },
+        {
+          "text": "that",
+          "start": 47.37,
+          "end": 47.519999999999996
+        },
+        {
+          "text": "way",
+          "start": 47.52,
+          "end": 47.67
+        },
+        {
+          "text": "any",
+          "start": 47.67,
+          "end": 47.83
+        },
+        {
+          "text": "more.",
+          "start": 47.83,
+          "end": 48.23
+        },
+        {
+          "text": "I",
+          "start": 48.51,
+          "end": 48.68
+        },
+        {
+          "text": "think",
+          "start": 48.68,
+          "end": 48.839999999999996
+        },
+        {
+          "text": "you",
+          "start": 48.84,
+          "end": 48.970000000000006
+        },
+        {
+          "text": "and",
+          "start": 48.97,
+          "end": 49.24
+        },
+        {
+          "text": "I",
+          "start": 49.24,
+          "end": 49.370000000000005
+        },
+        {
+          "text": "was",
+          "start": 49.37,
+          "end": 49.47
+        },
+        {
+          "text": "just",
+          "start": 49.47,
+          "end": 49.64
+        },
+        {
+          "text": "a",
+          "start": 49.64,
+          "end": 49.68
+        },
+        {
+          "text": "very",
+          "start": 49.69,
+          "end": 50.01
+        },
+        {
+          "text": "cute",
+          "start": 50.01,
+          "end": 50.37
+        },
+        {
+          "text": "animal.",
+          "start": 50.37,
+          "end": 50.8
+        },
+        {
+          "text": "I",
+          "start": 51.04,
+          "end": 51.16
+        },
+        {
+          "text": "won't",
+          "start": 51.17,
+          "end": 51.410000000000004
+        },
+        {
+          "text": "think",
+          "start": 51.41,
+          "end": 51.599999999999994
+        },
+        {
+          "text": "about",
+          "start": 51.6,
+          "end": 51.83
+        },
+        {
+          "text": "where",
+          "start": 51.83,
+          "end": 51.98
+        },
+        {
+          "text": "she's",
+          "start": 51.98,
+          "end": 52.23
+        },
+        {
+          "text": "from",
+          "start": 52.23,
+          "end": 52.669999999999995
+        }
+      ],
+      "speaker": 3
+    },
+    {
+      "words": [
+        {
+          "text": "China's",
+          "start": 53.9,
+          "end": 54.33
+        },
+        {
+          "text": "goes",
+          "start": 54.36,
+          "end": 54.62
+        },
+        {
+          "text": "in",
+          "start": 54.62,
+          "end": 54.8
+        },
+        {
+          "text": "giving",
+          "start": 54.8,
+          "end": 55.08
+        },
+        {
+          "text": "Taiwan.",
+          "start": 55.11,
+          "end": 55.56
+        },
+        {
+          "text": "Pandas",
+          "start": 55.56,
+          "end": 56.010000000000005
+        },
+        {
+          "text": "are",
+          "start": 56.01,
+          "end": 56.11
+        },
+        {
+          "text": "clear",
+          "start": 56.11,
+          "end": 56.589999999999996
+        },
+        {
+          "text": "he",
+          "start": 57,
+          "end": 57.17
+        },
+        {
+          "text": "named",
+          "start": 57.18,
+          "end": 57.54
+        },
+        {
+          "text": "his",
+          "start": 57.96,
+          "end": 58.12
+        },
+        {
+          "text": "parents",
+          "start": 58.15,
+          "end": 58.62
+        },
+        {
+          "text": "twenty",
+          "start": 58.86,
+          "end": 59.25
+        },
+        {
+          "text": "one",
+          "start": 59.27,
+          "end": 59.470000000000006
+        },
+        {
+          "text": "in",
+          "start": 59.5,
+          "end": 59.65
+        },
+        {
+          "text": "January,",
+          "start": 59.71,
+          "end": 60.15
+        },
+        {
+          "text": "which",
+          "start": 60.47,
+          "end": 60.72
+        },
+        {
+          "text": "together",
+          "start": 60.72,
+          "end": 61.1
+        },
+        {
+          "text": "mean",
+          "start": 61.1,
+          "end": 61.46
+        },
+        {
+          "text": "reunion",
+          "start": 61.65,
+          "end": 62.29
+        },
+        {
+          "text": "to",
+          "start": 63.45,
+          "end": 63.71
+        },
+        {
+          "text": "China.",
+          "start": 64.53,
+          "end": 64.82000000000001
+        },
+        {
+          "text": "His",
+          "start": 64.84,
+          "end": 65.18
+        },
+        {
+          "text": "time,",
+          "start": 65.19,
+          "end": 65.48
+        },
+        {
+          "text": "one",
+          "start": 65.53,
+          "end": 65.73
+        },
+        {
+          "text": "province",
+          "start": 65.93,
+          "end": 66.5
+        },
+        {
+          "text": "has",
+          "start": 66.87,
+          "end": 67.10000000000001
+        },
+        {
+          "text": "hundreds",
+          "start": 67.1,
+          "end": 67.55
+        },
+        {
+          "text": "of",
+          "start": 67.55,
+          "end": 67.64
+        },
+        {
+          "text": "missus",
+          "start": 67.64,
+          "end": 67.99
+        },
+        {
+          "text": "target",
+          "start": 68.01,
+          "end": 68.42
+        },
+        {
+          "text": "at",
+          "start": 68.5,
+          "end": 68.6
+        },
+        {
+          "text": "the",
+          "start": 68.61,
+          "end": 68.78
+        },
+        {
+          "text": "island",
+          "start": 68.78,
+          "end": 69.17
+        },
+        {
+          "text": "to",
+          "start": 69.41,
+          "end": 69.58
+        },
+        {
+          "text": "reinforce",
+          "start": 69.58,
+          "end": 70.14999999999999
+        },
+        {
+          "text": "his",
+          "start": 70.15,
+          "end": 70.30000000000001
+        },
+        {
+          "text": "claim",
+          "start": 70.3,
+          "end": 70.78
+        }
+      ],
+      "speaker": 1
+    },
+    {
+      "words": [
+        {
+          "text": "some",
+          "start": 71.42,
+          "end": 71.8
+        },
+        {
+          "text": "say",
+          "start": 71.8,
+          "end": 72.00999999999999
+        },
+        {
+          "text": "pandas",
+          "start": 72.01,
+          "end": 72.5
+        },
+        {
+          "text": "have",
+          "start": 72.5,
+          "end": 72.64
+        },
+        {
+          "text": "helped",
+          "start": 72.64,
+          "end": 72.95
+        },
+        {
+          "text": "Beijing's",
+          "start": 72.95,
+          "end": 73.42
+        },
+        {
+          "text": "image.",
+          "start": 73.42,
+          "end": 73.97
+        }
+      ],
+      "speaker": 1
+    },
+    {
+      "words": [
+        {
+          "text": "That's",
+          "start": 74.47,
+          "end": 74.9
+        },
+        {
+          "text": "it.",
+          "start": 74.94,
+          "end": 75.09
+        },
+        {
+          "text": "Hammer's",
+          "start": 75.11,
+          "end": 75.78
+        },
+        {
+          "text": "some",
+          "start": 75.81,
+          "end": 76.04
+        },
+        {
+          "text": "woman",
+          "start": 76.04,
+          "end": 76.32000000000001
+        },
+        {
+          "text": "that",
+          "start": 76.32,
+          "end": 76.52
+        },
+        {
+          "text": "they",
+          "start": 76.54,
+          "end": 76.65
+        },
+        {
+          "text": "gave",
+          "start": 76.66,
+          "end": 76.97
+        },
+        {
+          "text": "these",
+          "start": 76.97,
+          "end": 77.16
+        },
+        {
+          "text": "pandas",
+          "start": 77.17,
+          "end": 77.52
+        },
+        {
+          "text": "to",
+          "start": 77.52,
+          "end": 77.74
+        },
+        {
+          "text": "us",
+          "start": 77.74,
+          "end": 77.94
+        },
+        {
+          "text": "is",
+          "start": 77.97,
+          "end": 78.1
+        },
+        {
+          "text": "a",
+          "start": 78.1,
+          "end": 78.16
+        },
+        {
+          "text": "positive",
+          "start": 78.16,
+          "end": 78.64
+        },
+        {
+          "text": "development",
+          "start": 78.64,
+          "end": 79.19
+        },
+        {
+          "text": "in",
+          "start": 79.19,
+          "end": 79.27
+        },
+        {
+          "text": "relations",
+          "start": 79.27,
+          "end": 79.78
+        },
+        {
+          "text": "between",
+          "start": 79.78,
+          "end": 80.09
+        },
+        {
+          "text": "the",
+          "start": 80.09,
+          "end": 80.17
+        },
+        {
+          "text": "two",
+          "start": 80.17,
+          "end": 80.38
+        },
+        {
+          "text": "sides,",
+          "start": 80.38,
+          "end": 80.85
+        },
+        {
+          "text": "but",
+          "start": 81.07,
+          "end": 81.22999999999999
+        },
+        {
+          "text": "it's",
+          "start": 81.23,
+          "end": 81.38000000000001
+        },
+        {
+          "text": "not",
+          "start": 81.38,
+          "end": 81.61999999999999
+        },
+        {
+          "text": "really",
+          "start": 81.62,
+          "end": 82
+        },
+        {
+          "text": "related",
+          "start": 82,
+          "end": 82.38
+        },
+        {
+          "text": "to",
+          "start": 82.38,
+          "end": 82.46
+        },
+        {
+          "text": "politics",
+          "start": 82.46,
+          "end": 83.11
+        },
+        {
+          "text": "in",
+          "start": 83.34,
+          "end": 83.52000000000001
+        },
+        {
+          "text": "these",
+          "start": 83.52,
+          "end": 83.78
+        },
+        {
+          "text": "few",
+          "start": 83.78,
+          "end": 83.96000000000001
+        },
+        {
+          "text": "years.",
+          "start": 83.96,
+          "end": 84.32
+        },
+        {
+          "text": "Though",
+          "start": 84.32,
+          "end": 84.61999999999999
+        },
+        {
+          "text": "many",
+          "start": 84.64,
+          "end": 84.99
+        },
+        {
+          "text": "Taiwanese",
+          "start": 84.99,
+          "end": 85.58999999999999
+        },
+        {
+          "text": "people,",
+          "start": 85.59,
+          "end": 86.02000000000001
+        },
+        {
+          "text": "especially",
+          "start": 86.22,
+          "end": 86.8
+        },
+        {
+          "text": "the",
+          "start": 86.8,
+          "end": 86.89
+        },
+        {
+          "text": "younger",
+          "start": 86.89,
+          "end": 87.21
+        },
+        {
+          "text": "generation",
+          "start": 87.21,
+          "end": 87.77
+        },
+        {
+          "text": "don't",
+          "start": 87.77,
+          "end": 88.02
+        },
+        {
+          "text": "feel",
+          "start": 88.02,
+          "end": 88.22999999999999
+        },
+        {
+          "text": "so",
+          "start": 88.23,
+          "end": 88.38000000000001
+        },
+        {
+          "text": "strongly",
+          "start": 88.38,
+          "end": 88.97999999999999
+        },
+        {
+          "text": "about",
+          "start": 88.98,
+          "end": 89.27000000000001
+        },
+        {
+          "text": "independence",
+          "start": 89.27,
+          "end": 89.97999999999999
+        },
+        {
+          "text": "or",
+          "start": 89.98,
+          "end": 90.09
+        },
+        {
+          "text": "unification.",
+          "start": 90.09,
+          "end": 90.93
+        }
+      ],
+      "speaker": 3
+    },
+    {
+      "words": [
+        {
+          "text": "Unlike",
+          "start": 92.41,
+          "end": 92.77
+        },
+        {
+          "text": "other",
+          "start": 92.8,
+          "end": 93.03999999999999
+        },
+        {
+          "text": "pandas",
+          "start": 93.04,
+          "end": 93.49000000000001
+        },
+        {
+          "text": "born",
+          "start": 93.49,
+          "end": 93.74
+        },
+        {
+          "text": "outside",
+          "start": 93.77,
+          "end": 94.16
+        },
+        {
+          "text": "of",
+          "start": 94.19,
+          "end": 94.28
+        },
+        {
+          "text": "mainland",
+          "start": 94.28,
+          "end": 94.62
+        },
+        {
+          "text": "China.",
+          "start": 94.63,
+          "end": 95.03999999999999
+        }
+      ],
+      "speaker": 1
+    },
+    {
+      "words": [
+        {
+          "text": "You",
+          "start": 95.37,
+          "end": 95.58
+        },
+        {
+          "text": "won't",
+          "start": 95.86,
+          "end": 96.16
+        },
+        {
+          "text": "have",
+          "start": 96.2,
+          "end": 96.37
+        },
+        {
+          "text": "to",
+          "start": 96.37,
+          "end": 96.46000000000001
+        },
+        {
+          "text": "be",
+          "start": 96.46,
+          "end": 96.61
+        },
+        {
+          "text": "returned",
+          "start": 96.61,
+          "end": 97.05
+        },
+        {
+          "text": "to",
+          "start": 97.05,
+          "end": 97.17
+        },
+        {
+          "text": "China",
+          "start": 97.17,
+          "end": 97.67
+        },
+        {
+          "text": "because",
+          "start": 97.95,
+          "end": 98.23
+        },
+        {
+          "text": "her",
+          "start": 98.23,
+          "end": 98.35000000000001
+        },
+        {
+          "text": "parents",
+          "start": 98.35,
+          "end": 98.80999999999999
+        },
+        {
+          "text": "were",
+          "start": 98.81,
+          "end": 99.03
+        },
+        {
+          "text": "Cliff.",
+          "start": 99.06,
+          "end": 99.38
+        },
+        {
+          "text": "Not",
+          "start": 99.61,
+          "end": 99.82
+        },
+        {
+          "text": "along",
+          "start": 99.83,
+          "end": 100.36
+        }
+      ],
+      "speaker": 1
+    },
+    {
+      "words": [
+        {
+          "text": "than",
+          "start": 101.53,
+          "end": 101.8
+        },
+        {
+          "text": "one",
+          "start": 101.82,
+          "end": 102.02999999999999
+        },
+        {
+          "text": "million",
+          "start": 102.03,
+          "end": 102.41
+        },
+        {
+          "text": "Taiwanese",
+          "start": 102.41,
+          "end": 103.08
+        },
+        {
+          "text": "are",
+          "start": 103.28,
+          "end": 103.37
+        },
+        {
+          "text": "expected",
+          "start": 103.38,
+          "end": 103.83
+        },
+        {
+          "text": "to",
+          "start": 103.83,
+          "end": 103.92999999999999
+        },
+        {
+          "text": "see",
+          "start": 103.93,
+          "end": 104.21000000000001
+        },
+        {
+          "text": "her",
+          "start": 104.21,
+          "end": 104.35
+        },
+        {
+          "text": "in",
+          "start": 104.35,
+          "end": 104.58999999999999
+        },
+        {
+          "text": "just",
+          "start": 104.59,
+          "end": 104.91
+        },
+        {
+          "text": "the",
+          "start": 104.91,
+          "end": 104.97999999999999
+        },
+        {
+          "text": "first",
+          "start": 104.98,
+          "end": 105.38000000000001
+        },
+        {
+          "text": "three",
+          "start": 105.38,
+          "end": 105.58999999999999
+        },
+        {
+          "text": "months",
+          "start": 105.59,
+          "end": 105.97
+        }
+      ],
+      "speaker": 1
+    },
+    {
+      "words": [
+        {
+          "text": "at",
+          "start": 106.44,
+          "end": 106.61
+        },
+        {
+          "text": "this",
+          "start": 106.61,
+          "end": 106.87
+        },
+        {
+          "text": "rate",
+          "start": 106.87,
+          "end": 107.14
+        },
+        {
+          "text": "the",
+          "start": 107.34,
+          "end": 107.43
+        },
+        {
+          "text": "tender",
+          "start": 107.49,
+          "end": 107.92
+        },
+        {
+          "text": "is",
+          "start": 107.93,
+          "end": 108.14
+        },
+        {
+          "text": "expected",
+          "start": 108.14,
+          "end": 108.56
+        },
+        {
+          "text": "to",
+          "start": 108.56,
+          "end": 108.67
+        },
+        {
+          "text": "do",
+          "start": 108.67,
+          "end": 108.87
+        },
+        {
+          "text": "what",
+          "start": 108.87,
+          "end": 109.09
+        },
+        {
+          "text": "Beijing,",
+          "start": 109.09,
+          "end": 109.61
+        },
+        {
+          "text": "hasn't",
+          "start": 109.61,
+          "end": 109.91
+        },
+        {
+          "text": "been",
+          "start": 109.93,
+          "end": 110.08000000000001
+        },
+        {
+          "text": "able",
+          "start": 110.08,
+          "end": 110.3
+        },
+        {
+          "text": "to",
+          "start": 110.3,
+          "end": 110.64
+        }
+      ],
+      "speaker": 1
+    },
+    {
+      "words": [
+        {
+          "text": "many",
+          "start": 111.28,
+          "end": 111.59
+        },
+        {
+          "text": "Taiwanese",
+          "start": 111.6,
+          "end": 112.22999999999999
+        },
+        {
+          "text": "warm",
+          "start": 112.48,
+          "end": 113.02000000000001
+        },
+        {
+          "text": "and",
+          "start": 113.03,
+          "end": 113.19
+        },
+        {
+          "text": "cuddly",
+          "start": 113.19,
+          "end": 113.64
+        },
+        {
+          "text": "feeling.",
+          "start": 113.64,
+          "end": 114.22
+        },
+        {
+          "text": "Cindy",
+          "start": 114.6,
+          "end": 115.08
+        },
+        {
+          "text": "Sue",
+          "start": 115.08,
+          "end": 115.56
+        },
+        {
+          "text": "b.",
+          "start": 115.6,
+          "end": 115.71
+        },
+        {
+          "text": "b.",
+          "start": 115.71,
+          "end": 115.83999999999999
+        },
+        {
+          "text": "c.",
+          "start": 115.84,
+          "end": 116.01
+        },
+        {
+          "text": "News",
+          "start": 116.01,
+          "end": 116.43
+        },
+        {
+          "text": "Taipei.",
+          "start": 116.66,
+          "end": 117.24
+        }
+      ],
+      "speaker": 4
+    }
+  ]
+}

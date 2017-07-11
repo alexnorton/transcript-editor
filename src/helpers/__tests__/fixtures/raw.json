@@ -1,0 +1,5832 @@
+{
+  "entityMap": {
+    "0": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 1.39,
+        "end": 1.7799999999999998
+      }
+    },
+    "1": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "2": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 1.9,
+        "end": 2.44
+      }
+    },
+    "3": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 2.44,
+        "end": 2.54
+      }
+    },
+    "4": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 2.54,
+        "end": 2.96
+      }
+    },
+    "5": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 2.96,
+        "end": 3.52
+      }
+    },
+    "6": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 3.78,
+        "end": 3.9099999999999997
+      }
+    },
+    "7": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 3.93,
+        "end": 4.2700000000000005
+      }
+    },
+    "8": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 4.27,
+        "end": 4.4799999999999995
+      }
+    },
+    "9": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 4.48,
+        "end": 4.62
+      }
+    },
+    "10": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 4.63,
+        "end": 4.96
+      }
+    },
+    "11": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 4.96,
+        "end": 5.29
+      }
+    },
+    "12": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 5.47,
+        "end": 5.6899999999999995
+      }
+    },
+    "13": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 5.69,
+        "end": 5.8100000000000005
+      }
+    },
+    "14": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 5.81,
+        "end": 5.85
+      }
+    },
+    "15": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 5.85,
+        "end": 6.25
+      }
+    },
+    "16": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 6.25,
+        "end": 6.8100000000000005
+      }
+    },
+    "17": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 6.81,
+        "end": 6.92
+      }
+    },
+    "18": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 6.93,
+        "end": 7.4799999999999995
+      }
+    },
+    "19": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 7.74,
+        "end": 8.01
+      }
+    },
+    "20": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 8.01,
+        "end": 8.25
+      }
+    },
+    "21": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 8.25,
+        "end": 8.37
+      }
+    },
+    "22": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 8.37,
+        "end": 8.53
+      }
+    },
+    "23": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 8.53,
+        "end": 8.78
+      }
+    },
+    "24": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 8.78,
+        "end": 8.889999999999999
+      }
+    },
+    "25": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 8.89,
+        "end": 9.41
+      }
+    },
+    "26": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 11.62,
+        "end": 12.219999999999999
+      }
+    },
+    "27": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "28": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 12.22,
+        "end": 12.430000000000001
+      }
+    },
+    "29": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 12.48,
+        "end": 12.74
+      }
+    },
+    "30": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 12.82,
+        "end": 13.280000000000001
+      }
+    },
+    "31": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 13.28,
+        "end": 13.389999999999999
+      }
+    },
+    "32": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 13.41,
+        "end": 13.99
+      }
+    },
+    "33": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 14.24,
+        "end": 14.44
+      }
+    },
+    "34": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 14.44,
+        "end": 14.99
+      }
+    },
+    "35": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 15.14,
+        "end": 15.34
+      }
+    },
+    "36": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 15.34,
+        "end": 15.5
+      }
+    },
+    "37": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 15.5,
+        "end": 15.69
+      }
+    },
+    "38": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 15.69,
+        "end": 15.79
+      }
+    },
+    "39": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 15.79,
+        "end": 15.86
+      }
+    },
+    "40": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 15.86,
+        "end": 16.16
+      }
+    },
+    "41": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 16.16,
+        "end": 16.28
+      }
+    },
+    "42": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 16.28,
+        "end": 16.34
+      }
+    },
+    "43": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 16.34,
+        "end": 16.72
+      }
+    },
+    "44": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 16.72,
+        "end": 17.049999999999997
+      }
+    },
+    "45": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 17.19,
+        "end": 17.290000000000003
+      }
+    },
+    "46": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 17.37,
+        "end": 17.470000000000002
+      }
+    },
+    "47": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 17.47,
+        "end": 17.919999999999998
+      }
+    },
+    "48": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 17.92,
+        "end": 18.35
+      }
+    },
+    "49": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 19.39,
+        "end": 19.93
+      }
+    },
+    "50": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "51": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 19.93,
+        "end": 19.99
+      }
+    },
+    "52": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 19.99,
+        "end": 20.22
+      }
+    },
+    "53": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 20.22,
+        "end": 20.33
+      }
+    },
+    "54": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 20.33,
+        "end": 20.459999999999997
+      }
+    },
+    "55": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 20.46,
+        "end": 20.76
+      }
+    },
+    "56": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 20.76,
+        "end": 20.85
+      }
+    },
+    "57": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 20.85,
+        "end": 21.16
+      }
+    },
+    "58": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 21.21,
+        "end": 21.54
+      }
+    },
+    "59": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 21.54,
+        "end": 21.75
+      }
+    },
+    "60": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 21.75,
+        "end": 22.15
+      }
+    },
+    "61": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 22.33,
+        "end": 22.459999999999997
+      }
+    },
+    "62": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 22.46,
+        "end": 22.61
+      }
+    },
+    "63": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 22.61,
+        "end": 22.66
+      }
+    },
+    "64": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 22.66,
+        "end": 23.05
+      }
+    },
+    "65": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 23.05,
+        "end": 23.13
+      }
+    },
+    "66": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 23.13,
+        "end": 23.209999999999997
+      }
+    },
+    "67": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 23.21,
+        "end": 23.51
+      }
+    },
+    "68": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 23.54,
+        "end": 23.88
+      }
+    },
+    "69": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 23.89,
+        "end": 24.18
+      }
+    },
+    "70": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 24.19,
+        "end": 24.5
+      }
+    },
+    "71": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 24.93,
+        "end": 25.12
+      }
+    },
+    "72": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "73": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 25.12,
+        "end": 25.41
+      }
+    },
+    "74": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 25.41,
+        "end": 25.57
+      }
+    },
+    "75": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 25.58,
+        "end": 26.02
+      }
+    },
+    "76": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 26.02,
+        "end": 26.34
+      }
+    },
+    "77": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 26.44,
+        "end": 27.150000000000002
+      }
+    },
+    "78": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 27.33,
+        "end": 27.509999999999998
+      }
+    },
+    "79": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 27.53,
+        "end": 27.8
+      }
+    },
+    "80": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 27.8,
+        "end": 28.220000000000002
+      }
+    },
+    "81": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 28.22,
+        "end": 28.5
+      }
+    },
+    "82": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 28.5,
+        "end": 28.82
+      }
+    },
+    "83": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 28.82,
+        "end": 29.12
+      }
+    },
+    "84": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 29.32,
+        "end": 29.46
+      }
+    },
+    "85": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 29.47,
+        "end": 29.669999999999998
+      }
+    },
+    "86": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 29.67,
+        "end": 30.060000000000002
+      }
+    },
+    "87": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 30.1,
+        "end": 30.53
+      }
+    },
+    "88": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 30.53,
+        "end": 30.86
+      }
+    },
+    "89": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 30.86,
+        "end": 31.24
+      }
+    },
+    "90": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 31.24,
+        "end": 31.689999999999998
+      }
+    },
+    "91": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 32.13,
+        "end": 32.980000000000004
+      }
+    },
+    "92": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 33.45,
+        "end": 33.85
+      }
+    },
+    "93": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 33.85,
+        "end": 34.15
+      }
+    },
+    "94": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 34.32,
+        "end": 34.9
+      }
+    },
+    "95": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 34.89,
+        "end": 35.01
+      }
+    },
+    "96": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 35.01,
+        "end": 35.089999999999996
+      }
+    },
+    "97": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 35.09,
+        "end": 35.6
+      }
+    },
+    "98": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 35.62,
+        "end": 36.22
+      }
+    },
+    "99": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 36.43,
+        "end": 36.61
+      }
+    },
+    "100": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 36.62,
+        "end": 36.98
+      }
+    },
+    "101": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 37.17,
+        "end": 37.43
+      }
+    },
+    "102": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 37.45,
+        "end": 37.800000000000004
+      }
+    },
+    "103": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 37.83,
+        "end": 38.089999999999996
+      }
+    },
+    "104": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 38.09,
+        "end": 38.31
+      }
+    },
+    "105": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 38.31,
+        "end": 38.620000000000005
+      }
+    },
+    "106": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 38.62,
+        "end": 38.769999999999996
+      }
+    },
+    "107": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 38.77,
+        "end": 39.46
+      }
+    },
+    "108": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 40.12,
+        "end": 40.72
+      }
+    },
+    "109": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "110": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 40.72,
+        "end": 40.86
+      }
+    },
+    "111": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 40.86,
+        "end": 41.1
+      }
+    },
+    "112": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 41.13,
+        "end": 41.410000000000004
+      }
+    },
+    "113": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 41.41,
+        "end": 41.769999999999996
+      }
+    },
+    "114": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 41.78,
+        "end": 41.97
+      }
+    },
+    "115": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 41.96,
+        "end": 42.19
+      }
+    },
+    "116": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 42.22,
+        "end": 42.6
+      }
+    },
+    "117": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 42.6,
+        "end": 42.7
+      }
+    },
+    "118": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 42.7,
+        "end": 42.81
+      }
+    },
+    "119": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 42.81,
+        "end": 43.21
+      }
+    },
+    "120": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 43.21,
+        "end": 43.29
+      }
+    },
+    "121": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 43.29,
+        "end": 43.519999999999996
+      }
+    },
+    "122": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 43.52,
+        "end": 43.650000000000006
+      }
+    },
+    "123": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 43.71,
+        "end": 44.21
+      }
+    },
+    "124": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 44.29,
+        "end": 44.4
+      }
+    },
+    "125": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 44.4,
+        "end": 44.61
+      }
+    },
+    "126": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 44.61,
+        "end": 44.68
+      }
+    },
+    "127": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 44.68,
+        "end": 44.8
+      }
+    },
+    "128": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 44.8,
+        "end": 44.87
+      }
+    },
+    "129": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 44.87,
+        "end": 45.39
+      }
+    },
+    "130": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 45.39,
+        "end": 45.54
+      }
+    },
+    "131": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 45.54,
+        "end": 45.69
+      }
+    },
+    "132": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 45.69,
+        "end": 45.86
+      }
+    },
+    "133": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 45.86,
+        "end": 46.339999999999996
+      }
+    },
+    "134": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 46.62,
+        "end": 46.89
+      }
+    },
+    "135": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 46.89,
+        "end": 46.97
+      }
+    },
+    "136": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 46.97,
+        "end": 47.22
+      }
+    },
+    "137": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 47.22,
+        "end": 47.37
+      }
+    },
+    "138": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 47.37,
+        "end": 47.519999999999996
+      }
+    },
+    "139": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 47.52,
+        "end": 47.67
+      }
+    },
+    "140": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 47.67,
+        "end": 47.83
+      }
+    },
+    "141": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 47.83,
+        "end": 48.23
+      }
+    },
+    "142": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 48.51,
+        "end": 48.68
+      }
+    },
+    "143": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 48.68,
+        "end": 48.839999999999996
+      }
+    },
+    "144": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 48.84,
+        "end": 48.970000000000006
+      }
+    },
+    "145": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 48.97,
+        "end": 49.24
+      }
+    },
+    "146": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 49.24,
+        "end": 49.370000000000005
+      }
+    },
+    "147": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 49.37,
+        "end": 49.47
+      }
+    },
+    "148": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 49.47,
+        "end": 49.64
+      }
+    },
+    "149": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 49.64,
+        "end": 49.68
+      }
+    },
+    "150": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 49.69,
+        "end": 50.01
+      }
+    },
+    "151": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 50.01,
+        "end": 50.37
+      }
+    },
+    "152": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 50.37,
+        "end": 50.8
+      }
+    },
+    "153": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 51.04,
+        "end": 51.16
+      }
+    },
+    "154": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 51.17,
+        "end": 51.410000000000004
+      }
+    },
+    "155": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 51.41,
+        "end": 51.599999999999994
+      }
+    },
+    "156": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 51.6,
+        "end": 51.83
+      }
+    },
+    "157": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 51.83,
+        "end": 51.98
+      }
+    },
+    "158": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 51.98,
+        "end": 52.23
+      }
+    },
+    "159": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 52.23,
+        "end": 52.669999999999995
+      }
+    },
+    "160": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 53.9,
+        "end": 54.33
+      }
+    },
+    "161": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "162": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 54.36,
+        "end": 54.62
+      }
+    },
+    "163": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 54.62,
+        "end": 54.8
+      }
+    },
+    "164": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 54.8,
+        "end": 55.08
+      }
+    },
+    "165": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 55.11,
+        "end": 55.56
+      }
+    },
+    "166": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 55.56,
+        "end": 56.010000000000005
+      }
+    },
+    "167": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 56.01,
+        "end": 56.11
+      }
+    },
+    "168": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 56.11,
+        "end": 56.589999999999996
+      }
+    },
+    "169": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 57,
+        "end": 57.17
+      }
+    },
+    "170": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 57.18,
+        "end": 57.54
+      }
+    },
+    "171": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 57.96,
+        "end": 58.12
+      }
+    },
+    "172": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 58.15,
+        "end": 58.62
+      }
+    },
+    "173": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 58.86,
+        "end": 59.25
+      }
+    },
+    "174": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 59.27,
+        "end": 59.470000000000006
+      }
+    },
+    "175": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 59.5,
+        "end": 59.65
+      }
+    },
+    "176": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 59.71,
+        "end": 60.15
+      }
+    },
+    "177": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 60.47,
+        "end": 60.72
+      }
+    },
+    "178": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 60.72,
+        "end": 61.1
+      }
+    },
+    "179": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 61.1,
+        "end": 61.46
+      }
+    },
+    "180": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 61.65,
+        "end": 62.29
+      }
+    },
+    "181": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 63.45,
+        "end": 63.71
+      }
+    },
+    "182": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 64.53,
+        "end": 64.82000000000001
+      }
+    },
+    "183": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 64.84,
+        "end": 65.18
+      }
+    },
+    "184": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 65.19,
+        "end": 65.48
+      }
+    },
+    "185": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 65.53,
+        "end": 65.73
+      }
+    },
+    "186": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 65.93,
+        "end": 66.5
+      }
+    },
+    "187": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 66.87,
+        "end": 67.10000000000001
+      }
+    },
+    "188": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 67.1,
+        "end": 67.55
+      }
+    },
+    "189": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 67.55,
+        "end": 67.64
+      }
+    },
+    "190": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 67.64,
+        "end": 67.99
+      }
+    },
+    "191": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 68.01,
+        "end": 68.42
+      }
+    },
+    "192": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 68.5,
+        "end": 68.6
+      }
+    },
+    "193": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 68.61,
+        "end": 68.78
+      }
+    },
+    "194": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 68.78,
+        "end": 69.17
+      }
+    },
+    "195": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 69.41,
+        "end": 69.58
+      }
+    },
+    "196": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 69.58,
+        "end": 70.14999999999999
+      }
+    },
+    "197": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 70.15,
+        "end": 70.30000000000001
+      }
+    },
+    "198": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 70.3,
+        "end": 70.78
+      }
+    },
+    "199": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 71.42,
+        "end": 71.8
+      }
+    },
+    "200": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "201": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 71.8,
+        "end": 72.00999999999999
+      }
+    },
+    "202": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 72.01,
+        "end": 72.5
+      }
+    },
+    "203": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 72.5,
+        "end": 72.64
+      }
+    },
+    "204": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 72.64,
+        "end": 72.95
+      }
+    },
+    "205": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 72.95,
+        "end": 73.42
+      }
+    },
+    "206": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 73.42,
+        "end": 73.97
+      }
+    },
+    "207": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 74.47,
+        "end": 74.9
+      }
+    },
+    "208": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "209": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 74.94,
+        "end": 75.09
+      }
+    },
+    "210": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 75.11,
+        "end": 75.78
+      }
+    },
+    "211": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 75.81,
+        "end": 76.04
+      }
+    },
+    "212": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 76.04,
+        "end": 76.32000000000001
+      }
+    },
+    "213": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 76.32,
+        "end": 76.52
+      }
+    },
+    "214": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 76.54,
+        "end": 76.65
+      }
+    },
+    "215": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 76.66,
+        "end": 76.97
+      }
+    },
+    "216": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 76.97,
+        "end": 77.16
+      }
+    },
+    "217": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 77.17,
+        "end": 77.52
+      }
+    },
+    "218": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 77.52,
+        "end": 77.74
+      }
+    },
+    "219": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 77.74,
+        "end": 77.94
+      }
+    },
+    "220": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 77.97,
+        "end": 78.1
+      }
+    },
+    "221": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 78.1,
+        "end": 78.16
+      }
+    },
+    "222": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 78.16,
+        "end": 78.64
+      }
+    },
+    "223": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 78.64,
+        "end": 79.19
+      }
+    },
+    "224": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 79.19,
+        "end": 79.27
+      }
+    },
+    "225": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 79.27,
+        "end": 79.78
+      }
+    },
+    "226": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 79.78,
+        "end": 80.09
+      }
+    },
+    "227": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 80.09,
+        "end": 80.17
+      }
+    },
+    "228": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 80.17,
+        "end": 80.38
+      }
+    },
+    "229": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 80.38,
+        "end": 80.85
+      }
+    },
+    "230": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 81.07,
+        "end": 81.22999999999999
+      }
+    },
+    "231": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 81.23,
+        "end": 81.38000000000001
+      }
+    },
+    "232": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 81.38,
+        "end": 81.61999999999999
+      }
+    },
+    "233": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 81.62,
+        "end": 82
+      }
+    },
+    "234": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 82,
+        "end": 82.38
+      }
+    },
+    "235": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 82.38,
+        "end": 82.46
+      }
+    },
+    "236": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 82.46,
+        "end": 83.11
+      }
+    },
+    "237": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 83.34,
+        "end": 83.52000000000001
+      }
+    },
+    "238": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 83.52,
+        "end": 83.78
+      }
+    },
+    "239": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 83.78,
+        "end": 83.96000000000001
+      }
+    },
+    "240": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 83.96,
+        "end": 84.32
+      }
+    },
+    "241": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 84.32,
+        "end": 84.61999999999999
+      }
+    },
+    "242": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 84.64,
+        "end": 84.99
+      }
+    },
+    "243": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 84.99,
+        "end": 85.58999999999999
+      }
+    },
+    "244": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 85.59,
+        "end": 86.02000000000001
+      }
+    },
+    "245": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 86.22,
+        "end": 86.8
+      }
+    },
+    "246": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 86.8,
+        "end": 86.89
+      }
+    },
+    "247": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 86.89,
+        "end": 87.21
+      }
+    },
+    "248": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 87.21,
+        "end": 87.77
+      }
+    },
+    "249": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 87.77,
+        "end": 88.02
+      }
+    },
+    "250": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 88.02,
+        "end": 88.22999999999999
+      }
+    },
+    "251": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 88.23,
+        "end": 88.38000000000001
+      }
+    },
+    "252": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 88.38,
+        "end": 88.97999999999999
+      }
+    },
+    "253": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 88.98,
+        "end": 89.27000000000001
+      }
+    },
+    "254": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 89.27,
+        "end": 89.97999999999999
+      }
+    },
+    "255": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 89.98,
+        "end": 90.09
+      }
+    },
+    "256": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 90.09,
+        "end": 90.93
+      }
+    },
+    "257": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 92.41,
+        "end": 92.77
+      }
+    },
+    "258": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "259": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 92.8,
+        "end": 93.03999999999999
+      }
+    },
+    "260": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 93.04,
+        "end": 93.49000000000001
+      }
+    },
+    "261": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 93.49,
+        "end": 93.74
+      }
+    },
+    "262": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 93.77,
+        "end": 94.16
+      }
+    },
+    "263": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 94.19,
+        "end": 94.28
+      }
+    },
+    "264": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 94.28,
+        "end": 94.62
+      }
+    },
+    "265": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 94.63,
+        "end": 95.03999999999999
+      }
+    },
+    "266": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 95.37,
+        "end": 95.58
+      }
+    },
+    "267": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "268": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 95.86,
+        "end": 96.16
+      }
+    },
+    "269": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 96.2,
+        "end": 96.37
+      }
+    },
+    "270": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 96.37,
+        "end": 96.46000000000001
+      }
+    },
+    "271": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 96.46,
+        "end": 96.61
+      }
+    },
+    "272": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 96.61,
+        "end": 97.05
+      }
+    },
+    "273": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 97.05,
+        "end": 97.17
+      }
+    },
+    "274": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 97.17,
+        "end": 97.67
+      }
+    },
+    "275": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 97.95,
+        "end": 98.23
+      }
+    },
+    "276": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 98.23,
+        "end": 98.35000000000001
+      }
+    },
+    "277": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 98.35,
+        "end": 98.80999999999999
+      }
+    },
+    "278": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 98.81,
+        "end": 99.03
+      }
+    },
+    "279": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 99.06,
+        "end": 99.38
+      }
+    },
+    "280": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 99.61,
+        "end": 99.82
+      }
+    },
+    "281": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 99.83,
+        "end": 100.36
+      }
+    },
+    "282": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 101.53,
+        "end": 101.8
+      }
+    },
+    "283": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "284": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 101.82,
+        "end": 102.02999999999999
+      }
+    },
+    "285": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 102.03,
+        "end": 102.41
+      }
+    },
+    "286": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 102.41,
+        "end": 103.08
+      }
+    },
+    "287": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 103.28,
+        "end": 103.37
+      }
+    },
+    "288": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 103.38,
+        "end": 103.83
+      }
+    },
+    "289": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 103.83,
+        "end": 103.92999999999999
+      }
+    },
+    "290": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 103.93,
+        "end": 104.21000000000001
+      }
+    },
+    "291": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 104.21,
+        "end": 104.35
+      }
+    },
+    "292": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 104.35,
+        "end": 104.58999999999999
+      }
+    },
+    "293": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 104.59,
+        "end": 104.91
+      }
+    },
+    "294": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 104.91,
+        "end": 104.97999999999999
+      }
+    },
+    "295": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 104.98,
+        "end": 105.38000000000001
+      }
+    },
+    "296": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 105.38,
+        "end": 105.58999999999999
+      }
+    },
+    "297": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 105.59,
+        "end": 105.97
+      }
+    },
+    "298": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 106.44,
+        "end": 106.61
+      }
+    },
+    "299": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "300": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 106.61,
+        "end": 106.87
+      }
+    },
+    "301": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 106.87,
+        "end": 107.14
+      }
+    },
+    "302": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 107.34,
+        "end": 107.43
+      }
+    },
+    "303": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 107.49,
+        "end": 107.92
+      }
+    },
+    "304": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 107.93,
+        "end": 108.14
+      }
+    },
+    "305": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 108.14,
+        "end": 108.56
+      }
+    },
+    "306": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 108.56,
+        "end": 108.67
+      }
+    },
+    "307": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 108.67,
+        "end": 108.87
+      }
+    },
+    "308": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 108.87,
+        "end": 109.09
+      }
+    },
+    "309": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 109.09,
+        "end": 109.61
+      }
+    },
+    "310": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 109.61,
+        "end": 109.91
+      }
+    },
+    "311": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 109.93,
+        "end": 110.08000000000001
+      }
+    },
+    "312": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 110.08,
+        "end": 110.3
+      }
+    },
+    "313": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 110.3,
+        "end": 110.64
+      }
+    },
+    "314": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 111.28,
+        "end": 111.59
+      }
+    },
+    "315": {
+      "type": "TRANSCRIPT_SPACE",
+      "mutability": "IMMUTABLE",
+      "data": {}
+    },
+    "316": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 111.6,
+        "end": 112.22999999999999
+      }
+    },
+    "317": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 112.48,
+        "end": 113.02000000000001
+      }
+    },
+    "318": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 113.03,
+        "end": 113.19
+      }
+    },
+    "319": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 113.19,
+        "end": 113.64
+      }
+    },
+    "320": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 113.64,
+        "end": 114.22
+      }
+    },
+    "321": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 114.6,
+        "end": 115.08
+      }
+    },
+    "322": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 115.08,
+        "end": 115.56
+      }
+    },
+    "323": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 115.6,
+        "end": 115.71
+      }
+    },
+    "324": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 115.71,
+        "end": 115.83999999999999
+      }
+    },
+    "325": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 115.84,
+        "end": 116.01
+      }
+    },
+    "326": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 116.01,
+        "end": 116.43
+      }
+    },
+    "327": {
+      "type": "TRANSCRIPT_WORD",
+      "mutability": "MUTABLE",
+      "data": {
+        "start": 116.66,
+        "end": 117.24
+      }
+    }
+  },
+  "blocks": [
+    {
+      "key": "0",
+      "text": "PLAYFUL curious and totally adorable. This six month old panda cub has been a huge sensation in Taiwan. Ever since she was born in July.",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 7,
+          "key": 0
+        },
+        {
+          "offset": 7,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 8,
+          "length": 7,
+          "key": 2
+        },
+        {
+          "offset": 15,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 16,
+          "length": 3,
+          "key": 3
+        },
+        {
+          "offset": 19,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 20,
+          "length": 7,
+          "key": 4
+        },
+        {
+          "offset": 27,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 28,
+          "length": 9,
+          "key": 5
+        },
+        {
+          "offset": 37,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 38,
+          "length": 4,
+          "key": 6
+        },
+        {
+          "offset": 42,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 43,
+          "length": 3,
+          "key": 7
+        },
+        {
+          "offset": 46,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 47,
+          "length": 5,
+          "key": 8
+        },
+        {
+          "offset": 52,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 53,
+          "length": 3,
+          "key": 9
+        },
+        {
+          "offset": 56,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 57,
+          "length": 5,
+          "key": 10
+        },
+        {
+          "offset": 62,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 63,
+          "length": 3,
+          "key": 11
+        },
+        {
+          "offset": 66,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 67,
+          "length": 3,
+          "key": 12
+        },
+        {
+          "offset": 70,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 71,
+          "length": 4,
+          "key": 13
+        },
+        {
+          "offset": 75,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 76,
+          "length": 1,
+          "key": 14
+        },
+        {
+          "offset": 77,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 78,
+          "length": 4,
+          "key": 15
+        },
+        {
+          "offset": 82,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 83,
+          "length": 9,
+          "key": 16
+        },
+        {
+          "offset": 92,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 93,
+          "length": 2,
+          "key": 17
+        },
+        {
+          "offset": 95,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 96,
+          "length": 7,
+          "key": 18
+        },
+        {
+          "offset": 103,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 104,
+          "length": 4,
+          "key": 19
+        },
+        {
+          "offset": 108,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 109,
+          "length": 5,
+          "key": 20
+        },
+        {
+          "offset": 114,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 115,
+          "length": 3,
+          "key": 21
+        },
+        {
+          "offset": 118,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 119,
+          "length": 3,
+          "key": 22
+        },
+        {
+          "offset": 122,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 123,
+          "length": 4,
+          "key": 23
+        },
+        {
+          "offset": 127,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 128,
+          "length": 2,
+          "key": 24
+        },
+        {
+          "offset": 130,
+          "length": 1,
+          "key": 1
+        },
+        {
+          "offset": 131,
+          "length": 5,
+          "key": 25
+        }
+      ],
+      "data": {
+        "speaker": 0
+      }
+    },
+    {
+      "key": "1",
+      "text": "Previously on showing videos and pictures on Monday. She was put on a show for the first time at the Taiping Zoo,",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 10,
+          "key": 26
+        },
+        {
+          "offset": 10,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 11,
+          "length": 2,
+          "key": 28
+        },
+        {
+          "offset": 13,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 14,
+          "length": 7,
+          "key": 29
+        },
+        {
+          "offset": 21,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 22,
+          "length": 6,
+          "key": 30
+        },
+        {
+          "offset": 28,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 29,
+          "length": 3,
+          "key": 31
+        },
+        {
+          "offset": 32,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 33,
+          "length": 8,
+          "key": 32
+        },
+        {
+          "offset": 41,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 42,
+          "length": 2,
+          "key": 33
+        },
+        {
+          "offset": 44,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 45,
+          "length": 7,
+          "key": 34
+        },
+        {
+          "offset": 52,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 53,
+          "length": 3,
+          "key": 35
+        },
+        {
+          "offset": 56,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 57,
+          "length": 3,
+          "key": 36
+        },
+        {
+          "offset": 60,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 61,
+          "length": 3,
+          "key": 37
+        },
+        {
+          "offset": 64,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 65,
+          "length": 2,
+          "key": 38
+        },
+        {
+          "offset": 67,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 68,
+          "length": 1,
+          "key": 39
+        },
+        {
+          "offset": 69,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 70,
+          "length": 4,
+          "key": 40
+        },
+        {
+          "offset": 74,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 75,
+          "length": 3,
+          "key": 41
+        },
+        {
+          "offset": 78,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 79,
+          "length": 3,
+          "key": 42
+        },
+        {
+          "offset": 82,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 83,
+          "length": 5,
+          "key": 43
+        },
+        {
+          "offset": 88,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 89,
+          "length": 4,
+          "key": 44
+        },
+        {
+          "offset": 93,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 94,
+          "length": 2,
+          "key": 45
+        },
+        {
+          "offset": 96,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 97,
+          "length": 3,
+          "key": 46
+        },
+        {
+          "offset": 100,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 101,
+          "length": 7,
+          "key": 47
+        },
+        {
+          "offset": 108,
+          "length": 1,
+          "key": 27
+        },
+        {
+          "offset": 109,
+          "length": 4,
+          "key": 48
+        }
+      ],
+      "data": {
+        "speaker": 1
+      }
+    },
+    {
+      "key": "2",
+      "text": "thousands of people have been lining up since early this morning to get a glimpse of the Pen Club friends died.",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 9,
+          "key": 49
+        },
+        {
+          "offset": 9,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 10,
+          "length": 2,
+          "key": 51
+        },
+        {
+          "offset": 12,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 13,
+          "length": 6,
+          "key": 52
+        },
+        {
+          "offset": 19,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 20,
+          "length": 4,
+          "key": 53
+        },
+        {
+          "offset": 24,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 25,
+          "length": 4,
+          "key": 54
+        },
+        {
+          "offset": 29,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 30,
+          "length": 6,
+          "key": 55
+        },
+        {
+          "offset": 36,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 37,
+          "length": 2,
+          "key": 56
+        },
+        {
+          "offset": 39,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 40,
+          "length": 5,
+          "key": 57
+        },
+        {
+          "offset": 45,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 46,
+          "length": 5,
+          "key": 58
+        },
+        {
+          "offset": 51,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 52,
+          "length": 4,
+          "key": 59
+        },
+        {
+          "offset": 56,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 57,
+          "length": 7,
+          "key": 60
+        },
+        {
+          "offset": 64,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 65,
+          "length": 2,
+          "key": 61
+        },
+        {
+          "offset": 67,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 68,
+          "length": 3,
+          "key": 62
+        },
+        {
+          "offset": 71,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 72,
+          "length": 1,
+          "key": 63
+        },
+        {
+          "offset": 73,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 74,
+          "length": 7,
+          "key": 64
+        },
+        {
+          "offset": 81,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 82,
+          "length": 2,
+          "key": 65
+        },
+        {
+          "offset": 84,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 85,
+          "length": 3,
+          "key": 66
+        },
+        {
+          "offset": 88,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 89,
+          "length": 3,
+          "key": 67
+        },
+        {
+          "offset": 92,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 93,
+          "length": 4,
+          "key": 68
+        },
+        {
+          "offset": 97,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 98,
+          "length": 7,
+          "key": 69
+        },
+        {
+          "offset": 105,
+          "length": 1,
+          "key": 50
+        },
+        {
+          "offset": 106,
+          "length": 5,
+          "key": 70
+        }
+      ],
+      "data": {
+        "speaker": 2
+      }
+    },
+    {
+      "key": "3",
+      "text": "They even though Beijing hopes Hercules will help convince many people here to help. Warmer feelings towards mainland China. Unification. People here. Politics is a lasting undermine, to them, then dies very much. Made in Taiwan.",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 4,
+          "key": 71
+        },
+        {
+          "offset": 4,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 5,
+          "length": 4,
+          "key": 73
+        },
+        {
+          "offset": 9,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 10,
+          "length": 6,
+          "key": 74
+        },
+        {
+          "offset": 16,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 17,
+          "length": 7,
+          "key": 75
+        },
+        {
+          "offset": 24,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 25,
+          "length": 5,
+          "key": 76
+        },
+        {
+          "offset": 30,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 31,
+          "length": 8,
+          "key": 77
+        },
+        {
+          "offset": 39,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 40,
+          "length": 4,
+          "key": 78
+        },
+        {
+          "offset": 44,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 45,
+          "length": 4,
+          "key": 79
+        },
+        {
+          "offset": 49,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 50,
+          "length": 8,
+          "key": 80
+        },
+        {
+          "offset": 58,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 59,
+          "length": 4,
+          "key": 81
+        },
+        {
+          "offset": 63,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 64,
+          "length": 6,
+          "key": 82
+        },
+        {
+          "offset": 70,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 71,
+          "length": 4,
+          "key": 83
+        },
+        {
+          "offset": 75,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 76,
+          "length": 2,
+          "key": 84
+        },
+        {
+          "offset": 78,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 79,
+          "length": 5,
+          "key": 85
+        },
+        {
+          "offset": 84,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 85,
+          "length": 6,
+          "key": 86
+        },
+        {
+          "offset": 91,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 92,
+          "length": 8,
+          "key": 87
+        },
+        {
+          "offset": 100,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 101,
+          "length": 7,
+          "key": 88
+        },
+        {
+          "offset": 108,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 109,
+          "length": 8,
+          "key": 89
+        },
+        {
+          "offset": 117,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 118,
+          "length": 6,
+          "key": 90
+        },
+        {
+          "offset": 124,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 125,
+          "length": 12,
+          "key": 91
+        },
+        {
+          "offset": 137,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 138,
+          "length": 6,
+          "key": 92
+        },
+        {
+          "offset": 144,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 145,
+          "length": 5,
+          "key": 93
+        },
+        {
+          "offset": 150,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 151,
+          "length": 8,
+          "key": 94
+        },
+        {
+          "offset": 159,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 160,
+          "length": 2,
+          "key": 95
+        },
+        {
+          "offset": 162,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 163,
+          "length": 1,
+          "key": 96
+        },
+        {
+          "offset": 164,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 165,
+          "length": 7,
+          "key": 97
+        },
+        {
+          "offset": 172,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 173,
+          "length": 10,
+          "key": 98
+        },
+        {
+          "offset": 183,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 184,
+          "length": 2,
+          "key": 99
+        },
+        {
+          "offset": 186,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 187,
+          "length": 5,
+          "key": 100
+        },
+        {
+          "offset": 192,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 193,
+          "length": 4,
+          "key": 101
+        },
+        {
+          "offset": 197,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 198,
+          "length": 4,
+          "key": 102
+        },
+        {
+          "offset": 202,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 203,
+          "length": 4,
+          "key": 103
+        },
+        {
+          "offset": 207,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 208,
+          "length": 5,
+          "key": 104
+        },
+        {
+          "offset": 213,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 214,
+          "length": 4,
+          "key": 105
+        },
+        {
+          "offset": 218,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 219,
+          "length": 2,
+          "key": 106
+        },
+        {
+          "offset": 221,
+          "length": 1,
+          "key": 72
+        },
+        {
+          "offset": 222,
+          "length": 7,
+          "key": 107
+        }
+      ],
+      "data": {
+        "speaker": 2
+      }
+    },
+    {
+      "key": "4",
+      "text": "He has years. Hand endured a hold first. When her parents were given to Thailand. I thought it was a strategy to win us over now. I don't think that way any more. I think you and I was just a very cute animal. I won't think about where she's from",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 2,
+          "key": 108
+        },
+        {
+          "offset": 2,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 3,
+          "length": 3,
+          "key": 110
+        },
+        {
+          "offset": 6,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 7,
+          "length": 6,
+          "key": 111
+        },
+        {
+          "offset": 13,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 14,
+          "length": 4,
+          "key": 112
+        },
+        {
+          "offset": 18,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 19,
+          "length": 7,
+          "key": 113
+        },
+        {
+          "offset": 26,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 27,
+          "length": 1,
+          "key": 114
+        },
+        {
+          "offset": 28,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 29,
+          "length": 4,
+          "key": 115
+        },
+        {
+          "offset": 33,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 34,
+          "length": 6,
+          "key": 116
+        },
+        {
+          "offset": 40,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 41,
+          "length": 4,
+          "key": 117
+        },
+        {
+          "offset": 45,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 46,
+          "length": 3,
+          "key": 118
+        },
+        {
+          "offset": 49,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 50,
+          "length": 7,
+          "key": 119
+        },
+        {
+          "offset": 57,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 58,
+          "length": 4,
+          "key": 120
+        },
+        {
+          "offset": 62,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 63,
+          "length": 5,
+          "key": 121
+        },
+        {
+          "offset": 68,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 69,
+          "length": 2,
+          "key": 122
+        },
+        {
+          "offset": 71,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 72,
+          "length": 9,
+          "key": 123
+        },
+        {
+          "offset": 81,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 82,
+          "length": 1,
+          "key": 124
+        },
+        {
+          "offset": 83,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 84,
+          "length": 7,
+          "key": 125
+        },
+        {
+          "offset": 91,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 92,
+          "length": 2,
+          "key": 126
+        },
+        {
+          "offset": 94,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 95,
+          "length": 3,
+          "key": 127
+        },
+        {
+          "offset": 98,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 99,
+          "length": 1,
+          "key": 128
+        },
+        {
+          "offset": 100,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 101,
+          "length": 8,
+          "key": 129
+        },
+        {
+          "offset": 109,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 110,
+          "length": 2,
+          "key": 130
+        },
+        {
+          "offset": 112,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 113,
+          "length": 3,
+          "key": 131
+        },
+        {
+          "offset": 116,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 117,
+          "length": 2,
+          "key": 132
+        },
+        {
+          "offset": 119,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 120,
+          "length": 4,
+          "key": 133
+        },
+        {
+          "offset": 124,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 125,
+          "length": 4,
+          "key": 134
+        },
+        {
+          "offset": 129,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 130,
+          "length": 1,
+          "key": 135
+        },
+        {
+          "offset": 131,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 132,
+          "length": 5,
+          "key": 136
+        },
+        {
+          "offset": 137,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 138,
+          "length": 5,
+          "key": 137
+        },
+        {
+          "offset": 143,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 144,
+          "length": 4,
+          "key": 138
+        },
+        {
+          "offset": 148,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 149,
+          "length": 3,
+          "key": 139
+        },
+        {
+          "offset": 152,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 153,
+          "length": 3,
+          "key": 140
+        },
+        {
+          "offset": 156,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 157,
+          "length": 5,
+          "key": 141
+        },
+        {
+          "offset": 162,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 163,
+          "length": 1,
+          "key": 142
+        },
+        {
+          "offset": 164,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 165,
+          "length": 5,
+          "key": 143
+        },
+        {
+          "offset": 170,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 171,
+          "length": 3,
+          "key": 144
+        },
+        {
+          "offset": 174,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 175,
+          "length": 3,
+          "key": 145
+        },
+        {
+          "offset": 178,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 179,
+          "length": 1,
+          "key": 146
+        },
+        {
+          "offset": 180,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 181,
+          "length": 3,
+          "key": 147
+        },
+        {
+          "offset": 184,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 185,
+          "length": 4,
+          "key": 148
+        },
+        {
+          "offset": 189,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 190,
+          "length": 1,
+          "key": 149
+        },
+        {
+          "offset": 191,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 192,
+          "length": 4,
+          "key": 150
+        },
+        {
+          "offset": 196,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 197,
+          "length": 4,
+          "key": 151
+        },
+        {
+          "offset": 201,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 202,
+          "length": 7,
+          "key": 152
+        },
+        {
+          "offset": 209,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 210,
+          "length": 1,
+          "key": 153
+        },
+        {
+          "offset": 211,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 212,
+          "length": 5,
+          "key": 154
+        },
+        {
+          "offset": 217,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 218,
+          "length": 5,
+          "key": 155
+        },
+        {
+          "offset": 223,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 224,
+          "length": 5,
+          "key": 156
+        },
+        {
+          "offset": 229,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 230,
+          "length": 5,
+          "key": 157
+        },
+        {
+          "offset": 235,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 236,
+          "length": 5,
+          "key": 158
+        },
+        {
+          "offset": 241,
+          "length": 1,
+          "key": 109
+        },
+        {
+          "offset": 242,
+          "length": 4,
+          "key": 159
+        }
+      ],
+      "data": {
+        "speaker": 3
+      }
+    },
+    {
+      "key": "5",
+      "text": "China's goes in giving Taiwan. Pandas are clear he named his parents twenty one in January, which together mean reunion to China. His time, one province has hundreds of missus target at the island to reinforce his claim",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 7,
+          "key": 160
+        },
+        {
+          "offset": 7,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 8,
+          "length": 4,
+          "key": 162
+        },
+        {
+          "offset": 12,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 13,
+          "length": 2,
+          "key": 163
+        },
+        {
+          "offset": 15,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 16,
+          "length": 6,
+          "key": 164
+        },
+        {
+          "offset": 22,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 23,
+          "length": 7,
+          "key": 165
+        },
+        {
+          "offset": 30,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 31,
+          "length": 6,
+          "key": 166
+        },
+        {
+          "offset": 37,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 38,
+          "length": 3,
+          "key": 167
+        },
+        {
+          "offset": 41,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 42,
+          "length": 5,
+          "key": 168
+        },
+        {
+          "offset": 47,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 48,
+          "length": 2,
+          "key": 169
+        },
+        {
+          "offset": 50,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 51,
+          "length": 5,
+          "key": 170
+        },
+        {
+          "offset": 56,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 57,
+          "length": 3,
+          "key": 171
+        },
+        {
+          "offset": 60,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 61,
+          "length": 7,
+          "key": 172
+        },
+        {
+          "offset": 68,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 69,
+          "length": 6,
+          "key": 173
+        },
+        {
+          "offset": 75,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 76,
+          "length": 3,
+          "key": 174
+        },
+        {
+          "offset": 79,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 80,
+          "length": 2,
+          "key": 175
+        },
+        {
+          "offset": 82,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 83,
+          "length": 8,
+          "key": 176
+        },
+        {
+          "offset": 91,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 92,
+          "length": 5,
+          "key": 177
+        },
+        {
+          "offset": 97,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 98,
+          "length": 8,
+          "key": 178
+        },
+        {
+          "offset": 106,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 107,
+          "length": 4,
+          "key": 179
+        },
+        {
+          "offset": 111,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 112,
+          "length": 7,
+          "key": 180
+        },
+        {
+          "offset": 119,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 120,
+          "length": 2,
+          "key": 181
+        },
+        {
+          "offset": 122,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 123,
+          "length": 6,
+          "key": 182
+        },
+        {
+          "offset": 129,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 130,
+          "length": 3,
+          "key": 183
+        },
+        {
+          "offset": 133,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 134,
+          "length": 5,
+          "key": 184
+        },
+        {
+          "offset": 139,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 140,
+          "length": 3,
+          "key": 185
+        },
+        {
+          "offset": 143,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 144,
+          "length": 8,
+          "key": 186
+        },
+        {
+          "offset": 152,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 153,
+          "length": 3,
+          "key": 187
+        },
+        {
+          "offset": 156,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 157,
+          "length": 8,
+          "key": 188
+        },
+        {
+          "offset": 165,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 166,
+          "length": 2,
+          "key": 189
+        },
+        {
+          "offset": 168,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 169,
+          "length": 6,
+          "key": 190
+        },
+        {
+          "offset": 175,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 176,
+          "length": 6,
+          "key": 191
+        },
+        {
+          "offset": 182,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 183,
+          "length": 2,
+          "key": 192
+        },
+        {
+          "offset": 185,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 186,
+          "length": 3,
+          "key": 193
+        },
+        {
+          "offset": 189,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 190,
+          "length": 6,
+          "key": 194
+        },
+        {
+          "offset": 196,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 197,
+          "length": 2,
+          "key": 195
+        },
+        {
+          "offset": 199,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 200,
+          "length": 9,
+          "key": 196
+        },
+        {
+          "offset": 209,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 210,
+          "length": 3,
+          "key": 197
+        },
+        {
+          "offset": 213,
+          "length": 1,
+          "key": 161
+        },
+        {
+          "offset": 214,
+          "length": 5,
+          "key": 198
+        }
+      ],
+      "data": {
+        "speaker": 1
+      }
+    },
+    {
+      "key": "6",
+      "text": "some say pandas have helped Beijing's image.",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 4,
+          "key": 199
+        },
+        {
+          "offset": 4,
+          "length": 1,
+          "key": 200
+        },
+        {
+          "offset": 5,
+          "length": 3,
+          "key": 201
+        },
+        {
+          "offset": 8,
+          "length": 1,
+          "key": 200
+        },
+        {
+          "offset": 9,
+          "length": 6,
+          "key": 202
+        },
+        {
+          "offset": 15,
+          "length": 1,
+          "key": 200
+        },
+        {
+          "offset": 16,
+          "length": 4,
+          "key": 203
+        },
+        {
+          "offset": 20,
+          "length": 1,
+          "key": 200
+        },
+        {
+          "offset": 21,
+          "length": 6,
+          "key": 204
+        },
+        {
+          "offset": 27,
+          "length": 1,
+          "key": 200
+        },
+        {
+          "offset": 28,
+          "length": 9,
+          "key": 205
+        },
+        {
+          "offset": 37,
+          "length": 1,
+          "key": 200
+        },
+        {
+          "offset": 38,
+          "length": 6,
+          "key": 206
+        }
+      ],
+      "data": {
+        "speaker": 1
+      }
+    },
+    {
+      "key": "7",
+      "text": "That's it. Hammer's some woman that they gave these pandas to us is a positive development in relations between the two sides, but it's not really related to politics in these few years. Though many Taiwanese people, especially the younger generation don't feel so strongly about independence or unification.",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 6,
+          "key": 207
+        },
+        {
+          "offset": 6,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 7,
+          "length": 3,
+          "key": 209
+        },
+        {
+          "offset": 10,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 11,
+          "length": 8,
+          "key": 210
+        },
+        {
+          "offset": 19,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 20,
+          "length": 4,
+          "key": 211
+        },
+        {
+          "offset": 24,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 25,
+          "length": 5,
+          "key": 212
+        },
+        {
+          "offset": 30,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 31,
+          "length": 4,
+          "key": 213
+        },
+        {
+          "offset": 35,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 36,
+          "length": 4,
+          "key": 214
+        },
+        {
+          "offset": 40,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 41,
+          "length": 4,
+          "key": 215
+        },
+        {
+          "offset": 45,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 46,
+          "length": 5,
+          "key": 216
+        },
+        {
+          "offset": 51,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 52,
+          "length": 6,
+          "key": 217
+        },
+        {
+          "offset": 58,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 59,
+          "length": 2,
+          "key": 218
+        },
+        {
+          "offset": 61,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 62,
+          "length": 2,
+          "key": 219
+        },
+        {
+          "offset": 64,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 65,
+          "length": 2,
+          "key": 220
+        },
+        {
+          "offset": 67,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 68,
+          "length": 1,
+          "key": 221
+        },
+        {
+          "offset": 69,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 70,
+          "length": 8,
+          "key": 222
+        },
+        {
+          "offset": 78,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 79,
+          "length": 11,
+          "key": 223
+        },
+        {
+          "offset": 90,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 91,
+          "length": 2,
+          "key": 224
+        },
+        {
+          "offset": 93,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 94,
+          "length": 9,
+          "key": 225
+        },
+        {
+          "offset": 103,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 104,
+          "length": 7,
+          "key": 226
+        },
+        {
+          "offset": 111,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 112,
+          "length": 3,
+          "key": 227
+        },
+        {
+          "offset": 115,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 116,
+          "length": 3,
+          "key": 228
+        },
+        {
+          "offset": 119,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 120,
+          "length": 6,
+          "key": 229
+        },
+        {
+          "offset": 126,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 127,
+          "length": 3,
+          "key": 230
+        },
+        {
+          "offset": 130,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 131,
+          "length": 4,
+          "key": 231
+        },
+        {
+          "offset": 135,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 136,
+          "length": 3,
+          "key": 232
+        },
+        {
+          "offset": 139,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 140,
+          "length": 6,
+          "key": 233
+        },
+        {
+          "offset": 146,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 147,
+          "length": 7,
+          "key": 234
+        },
+        {
+          "offset": 154,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 155,
+          "length": 2,
+          "key": 235
+        },
+        {
+          "offset": 157,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 158,
+          "length": 8,
+          "key": 236
+        },
+        {
+          "offset": 166,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 167,
+          "length": 2,
+          "key": 237
+        },
+        {
+          "offset": 169,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 170,
+          "length": 5,
+          "key": 238
+        },
+        {
+          "offset": 175,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 176,
+          "length": 3,
+          "key": 239
+        },
+        {
+          "offset": 179,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 180,
+          "length": 6,
+          "key": 240
+        },
+        {
+          "offset": 186,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 187,
+          "length": 6,
+          "key": 241
+        },
+        {
+          "offset": 193,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 194,
+          "length": 4,
+          "key": 242
+        },
+        {
+          "offset": 198,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 199,
+          "length": 9,
+          "key": 243
+        },
+        {
+          "offset": 208,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 209,
+          "length": 7,
+          "key": 244
+        },
+        {
+          "offset": 216,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 217,
+          "length": 10,
+          "key": 245
+        },
+        {
+          "offset": 227,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 228,
+          "length": 3,
+          "key": 246
+        },
+        {
+          "offset": 231,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 232,
+          "length": 7,
+          "key": 247
+        },
+        {
+          "offset": 239,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 240,
+          "length": 10,
+          "key": 248
+        },
+        {
+          "offset": 250,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 251,
+          "length": 5,
+          "key": 249
+        },
+        {
+          "offset": 256,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 257,
+          "length": 4,
+          "key": 250
+        },
+        {
+          "offset": 261,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 262,
+          "length": 2,
+          "key": 251
+        },
+        {
+          "offset": 264,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 265,
+          "length": 8,
+          "key": 252
+        },
+        {
+          "offset": 273,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 274,
+          "length": 5,
+          "key": 253
+        },
+        {
+          "offset": 279,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 280,
+          "length": 12,
+          "key": 254
+        },
+        {
+          "offset": 292,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 293,
+          "length": 2,
+          "key": 255
+        },
+        {
+          "offset": 295,
+          "length": 1,
+          "key": 208
+        },
+        {
+          "offset": 296,
+          "length": 12,
+          "key": 256
+        }
+      ],
+      "data": {
+        "speaker": 3
+      }
+    },
+    {
+      "key": "8",
+      "text": "Unlike other pandas born outside of mainland China.",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 6,
+          "key": 257
+        },
+        {
+          "offset": 6,
+          "length": 1,
+          "key": 258
+        },
+        {
+          "offset": 7,
+          "length": 5,
+          "key": 259
+        },
+        {
+          "offset": 12,
+          "length": 1,
+          "key": 258
+        },
+        {
+          "offset": 13,
+          "length": 6,
+          "key": 260
+        },
+        {
+          "offset": 19,
+          "length": 1,
+          "key": 258
+        },
+        {
+          "offset": 20,
+          "length": 4,
+          "key": 261
+        },
+        {
+          "offset": 24,
+          "length": 1,
+          "key": 258
+        },
+        {
+          "offset": 25,
+          "length": 7,
+          "key": 262
+        },
+        {
+          "offset": 32,
+          "length": 1,
+          "key": 258
+        },
+        {
+          "offset": 33,
+          "length": 2,
+          "key": 263
+        },
+        {
+          "offset": 35,
+          "length": 1,
+          "key": 258
+        },
+        {
+          "offset": 36,
+          "length": 8,
+          "key": 264
+        },
+        {
+          "offset": 44,
+          "length": 1,
+          "key": 258
+        },
+        {
+          "offset": 45,
+          "length": 6,
+          "key": 265
+        }
+      ],
+      "data": {
+        "speaker": 1
+      }
+    },
+    {
+      "key": "9",
+      "text": "You won't have to be returned to China because her parents were Cliff. Not along",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 3,
+          "key": 266
+        },
+        {
+          "offset": 3,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 4,
+          "length": 5,
+          "key": 268
+        },
+        {
+          "offset": 9,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 10,
+          "length": 4,
+          "key": 269
+        },
+        {
+          "offset": 14,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 15,
+          "length": 2,
+          "key": 270
+        },
+        {
+          "offset": 17,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 18,
+          "length": 2,
+          "key": 271
+        },
+        {
+          "offset": 20,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 21,
+          "length": 8,
+          "key": 272
+        },
+        {
+          "offset": 29,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 30,
+          "length": 2,
+          "key": 273
+        },
+        {
+          "offset": 32,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 33,
+          "length": 5,
+          "key": 274
+        },
+        {
+          "offset": 38,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 39,
+          "length": 7,
+          "key": 275
+        },
+        {
+          "offset": 46,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 47,
+          "length": 3,
+          "key": 276
+        },
+        {
+          "offset": 50,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 51,
+          "length": 7,
+          "key": 277
+        },
+        {
+          "offset": 58,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 59,
+          "length": 4,
+          "key": 278
+        },
+        {
+          "offset": 63,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 64,
+          "length": 6,
+          "key": 279
+        },
+        {
+          "offset": 70,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 71,
+          "length": 3,
+          "key": 280
+        },
+        {
+          "offset": 74,
+          "length": 1,
+          "key": 267
+        },
+        {
+          "offset": 75,
+          "length": 5,
+          "key": 281
+        }
+      ],
+      "data": {
+        "speaker": 1
+      }
+    },
+    {
+      "key": "10",
+      "text": "than one million Taiwanese are expected to see her in just the first three months",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 4,
+          "key": 282
+        },
+        {
+          "offset": 4,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 5,
+          "length": 3,
+          "key": 284
+        },
+        {
+          "offset": 8,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 9,
+          "length": 7,
+          "key": 285
+        },
+        {
+          "offset": 16,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 17,
+          "length": 9,
+          "key": 286
+        },
+        {
+          "offset": 26,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 27,
+          "length": 3,
+          "key": 287
+        },
+        {
+          "offset": 30,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 31,
+          "length": 8,
+          "key": 288
+        },
+        {
+          "offset": 39,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 40,
+          "length": 2,
+          "key": 289
+        },
+        {
+          "offset": 42,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 43,
+          "length": 3,
+          "key": 290
+        },
+        {
+          "offset": 46,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 47,
+          "length": 3,
+          "key": 291
+        },
+        {
+          "offset": 50,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 51,
+          "length": 2,
+          "key": 292
+        },
+        {
+          "offset": 53,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 54,
+          "length": 4,
+          "key": 293
+        },
+        {
+          "offset": 58,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 59,
+          "length": 3,
+          "key": 294
+        },
+        {
+          "offset": 62,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 63,
+          "length": 5,
+          "key": 295
+        },
+        {
+          "offset": 68,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 69,
+          "length": 5,
+          "key": 296
+        },
+        {
+          "offset": 74,
+          "length": 1,
+          "key": 283
+        },
+        {
+          "offset": 75,
+          "length": 6,
+          "key": 297
+        }
+      ],
+      "data": {
+        "speaker": 1
+      }
+    },
+    {
+      "key": "11",
+      "text": "at this rate the tender is expected to do what Beijing, hasn't been able to",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 2,
+          "key": 298
+        },
+        {
+          "offset": 2,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 3,
+          "length": 4,
+          "key": 300
+        },
+        {
+          "offset": 7,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 8,
+          "length": 4,
+          "key": 301
+        },
+        {
+          "offset": 12,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 13,
+          "length": 3,
+          "key": 302
+        },
+        {
+          "offset": 16,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 17,
+          "length": 6,
+          "key": 303
+        },
+        {
+          "offset": 23,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 24,
+          "length": 2,
+          "key": 304
+        },
+        {
+          "offset": 26,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 27,
+          "length": 8,
+          "key": 305
+        },
+        {
+          "offset": 35,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 36,
+          "length": 2,
+          "key": 306
+        },
+        {
+          "offset": 38,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 39,
+          "length": 2,
+          "key": 307
+        },
+        {
+          "offset": 41,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 42,
+          "length": 4,
+          "key": 308
+        },
+        {
+          "offset": 46,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 47,
+          "length": 8,
+          "key": 309
+        },
+        {
+          "offset": 55,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 56,
+          "length": 6,
+          "key": 310
+        },
+        {
+          "offset": 62,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 63,
+          "length": 4,
+          "key": 311
+        },
+        {
+          "offset": 67,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 68,
+          "length": 4,
+          "key": 312
+        },
+        {
+          "offset": 72,
+          "length": 1,
+          "key": 299
+        },
+        {
+          "offset": 73,
+          "length": 2,
+          "key": 313
+        }
+      ],
+      "data": {
+        "speaker": 1
+      }
+    },
+    {
+      "key": "12",
+      "text": "many Taiwanese warm and cuddly feeling. Cindy Sue b. b. c. News Taipei.",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 4,
+          "key": 314
+        },
+        {
+          "offset": 4,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 5,
+          "length": 9,
+          "key": 316
+        },
+        {
+          "offset": 14,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 15,
+          "length": 4,
+          "key": 317
+        },
+        {
+          "offset": 19,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 20,
+          "length": 3,
+          "key": 318
+        },
+        {
+          "offset": 23,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 24,
+          "length": 6,
+          "key": 319
+        },
+        {
+          "offset": 30,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 31,
+          "length": 8,
+          "key": 320
+        },
+        {
+          "offset": 39,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 40,
+          "length": 5,
+          "key": 321
+        },
+        {
+          "offset": 45,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 46,
+          "length": 3,
+          "key": 322
+        },
+        {
+          "offset": 49,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 50,
+          "length": 2,
+          "key": 323
+        },
+        {
+          "offset": 52,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 53,
+          "length": 2,
+          "key": 324
+        },
+        {
+          "offset": 55,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 56,
+          "length": 2,
+          "key": 325
+        },
+        {
+          "offset": 58,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 59,
+          "length": 4,
+          "key": 326
+        },
+        {
+          "offset": 63,
+          "length": 1,
+          "key": 315
+        },
+        {
+          "offset": 64,
+          "length": 7,
+          "key": 327
+        }
+      ],
+      "data": {
+        "speaker": 4
+      }
+    }
+  ]
+}
