@@ -27,8 +27,7 @@
   },
   "scripts": {
     "prepublish": "babel -d lib --copy-files --ignore '**/__tests__' src/",
-    "test": "jest src/",
-    "coverage": "jest --coverage --collectCoverageFrom='src/**/*.js'"
+    "test": "jest src/"
   },
   "repository": {
     "type": "git",
@@ -48,5 +47,9 @@
       "es2015",
       "react"
     ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": "src/**/*.js"
   }
 }
