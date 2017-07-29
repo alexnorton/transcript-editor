@@ -65,3 +65,7 @@ For a more complex example see the [demo application source code](demo-app/) in 
 | `onSelectionChange`  | function   | Callback to be executed when the selection state has changed. |
 | `onKeyboardEvent`    | function   | Callback to be executed when a keyboard event occurs. |
 | `showSpeakers`       | boolean    | When true, show speaker information column. Defaults to false |
+
+## Author
+
+[**Alex Norton**](https://github.com/alexnorton/) - get in touch [@alxnorton](https://twitter.com/alxnorton)
