@@ -1,5 +1,6 @@
 import React from 'react';
 import { EditorBlock } from 'draft-js';
+import PropTypes from 'prop-types';
 
 const TranscriptEditorBlock = (props) => {
   const speakerSection = props.blockProps.showSpeakers ? (
@@ -27,9 +28,9 @@ const TranscriptEditorBlock = (props) => {
 };
 
 TranscriptEditorBlock.propTypes = {
-  block: React.PropTypes.node,
-  blockProps: React.PropTypes.shape({
-    showSpeakers: React.PropTypes.bool,
+  block: PropTypes.node,
+  blockProps: PropTypes.shape({
+    showSpeakers: PropTypes.bool,
   }),
 };
 

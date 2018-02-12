@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const TranscriptEditorSpace = ({ offsetKey, children }) => (
   <span
@@ -8,8 +9,8 @@ const TranscriptEditorSpace = ({ offsetKey, children }) => (
 );
 
 TranscriptEditorSpace.propTypes = {
-  offsetKey: React.PropTypes.string,
-  children: React.PropTypes.array,
+  offsetKey: PropTypes.string,
+  children: PropTypes.array,
 };
 
 export default TranscriptEditorSpace;

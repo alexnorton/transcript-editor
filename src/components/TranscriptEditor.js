@@ -3,6 +3,7 @@ import { Editor, EditorState, CompositeDecorator, CharacterMetadata, getDefaultK
 import Immutable from 'immutable';
 import debounce from 'lodash.debounce';
 import { Transcript } from 'transcript-model';
+import PropTypes from 'prop-types';
 
 import convertFromTranscript from '../helpers/convertFromTranscript';
 import convertToTranscript from '../helpers/convertToTranscript';
@@ -332,12 +333,12 @@ class TranscriptEditor extends Component {
 }
 
 TranscriptEditor.propTypes = {
-  transcript: React.PropTypes.instanceOf(Transcript),
-  onTranscriptUpdate: React.PropTypes.func,
-  onSelectionChange: React.PropTypes.func,
-  disabled: React.PropTypes.bool,
-  onKeyboardEvent: React.PropTypes.func,
-  showSpeakers: React.PropTypes.bool,
+  transcript: PropTypes.instanceOf(Transcript),
+  onTranscriptUpdate: PropTypes.func,
+  onSelectionChange: PropTypes.func,
+  disabled: PropTypes.bool,
+  onKeyboardEvent: PropTypes.func,
+  showSpeakers: PropTypes.bool,
 };
 
 export default TranscriptEditor;
