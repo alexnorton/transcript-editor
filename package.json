@@ -27,7 +27,7 @@
     "react-dom": "^15.3.2"
   },
   "scripts": {
-    "prepublish": "babel -d lib --copy-files --ignore '**/__tests__' src/",
+    "prepare": "babel -d lib --copy-files --ignore '**/__tests__' src/",
     "test": "jest src/"
   },
   "repository": {
