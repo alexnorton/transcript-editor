@@ -1,6 +1,6 @@
 {
   "name": "transcript-editor",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Editor component for transcripts. Allows correction of errors produced by the speech recognition process while maintaining time-alignment of words.",
   "main": "lib/index.js",
   "dependencies": {
