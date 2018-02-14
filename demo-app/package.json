@@ -12,13 +12,13 @@
     "bootswatch": "^3.3.7",
     "file-saver": "^1.3.2",
     "jss-browserify": "^0.6.0",
-    "react": "^15.6.1",
     "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-overlays": "^0.7.0",
     "react-router": "^2.8.1",
-    "transcript-editor": "file:../",
-    "transcript-model": "^0.4.2",
+    "transcript-editor": "../",
+    "transcript-model": "^0.4.4",
     "whatwg-fetch": "^2.0.3"
   },
   "scripts": {

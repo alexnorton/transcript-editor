@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
 import { AutoAffix } from 'react-overlays';
 import { saveAs } from 'file-saver';
-import TranscriptEditor from 'transcript-editor';
+import TranscriptEditor, { convertFromTranscript, convertToTranscript } from 'transcript-editor';
 import { Transcript } from 'transcript-model';
 
 import 'transcript-editor/lib/css/TranscriptEditor.css';
@@ -20,7 +20,7 @@ class EditorView extends Component {
       currentTime: 0,
     };
     this.onTimeUpdate = this.onTimeUpdate.bind(this);
-    this.onTranscriptUpdate = this.onTranscriptUpdate.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.loadTranscript = this.loadTranscript.bind(this);
     this.handleLoadTranscript = this.handleLoadTranscript.bind(this);
     this.saveTranscript = this.saveTranscript.bind(this);
@@ -32,11 +32,13 @@ class EditorView extends Component {
       .then(response => response.json())
       .then((json) => {
         const transcript = Transcript.fromMediaTagger(json);
+        const { editorState, speakers } = convertFromTranscript(transcript);
+
         this.setState({
-          initialTranscript: transcript,
-          clipName: json.metadata.RETURN.RESULTS.ITEM.CLIPNAME,
+          editorState,
+          speakers,
         });
-        this.transcript = transcript;
+
         this.editor.focus();
       });
   }
@@ -47,7 +49,13 @@ class EditorView extends Component {
 
   onTranscriptUpdate(transcript) {
     this.styleManager.setTranscript(transcript);
-    this.transcript = transcript;
+  }
+
+  handleChange({ editorState, speakers }) {
+    this.setState({
+      editorState,
+      speakers,
+    });
   }
 
   loadTranscript() {
@@ -64,10 +72,12 @@ class EditorView extends Component {
       const transcriptJSONString = event.target.result;
       const transcriptJSON = JSON.parse(transcriptJSONString);
       const transcript = Transcript.fromJSON(transcriptJSON);
+      const { editorState, speakers } = convertFromTranscript(transcript);
+
       this.setState({
-        initialTranscript: transcript,
+        editorState,
+        speakers,
       });
-      this.transcript = transcript;
     };
 
     fileReader.readAsText(file);
@@ -94,8 +104,10 @@ class EditorView extends Component {
   }
 
   saveTranscript() {
+    const transcript = convertToTranscript(this.state.editorState.getCurrentContent(), this.state.speakers);
+
     const blob = new Blob(
-      [JSON.stringify(this.transcript.toJSON(), null, 2)],
+      [JSON.stringify(transcript.toJSON(), null, 2)],
       { type: 'application/json;charset=utf-8' }
     );
     saveAs(blob, 'transcript.json');
@@ -136,8 +148,9 @@ class EditorView extends Component {
           <Col xs={7}>
             <TranscriptEditor
               ref={(editor) => { this.editor = editor; }}
-              transcript={this.state.initialTranscript}
-              onTranscriptUpdate={this.onTranscriptUpdate}
+              editorState={this.state.editorState}
+              speakers={this.state.speakers}
+              onChange={this.handleChange}
               onKeyboardEvent={this.handleKeyboardEvent}
               showSpeakers
             />
