@@ -6,7 +6,6 @@
   "dependencies": {
     "draft-js": "^0.10.5",
     "immutable": "^3.8.2",
-    "lodash.debounce": "^4.0.8",
     "prop-types": "^15.6.0",
     "transcript-model": "^0.4.4",
     "uuid": "^3.0.1"
