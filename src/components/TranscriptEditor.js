@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Editor, EditorState, CharacterMetadata, getDefaultKeyBinding } from 'draft-js';
 import Immutable from 'immutable';
-import { Speaker } from 'transcript-model';
 import PropTypes from 'prop-types';
 
 import updateBlock from '../helpers/updateBlock';
 import TranscriptEditorBlock from './TranscriptEditorBlock';
-import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE }
-  from '../helpers/TranscriptEntities';
+import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE } from '../helpers/TranscriptEntities';
 
 class TranscriptEditor extends Component {
   constructor(props) {
@@ -58,43 +56,47 @@ class TranscriptEditor extends Component {
           // Have we merged blocks?
           if (blockMap.size < previousEditorState.getCurrentContent().getBlockMap().size) {
             // Do we have two adjacent words?
-            if (contentState.getEntity(
-                newContentBlock.characterList.get(startOffset).entity
-              ).type === TRANSCRIPT_WORD
-             && contentState.getEntity(
-                newContentBlock.characterList.get(startOffset - 1).entity
-              ).type === TRANSCRIPT_WORD) {
+            if (
+              contentState.getEntity(newContentBlock.characterList.get(startOffset).entity).type ===
+                TRANSCRIPT_WORD &&
+              contentState.getEntity(newContentBlock.characterList.get(startOffset - 1).entity)
+                .type === TRANSCRIPT_WORD
+            ) {
               // Add a space
               newContentBlock = newContentBlock
-                .set('characterList', newContentBlock.characterList.insert(startOffset,
-                  CharacterMetadata.applyEntity(
-                    CharacterMetadata.create(),
-                    (() => {
-                      contentState = contentState.createEntity(
-                        'TRANSCRIPT_SPACE', 'IMMUTABLE', null
-                      );
-                      return contentState.getLastCreatedEntityKey();
-                    })()
-                  )
-                ))
-                .set('text', `${newContentBlock.text.slice(0, startOffset)}`
-                           + ` ${newContentBlock.text.slice(startOffset)}`
+                .set(
+                  'characterList',
+                  newContentBlock.characterList.insert(
+                    startOffset,
+                    CharacterMetadata.applyEntity(
+                      CharacterMetadata.create(),
+                      (() => {
+                        contentState = contentState.createEntity(
+                          'TRANSCRIPT_SPACE',
+                          'IMMUTABLE',
+                          null,
+                        );
+                        return contentState.getLastCreatedEntityKey();
+                      })(),
+                    ),
+                  ),
+                )
+                .set(
+                  'text',
+                  `${newContentBlock.text.slice(0, startOffset)}` +
+                    ` ${newContentBlock.text.slice(startOffset)}`,
                 );
             }
           }
 
           // Update the entities
-          newContentBlock = newContentBlock.merge(
-            updateBlock(
-              newContentBlock,
-              contentState
-            )
-          );
+          newContentBlock = newContentBlock.merge(updateBlock(newContentBlock, contentState));
 
           // Have we created a leading space? (e.g. when splitting a block)
-          if (contentState.getEntity(
-              newContentBlock.characterList.first().entity
-            ).type === TRANSCRIPT_SPACE) {
+          if (
+            contentState.getEntity(newContentBlock.characterList.first().entity).type ===
+            TRANSCRIPT_SPACE
+          ) {
             // Remove the leading space
             newContentBlock = newContentBlock
               .set('characterList', newContentBlock.characterList.shift())
@@ -104,16 +106,15 @@ class TranscriptEditor extends Component {
           // Is this block missing data? (e.g. it's been split)
           if (newContentBlock.data.isEmpty()) {
             // Copy the previous block's data
-            newContentBlock = newContentBlock.set(
-              'data', _newBlockMap.last().data
-            );
+            newContentBlock = newContentBlock.set('data', _newBlockMap.last().data);
           }
-        // Otherwise is this the block previously being edited? (e.g. that was split)
+          // Otherwise is this the block previously being edited? (e.g. that was split)
         } else if (blockKey === previousStartKey) {
           // Have we created a trailing space?
-          if (contentState.getEntity(
-              newContentBlock.characterList.last().entity
-            ).type === TRANSCRIPT_SPACE) {
+          if (
+            contentState.getEntity(newContentBlock.characterList.last().entity).type ===
+            TRANSCRIPT_SPACE
+          ) {
             // Remove the trailing space
             newContentBlock = newContentBlock
               .set('characterList', newContentBlock.characterList.pop())
@@ -127,9 +128,7 @@ class TranscriptEditor extends Component {
       contentState = contentState.set('blockMap', newBlockMap);
 
       this.props.onChange({
-        editorState: EditorState.push(
-          previousEditorState, contentState, lastChangeType
-        ),
+        editorState: EditorState.push(previousEditorState, contentState, lastChangeType),
         speakers: this.props.speakers,
       });
       return;
@@ -143,7 +142,7 @@ class TranscriptEditor extends Component {
   handleBeforeInput(chars) {
     // Don't allow inserting additional spaces between words
     if (chars === ' ') {
-      const editorState = this.props.editorState;
+      const { editorState } = this.props;
       const contentState = editorState.getCurrentContent();
       const selectionState = editorState.getSelection();
       const startKey = selectionState.getStartKey();
@@ -171,7 +170,7 @@ class TranscriptEditor extends Component {
     return {
       component: TranscriptEditorBlock,
       props: {
-        speakers: this.props.speakers || new Immutable.List(),
+        speakers: this.props.speakers,
         showSpeakers: this.props.showSpeakers,
       },
     };
@@ -182,21 +181,17 @@ class TranscriptEditor extends Component {
   }
 
   sendSelectionChange(contentState, selectionState) {
-    const startKey = selectionState.isBackward
-      ? selectionState.focusKey : selectionState.anchorKey;
+    const startKey = selectionState.isBackward ? selectionState.focusKey : selectionState.anchorKey;
     const startOffset = selectionState.isBackward
-      ? selectionState.focusOffset : selectionState.anchorOffset;
-    const endKey = selectionState.isBackward
-      ? selectionState.anchorKey : selectionState.focusKey;
+      ? selectionState.focusOffset
+      : selectionState.anchorOffset;
+    const endKey = selectionState.isBackward ? selectionState.anchorKey : selectionState.focusKey;
     const endOffset = selectionState.isBackward
-      ? selectionState.anchorOffset : selectionState.focusOffset;
+      ? selectionState.anchorOffset
+      : selectionState.focusOffset;
 
-    const startEntityKey = contentState
-      .getBlockForKey(startKey)
-      .getEntityAt(startOffset);
-    const endEntityKey = contentState
-      .getBlockForKey(endKey)
-      .getEntityAt(endOffset);
+    const startEntityKey = contentState.getBlockForKey(startKey).getEntityAt(startOffset);
+    const endEntityKey = contentState.getBlockForKey(endKey).getEntityAt(endOffset);
 
     const startEntity = startEntityKey && contentState.getEntity(startEntityKey);
     const endEntity = endEntityKey && contentState.getEntity(endEntityKey);
@@ -214,7 +209,7 @@ class TranscriptEditor extends Component {
   }
 
   handleReturn() {
-    const editorState = this.props.editorState;
+    const { editorState } = this.props;
     const contentState = editorState.getCurrentContent();
     const selectionState = editorState.getSelection();
     const startKey = selectionState.getStartKey();
@@ -222,8 +217,10 @@ class TranscriptEditor extends Component {
     const selectedBlock = editorState.getCurrentContent().getBlockForKey(startKey);
     const entityKeyBefore = selectedBlock.getEntityAt(startOffset - 1);
     const entityKeyAfter = selectedBlock.getEntityAt(startOffset);
-    if ((entityKeyBefore && contentState.getEntity(entityKeyBefore).type === TRANSCRIPT_SPACE)
-      || (entityKeyAfter && contentState.getEntity(entityKeyAfter).type === TRANSCRIPT_SPACE)) {
+    if (
+      (entityKeyBefore && contentState.getEntity(entityKeyBefore).type === TRANSCRIPT_SPACE) ||
+      (entityKeyAfter && contentState.getEntity(entityKeyAfter).type === TRANSCRIPT_SPACE)
+    ) {
       return false;
     }
     return true;
@@ -239,8 +236,10 @@ class TranscriptEditor extends Component {
     return (
       <div className="transcript-editor">
         <Editor
-          ref={(editor) => { this.editor = editor; }}
-          editorState={editorState || EditorState.createEmpty()}
+          ref={(editor) => {
+            this.editor = editor;
+          }}
+          editorState={editorState}
           onChange={this.onChange}
           handleReturn={this.handleReturn}
           handleBeforeInput={this.handleBeforeInput}
@@ -254,13 +253,22 @@ class TranscriptEditor extends Component {
 }
 
 TranscriptEditor.propTypes = {
-  onChange: PropTypes.func,
   editorState: PropTypes.instanceOf(EditorState),
-  speakers: PropTypes.arrayOf(Immutable.List),
+  speakers: PropTypes.instanceOf(Immutable.List),
+  onChange: PropTypes.func.isRequired,
   onSelectionChange: PropTypes.func,
-  disabled: PropTypes.bool,
   onKeyboardEvent: PropTypes.func,
+  disabled: PropTypes.bool,
   showSpeakers: PropTypes.bool,
+};
+
+TranscriptEditor.defaultProps = {
+  editorState: EditorState.createEmpty(),
+  speakers: new Immutable.List(),
+  onSelectionChange: null,
+  onKeyboardEvent: null,
+  disabled: false,
+  showSpeakers: false,
 };
 
 export default TranscriptEditor;

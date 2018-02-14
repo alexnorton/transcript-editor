@@ -23,7 +23,7 @@ const convertToTranscript = (contentState, speakers) => {
           id: entity.data.id,
           text,
         }));
-      }
+      },
     );
 
     return new TranscriptSegment({

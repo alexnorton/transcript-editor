@@ -4,8 +4,7 @@ import { Entity, CharacterMetadata, ContentBlock } from 'draft-js';
 import Immutable from 'immutable';
 
 import updateBlock from '../updateBlock';
-import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER }
-  from '../TranscriptEntities';
+import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE, TRANSCRIPT_PLACEHOLDER } from '../TranscriptEntities';
 
 const createCharacterListFromRanges = (ranges) => {
   const list = [];
@@ -32,9 +31,8 @@ beforeEach(() => {
 
   CharacterMetadata.create = jest.fn(() => ({}));
 
-  CharacterMetadata.applyEntity = jest.fn((character, entity) => (
-    Object.assign({}, character, { entity })
-  ));
+  CharacterMetadata.applyEntity = jest.fn((character, entity) =>
+    Object.assign({}, character, { entity }));
 
   ContentBlock.prototype.getEntityAt = function getEntityAt(index) {
     return this.characterList.get(index).entity;
@@ -110,9 +108,7 @@ describe('updateBlock()', () => {
 
     const { characterList, text } = updateBlock(contentBlock, previousContentBlock);
 
-    expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
-      { from: 0, to: 9, value: { entity: '1' } },
-    ]).toJS());
+    expect(characterList.toJS()).toEqual(createCharacterListFromRanges([{ from: 0, to: 9, value: { entity: '1' } }]).toJS());
 
     expect(text).toBe('HelloAlex!');
 
@@ -261,9 +257,10 @@ describe('updateBlock()', () => {
       { from: 8, to: 11, value: { entity: '5' } },
     ]).toJS());
 
-    expect(Entity.create).toBeCalledWith(TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE',
-      { start: 0.6, end: 0.9 }
-    );
+    expect(Entity.create).toBeCalledWith(TRANSCRIPT_PLACEHOLDER, 'IMMUTABLE', {
+      start: 0.6,
+      end: 0.9,
+    });
 
     expect(text).toBe('Hello \u200C Alex');
   });
@@ -334,9 +331,7 @@ describe('updateBlock()', () => {
 
     const { characterList, text } = updateBlock(contentBlock, previousContentBlock);
 
-    expect(Entity.create).toBeCalledWith(TRANSCRIPT_WORD, 'IMMUTABLE',
-      { start: 0.6, end: 0.9 }
-    );
+    expect(Entity.create).toBeCalledWith(TRANSCRIPT_WORD, 'IMMUTABLE', { start: 0.6, end: 0.9 });
 
     expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
       { from: 0, to: 4, value: { entity: '1' } },

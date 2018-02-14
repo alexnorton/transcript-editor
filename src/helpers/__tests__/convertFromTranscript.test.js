@@ -20,12 +20,8 @@ describe('convertFromTranscript()', () => {
       delete raw.entityMap[key].data.id;
     });
 
-    expect(raw).toEqual(
-      JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'raw.json')))
-    );
+    expect(raw).toEqual(JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'raw.json'))));
 
-    expect(speakers.toJSON()).toEqual(
-      JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'speakers.json')))
-    );
+    expect(speakers.toJSON()).toEqual(JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'speakers.json'))));
   });
 });

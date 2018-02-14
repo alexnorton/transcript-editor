@@ -28,10 +28,10 @@ const TranscriptEditorBlock = (props) => {
 };
 
 TranscriptEditorBlock.propTypes = {
-  block: PropTypes.node,
+  block: PropTypes.node.isRequired,
   blockProps: PropTypes.shape({
     showSpeakers: PropTypes.bool,
-  }),
+  }).isRequired,
 };
 
 export default TranscriptEditorBlock;

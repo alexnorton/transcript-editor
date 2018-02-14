@@ -14,8 +14,6 @@ describe('convertToTranscript()', () => {
 
     const transcript = convertToTranscript(contentState, speakers);
 
-    expect(transcript.toJSON()).toEqual(
-      JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'transcript.json')))
-    );
+    expect(transcript.toJSON()).toEqual(JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'transcript.json'))));
   });
 });
