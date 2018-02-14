@@ -1,6 +1,7 @@
-import { ContentBlock, CharacterMetadata, ContentState, SelectionState, BlockMapBuilder } from 'draft-js';
+import { EditorState, ContentBlock, CharacterMetadata, ContentState, SelectionState, BlockMapBuilder } from 'draft-js';
 import Immutable from 'immutable';
 import uuidV4 from 'uuid/v4';
+import decorator from './decorator';
 
 const convertFromTranscript = (transcript) => {
   let contentState = new ContentState();
@@ -59,7 +60,12 @@ const convertFromTranscript = (transcript) => {
 
   const speakers = transcript.get('speakers');
 
-  return { contentState, speakers };
+  const editorState = EditorState.createWithContent(
+    contentState,
+    decorator,
+  );
+
+  return { editorState, speakers };
 };
 
 export default convertFromTranscript;

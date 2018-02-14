@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, CompositeDecorator, CharacterMetadata, getDefaultKeyBinding } from 'draft-js';
+import { Editor, EditorState, CharacterMetadata, getDefaultKeyBinding } from 'draft-js';
 import Immutable from 'immutable';
-import debounce from 'lodash.debounce';
-import { Transcript } from 'transcript-model';
+import { Speaker } from 'transcript-model';
 import PropTypes from 'prop-types';
 
-import convertFromTranscript from '../helpers/convertFromTranscript';
-import convertToTranscript from '../helpers/convertToTranscript';
 import updateBlock from '../helpers/updateBlock';
 import TranscriptEditorBlock from './TranscriptEditorBlock';
-import TranscriptEditorWord from './TranscriptEditorWord';
-import TranscriptEditorSpace from './TranscriptEditorSpace';
 import { TRANSCRIPT_WORD, TRANSCRIPT_SPACE }
   from '../helpers/TranscriptEntities';
 
@@ -18,74 +13,19 @@ class TranscriptEditor extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      editorState: EditorState.createEmpty(),
-      speakers: [],
-      disabled: props.disabled || false,
-      showSpeakers: props.showSpeakers || false,
-    };
-
     this.onChange = this.onChange.bind(this);
     this.handleBeforeInput = this.handleBeforeInput.bind(this);
     this.handleReturn = this.handleReturn.bind(this);
     this.blockRenderer = this.blockRenderer.bind(this);
     this.handleKeyboardEvent = this.handleKeyboardEvent.bind(this);
-
-    this.debouncedSendTranscriptUpdate = debounce(this.sendTranscriptUpdate, 500);
-
-    this.decorator = new CompositeDecorator([
-      {
-        strategy: (contentBlock, callback, contentState) => {
-          contentBlock.findEntityRanges((character) => {
-            const entityKey = character.getEntity();
-            if (entityKey === null) {
-              return false;
-            }
-            const entityType = contentState.getEntity(entityKey).getType();
-            return entityType === TRANSCRIPT_WORD;
-          }, callback);
-        },
-        component: TranscriptEditorWord,
-      },
-      {
-        strategy: (contentBlock, callback, contentState) => {
-          contentBlock.findEntityRanges((character) => {
-            const entityKey = character.getEntity();
-            if (entityKey === null) {
-              return false;
-            }
-            const entityType = contentState.getEntity(entityKey).getType();
-            return entityType === TRANSCRIPT_SPACE;
-          }, callback);
-        },
-        component: TranscriptEditorSpace,
-      },
-    ]);
-  }
-
-  componentWillMount() {
-    if (this.props.transcript) {
-      this.instantiateEditor(this.props.transcript);
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      disabled: nextProps.disabled || false,
-    });
-
-    const transcript = nextProps.transcript;
-    if (transcript && this.state.transcript !== transcript) {
-      this.instantiateEditor(transcript);
-    }
   }
 
   onChange(editorState) {
-    if (this.state.disabled) {
+    if (this.props.disabled) {
       return;
     }
 
-    const previousEditorState = this.state.editorState;
+    const previousEditorState = this.props.editorState;
     const lastChangeType = editorState.getLastChangeType();
 
     const selectionState = editorState.getSelection();
@@ -186,39 +126,24 @@ class TranscriptEditor extends Component {
 
       contentState = contentState.set('blockMap', newBlockMap);
 
-      this.debouncedSendTranscriptUpdate(contentState, this.state.speakers);
-
-      this.setState({
+      this.props.onChange({
         editorState: EditorState.push(
           previousEditorState, contentState, lastChangeType
         ),
+        speakers: this.props.speakers,
       });
       return;
     }
-    this.setState({
+    this.props.onChange({
       editorState,
+      speakers: this.props.speakers,
     });
-  }
-
-  instantiateEditor(transcript) {
-    const { contentState, speakers } = convertFromTranscript(transcript);
-
-    this.setState({
-      editorState: EditorState.createWithContent(
-        contentState,
-        this.decorator
-      ),
-      speakers,
-      transcript,
-    });
-
-    this.sendTranscriptUpdate(contentState, speakers);
   }
 
   handleBeforeInput(chars) {
     // Don't allow inserting additional spaces between words
     if (chars === ' ') {
-      const editorState = this.state.editorState;
+      const editorState = this.props.editorState;
       const contentState = editorState.getCurrentContent();
       const selectionState = editorState.getSelection();
       const startKey = selectionState.getStartKey();
@@ -246,18 +171,14 @@ class TranscriptEditor extends Component {
     return {
       component: TranscriptEditorBlock,
       props: {
-        speakers: this.state.speakers,
-        showSpeakers: this.state.showSpeakers,
+        speakers: this.props.speakers || new Immutable.List(),
+        showSpeakers: this.props.showSpeakers,
       },
     };
   }
 
   focus() {
     this.editor.focus();
-  }
-
-  sendTranscriptUpdate(contentState, speakers) {
-    this.props.onTranscriptUpdate(convertToTranscript(contentState, speakers));
   }
 
   sendSelectionChange(contentState, selectionState) {
@@ -293,7 +214,7 @@ class TranscriptEditor extends Component {
   }
 
   handleReturn() {
-    const editorState = this.state.editorState;
+    const editorState = this.props.editorState;
     const contentState = editorState.getCurrentContent();
     const selectionState = editorState.getSelection();
     const startKey = selectionState.getStartKey();
@@ -314,12 +235,12 @@ class TranscriptEditor extends Component {
   }
 
   render() {
-    const { editorState } = this.state;
+    const { editorState } = this.props;
     return (
       <div className="transcript-editor">
         <Editor
           ref={(editor) => { this.editor = editor; }}
-          editorState={editorState}
+          editorState={editorState || EditorState.createEmpty()}
           onChange={this.onChange}
           handleReturn={this.handleReturn}
           handleBeforeInput={this.handleBeforeInput}
@@ -333,8 +254,9 @@ class TranscriptEditor extends Component {
 }
 
 TranscriptEditor.propTypes = {
-  transcript: PropTypes.instanceOf(Transcript),
-  onTranscriptUpdate: PropTypes.func,
+  onChange: PropTypes.func,
+  editorState: PropTypes.instanceOf(EditorState),
+  speakers: PropTypes.arrayOf(Immutable.List),
   onSelectionChange: PropTypes.func,
   disabled: PropTypes.bool,
   onKeyboardEvent: PropTypes.func,
