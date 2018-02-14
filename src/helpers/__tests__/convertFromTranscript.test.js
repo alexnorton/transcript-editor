@@ -10,7 +10,9 @@ describe('convertFromTranscript()', () => {
     const transcriptJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'transcript.json')));
     const transcript = Transcript.fromJSON(transcriptJson);
 
-    const { contentState, speakers } = convertFromTranscript(transcript);
+    const { editorState, speakers } = convertFromTranscript(transcript);
+
+    const contentState = editorState.getCurrentContent();
 
     const raw = convertToRaw(contentState);
 
