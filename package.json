@@ -4,11 +4,11 @@
   "description": "Editor component for transcripts. Allows correction of errors produced by the speech recognition process while maintaining time-alignment of words.",
   "main": "lib/index.js",
   "dependencies": {
-    "draft-js": "^0.10.1",
-    "immutable": "^3.8.1",
+    "draft-js": "^0.10.5",
+    "immutable": "^3.8.2",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.6.0",
-    "transcript-model": "^0.4.2",
+    "transcript-model": "^0.4.4",
     "uuid": "^3.0.1"
   },
   "devDependencies": {
@@ -23,9 +23,9 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
-    "jest": "^16.0.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "jest": "^22.3.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0",
@@ -56,6 +56,8 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": "src/**/*.js"
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   }
 }
