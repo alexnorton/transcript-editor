@@ -37,7 +37,20 @@ const updateBlock = (contentBlock, contentState) =>
             }
           }
         } else {
-          // Set it to the entity of this character
+          // Is this character a space?
+          if (contentState.getEntity(character.entity).type === TRANSCRIPT_SPACE) {
+            // Set previous character's entity to that of the character before it
+            return {
+              characterList: characterList
+                .set(-1, CharacterMetadata.applyEntity(
+                  previousCharacter,
+                  characterList.get(-2).entity,
+                ))
+                .push(character),
+              text: text + contentBlock.text[index],
+            };
+          }
+          // Otherwise set previous character's entity to this character's
           return {
             characterList: characterList
               .set(-1, CharacterMetadata.applyEntity(previousCharacter, character.entity))

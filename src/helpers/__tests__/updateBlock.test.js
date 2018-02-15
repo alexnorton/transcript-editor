@@ -141,4 +141,34 @@ describe('updateBlock()', () => {
 
     expect(text).toBe('Hello Alex!');
   });
+
+  it('adds new characters to the end of words', () => {
+    const contentState = new ContentState();
+
+    const entities = createEntities(contentState, [
+      [TRANSCRIPT_WORD],
+      [TRANSCRIPT_SPACE],
+      [TRANSCRIPT_WORD],
+    ]);
+
+    const contentBlock = new ContentBlock({
+      characterList: createCharacterListFromRanges([
+        { from: 0, to: 4, value: { entity: entities[0] } },
+        { from: 5, to: 5, values: { entity: null } },
+        { from: 6, to: 6, value: { entity: entities[1] } },
+        { from: 7, to: 10, value: { entity: entities[2] } },
+      ]),
+      text: 'Hello! Alex!',
+    });
+
+    const { characterList, text } = updateBlock(contentBlock, contentState);
+
+    expect(characterList.toJS()).toEqual(createCharacterListFromRanges([
+      { from: 0, to: 5, value: { entity: entities[0] } },
+      { from: 6, to: 6, value: { entity: entities[1] } },
+      { from: 7, to: 10, value: { entity: entities[2] } },
+    ]).toJS());
+
+    expect(text).toBe('Hello! Alex');
+  });
 });
