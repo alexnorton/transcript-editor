@@ -32,7 +32,8 @@
   },
   "scripts": {
     "prepare": "babel -d lib --copy-files --ignore '**/__tests__' src/",
-    "test": "jest src/"
+    "test": "jest src/",
+    "coverage": "npm run test -- --coverage"
   },
   "repository": {
     "type": "git",
@@ -54,7 +55,6 @@
     ]
   },
   "jest": {
-    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.js"
     ]
