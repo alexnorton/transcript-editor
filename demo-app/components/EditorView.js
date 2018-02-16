@@ -22,8 +22,8 @@ class EditorView extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.loadTranscript = this.loadTranscript.bind(this);
     this.handleLoadTranscript = this.handleLoadTranscript.bind(this);
+    this.loadTranscript = this.loadTranscript.bind(this);
     this.saveTranscript = this.saveTranscript.bind(this);
   }
 
@@ -36,10 +36,6 @@ class EditorView extends Component {
       editorState,
       speakers,
     });
-  }
-
-  loadTranscript() {
-    this.fileInput.click();
   }
 
   handleLoadTranscript() {
@@ -63,6 +59,10 @@ class EditorView extends Component {
     fileReader.readAsText(file);
   }
 
+  loadTranscript() {
+    this.fileInput.click();
+  }
+
   saveTranscript() {
     const transcript = convertToTranscript(
       this.state.editorState.getCurrentContent(),
@@ -82,7 +82,7 @@ class EditorView extends Component {
         <div className="row">
           <div className="col-5">
             <div>
-              <VideoPlayer src={video} onTimeUpdate={this.onTimeUpdate} />
+              <VideoPlayer src={video} />
               <div>
                 <input
                   type="file"
