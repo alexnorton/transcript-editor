@@ -22,50 +22,6 @@ Some things I'd like to work on:
 
 Visit the [demo](https://bbc.github.io/transcript-editor/).
 
-## Usage
-
-### Basic example
-
-```js
-import React from 'react';
-import TranscriptEditor from 'transcript-editor';
-
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // Get a Transcript from somewhere, e.g. from props, and add it to state
-    this.state = { 
-      initialTranscript: props.transcript,
-    };
-  }
-
-  render() {
-    return (
-      <TranscriptEditor
-        transcript={this.state.initialTranscript}
-        onTranscriptUpdate={(transcript) => { console.log('transcript updated', transcript); }}
-      />
-    );
-  }
-};
-
-export default MyComponent;
-```
-
-For a more complex example see the [demo application source code](demo-app/) in this repository.
-
-### Props
-
-| name                 | type       | description |
-| -------------------- | ---------- | ----------- |
-| `transcript`         | Transcript | Transcript object to hydrate the editor state from. |
-| `disabled`           | boolean    | When true, user input is disabled. Defaults to false. |
-| `onTranscriptUpdate` | function   | Callback to be exectuted when the transcript has changed. |
-| `onSelectionChange`  | function   | Callback to be executed when the selection state has changed. |
-| `onKeyboardEvent`    | function   | Callback to be executed when a keyboard event occurs. |
-| `showSpeakers`       | boolean    | When true, show speaker information column. Defaults to false |
-
 ## Author
 
 [**Alex Norton**](https://github.com/alexnorton/) - get in touch [@alxnorton](https://twitter.com/alxnorton)
