@@ -2,11 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class VideoPlayer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   componentDidMount() {
     this.video.addEventListener('play', () => this.startInterval());
     this.video.addEventListener('pause', () => this.stopInterval());
@@ -24,13 +19,13 @@ class VideoPlayer extends Component {
   }
 
   updateTime() {
-    this.setState({
-      currentTime: this.video.currentTime,
-    });
-    this.props.onTimeUpdate(this.video.currentTime);
+    if (this.props.onTimeUpdate) {
+      this.props.onTimeUpdate(this.video.currentTime);
+    }
   }
 
   render() {
+    /* eslint-disable jsx-a11y/media-has-caption */
     return (
       <div>
         <video
@@ -41,12 +36,17 @@ class VideoPlayer extends Component {
         />
       </div>
     );
+    /* eslint-enable */
   }
 }
 
 VideoPlayer.propTypes = {
-  src: PropTypes.string,
+  src: PropTypes.string.isRequired,
   onTimeUpdate: PropTypes.func,
+};
+
+VideoPlayer.defaultProps = {
+  onTimeUpdate: null,
 };
 
 export default VideoPlayer;

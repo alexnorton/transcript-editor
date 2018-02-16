@@ -15,14 +15,16 @@
     "babel-core": "^6.17.0",
     "babel-jest": "^16.0.0",
     "babel-polyfill": "^6.16.0",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-preset-react": "^6.16.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "16.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "^1.1.0",
     "jest": "^22.3.0",
+    "parcel-bundler": "^1.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
@@ -31,6 +33,9 @@
     "react-dom": "^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0"
   },
   "scripts": {
+    "start": "parcel demo-app/index.html",
+    "predeploy": "parcel build demo-app/index.html --public-url ./",
+    "deploy": "gh-pages -d dist",
     "prepare": "babel -d lib --copy-files --ignore '**/__tests__' src/",
     "test": "jest src/",
     "coverage": "npm run test -- --coverage"
@@ -48,12 +53,6 @@
   "files": [
     "lib/"
   ],
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js"
