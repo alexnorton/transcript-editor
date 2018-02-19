@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TranscriptEditorSpace = ({ children }) => (
-  <span className="transcript-editor-block__space">
+  <span className="transcript-editor-entity__space">
     {children}
   </span>
 );

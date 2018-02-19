@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const TranscriptEditorBlock = (props) => {
   const speakerSection = props.blockProps.showSpeakers ? (
     <div
-      className="transcript-editor-block__speaker"
+      className="transcript-editor-speaker"
       contentEditable={false}
       style={{
         MozUserSelect: 'none',
@@ -20,7 +20,7 @@ const TranscriptEditorBlock = (props) => {
   return (
     <div className="transcript-editor-block">
       {speakerSection}
-      <div className="transcript-editor-block__text">
+      <div className="transcript-editor-text">
         <EditorBlock {...props} />
       </div>
     </div>

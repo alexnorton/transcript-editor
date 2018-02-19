@@ -10,7 +10,7 @@ const TranscriptEditorWord = ({ entityKey, children, contentState }) => {
       title={titleString}
       data-start={entity.data.start}
       data-end={entity.data.end}
-      className="transcript-editor-block__word"
+      className="transcript-editor-entity__word"
     >
       {children}
     </span>

@@ -1,24 +1,24 @@
 .transcript-editor {
   border: 1px solid #ddd;
-  padding: 15px;
+  padding: 5px 15px;
   cursor: text;
 }
 
 .transcript-editor-block {
   display: flex;
-  margin-bottom: 10px;
+  margin: 10px 0px;
   line-height: 1.7;
 }
 
-.transcript-editor-block__speaker {
+.transcript-editor-speaker {
   width: 100px;
 }
 
-.transcript-editor-block__text {
+.transcript-editor-text {
   flex: 1;
 }
 
-.transcript-editor-block__word {
+.transcript-editor-entity__word {
   background-color: #d4eaff;
   border: 1px solid #ddd;
   padding: 0 2px;
