@@ -8,7 +8,6 @@ const TranscriptEditorWord = ({ entityKey, children, contentState }) => {
   return (
     <span
       title={titleString}
-      id={`word-${entity.data.id}`}
       data-start={entity.data.start}
       data-end={entity.data.end}
       className="transcript-editor-block__word"
