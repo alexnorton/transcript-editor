@@ -120,11 +120,11 @@ class EditorView extends Component {
                   style={{ display: 'none' }}
                   onChange={this.handleLoadTranscript}
                 />
-                <div className="btn-toolbar">
+                <div className="btn-toolbar mt-2">
                   <button
                     onClick={this.loadTranscript}
                     type="button"
-                    className="btn btn-primary mr-2"
+                    className="btn btn-primary mr-2 btn-sm"
                   >
                     Load transcript
                   </button>
@@ -132,14 +132,14 @@ class EditorView extends Component {
                   <button
                     onClick={this.saveTranscript}
                     type="button"
-                    className="btn btn-primary mr-2"
+                    className="btn btn-primary mr-2 btn-sm"
                   >
                     Save transcript
                   </button>
 
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-sm"
                     onClick={() => {
                       this.editor.focus();
                     }}
@@ -148,7 +148,7 @@ class EditorView extends Component {
                   </button>
                 </div>
               </div>
-              <div className="form-group mt-2 row">
+              <div className="form-group mt-3 row">
                 <label className="col-sm-4 col-form-label col-form-label-sm">Decorator</label>
                 <div className="col-sm-8">
                   <select
