@@ -1,10 +1,10 @@
 # transcript-editor
 
-[![Build Status](https://travis-ci.org/bbc/transcript-editor.svg?branch=master)](https://travis-ci.org/bbc/transcript-editor) [![npm](https://img.shields.io/npm/v/transcript-editor.svg)](https://www.npmjs.com/package/transcript-editor)
+[![Build Status](https://travis-ci.org/bbc/transcript-editor.svg?branch=master)](https://travis-ci.org/alexnorton/transcript-editor) [![npm](https://img.shields.io/npm/v/transcript-editor.svg)](https://www.npmjs.com/package/transcript-editor)
 
 Transcript editor, implemented as a React component. Allows correction of errors in Speech to Text engine while maintaining word-level timing information. Built using [Draft.js](https://facebook.github.io/draft-js/).
 
-Uses the [transcript-model](https://github.com/bbc/transcript-model) transcript representation format.
+Uses the [transcript-model](https://github.com/alexnorton/transcript-model) transcript representation format.
 
 ## ⚠️ Warning ⚠️
 
@@ -20,8 +20,8 @@ Some things I'd like to work on:
 
 ## Demo
 
-Visit the [demo](https://bbc.github.io/transcript-editor/).
+Visit the [demo](https://alexnorton.github.io/transcript-editor/).
 
 ## Author
 
-[**Alex Norton**](https://github.com/alexnorton/) - get in touch [@alxnorton](https://twitter.com/alxnorton)
+- [Alex Norton](https://github.com/alexnorton/)
