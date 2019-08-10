@@ -8,7 +8,7 @@ import convertFromTranscript from '../convertFromTranscript';
 describe('convertFromTranscript()', () => {
   it('converts transcript to contentState and speakers', () => {
     const transcriptJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'transcript.json')));
-    const transcript = Transcript.fromJSON(transcriptJson);
+    const transcript = Transcript.fromJson(transcriptJson);
 
     const { editorState, speakers } = convertFromTranscript(transcript);
 
